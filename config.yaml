@@ -38,14 +38,14 @@ markup:
 #     weight: 3
 
 menu:
-  # before: []
-  after:
-    - name: "Github"
-      url: "https://github.com/alex-shpak/hugo-book"
-      weight: 10
-    - name: "Hugo Themes"
-      url: "https://themes.gohugo.io/hugo-book/"
-      weight: 20
+  before: []
+  # after:
+  #   - name: "Github"
+  #     url: "https://github.com/alex-shpak/hugo-book"
+  #     weight: 10
+  #   - name: "Hugo Themes"
+  #     url: "https://themes.gohugo.io/hugo-book/"
+  #     weight: 20
 
 params:
   # (Optional, default light) Sets color theme: light, dark or auto.
@@ -84,12 +84,12 @@ params:
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
   # Edit path must point to root directory of repo.
-  BookEditPath: edit/main/exampleSite
+  BookEditPath: edit/main/content/posts
 
   # Configure the date format used on the pages
   # - In git information
   # - In blog posts
-  BookDateFormat: "January 2, 2006"
+  BookDateFormat: "2006-01-02"
 
   # (Optional, default true) Enables search function with flexsearch,
   # Index is built on fly, therefore it might slowdown your website.
