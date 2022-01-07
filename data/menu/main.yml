@@ -1,5 +1,7 @@
 ---
 main:
+  - name: HOME
+    ref: "/notes"
   - name: 勉強記録
     ref: "/notes/20211231162342"
   #   sub:
