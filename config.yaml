@@ -4,6 +4,8 @@ countryCode: ja
 languageCode: ja
 HasCJKLanguage: true
 
+preserveTaxonomyNames: false
+
 title: Keido
 theme: even
 
