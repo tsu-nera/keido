@@ -1,3 +1,6 @@
 [submodule "themes/binario"]
 	path = themes/binario
 	url = https://github.com/vimux/binario
+[submodule "themes/even"]
+	path = themes/even
+	url = https://github.com/olOwOlo/hugo-theme-even
