@@ -26,3 +26,6 @@ enableRobotsTXT = true
 
 [taxonomies]
    tag = "tags"
+
+[params]
+   type = "notes"
