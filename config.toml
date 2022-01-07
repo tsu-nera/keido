@@ -29,4 +29,11 @@ enableRobotsTXT = true
 
 [params]
    type = "notes"
+   geekdocToC = 3
    geekdocMenuBundle = true
+   geekdocNextPrev = false
+   geekdocBreadcrumb = false
+   geekdocRepo = "https://github.com/tsu-nera/keido"
+   geekdocEditPath = "edit/main/content"
+   geekdocBackToTop = false
+   geekdocTagsToMenu = true
