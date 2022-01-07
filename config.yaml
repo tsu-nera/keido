@@ -1,0 +1,21 @@
+baseURL: "https://tsu-nera.github.io/keido/"
+
+countryCode: ja
+languageCode: ja
+HasCJKLanguage: true
+
+title: Keido
+theme: binario
+
+paginate: 12
+
+googleAnalytics:
+
+refLinksErrorLevel: "WARNING"
+refLinksNotFoundURL: /keido/404.html
+
+params:
+  columns: 3
+  colorTheme: dark-red
+  comments: false
+  relatedMax: 6
