@@ -21,7 +21,7 @@ googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 refLinksErrorLevel = "WARNING"
-refLinksNotFoundURL = /keido/404.html
+refLinksNotFoundURL = "/keido/404.html"
 
 [author]                  # essential                     # 必需
   name = "olOwOlo"
