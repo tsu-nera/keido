@@ -19,6 +19,7 @@ Wiki & Zettelkastenによる知的生産基盤.
 -   [📝GTD]({{<relref "20220103071935.md#" >}})
 -   [📝Z世代]({{<relref "20211217134744.md#" >}})
 -   [📝Youtube]({{<relref "20220107141801.md#" >}})
+-   [📝Common Lisp]({{<relref "20211211065629.md#" >}})
 
 
 ## 知恵まとめ(Zettelkasten) {#知恵まとめ--zettelkasten}
