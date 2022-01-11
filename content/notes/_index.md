@@ -16,7 +16,7 @@ Wiki & Zettelkastenによる知的生産基盤.
         -   [📝Org-mode]({{<relref "20211211071525.md#" >}})
         -   [📝Org-roam]({{<relref "20211204183600.md#" >}})
         -   [📝ox-hugo]({{<relref "20211231044406.md#" >}})
-        -   [⚡My Emacs Config - 霹靂一閃](https://futurismo.biz/fshort/hekireki)
+        -   [⚡My Emacs Config - 霹靂一閃](https://tsu-nera.github.io/keido/notes/hekireki)
     -   [📝Sphinx]({{<relref "20211227052646.md#" >}})
     -   [📝Lisp]({{<relref "20211211065603.md#" >}})
         -   [📝Common Lisp]({{<relref "20211211065629.md#" >}})
