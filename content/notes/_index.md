@@ -1,6 +1,5 @@
 +++
 title = "Keido"
-author = ["Tsunemichi Harada"]
 tags = ["DOC"]
 draft = false
 +++
