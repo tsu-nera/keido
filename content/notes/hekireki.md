@@ -1,5 +1,6 @@
 +++
 title = "⚡My Emacs Config - 霹靂一閃"
+author = ["Tsunemichi Harada"]
 draft = false
 +++
 
@@ -11,6 +12,7 @@ ref: <https://github.com/tsu-nera/hekireki>
 
 ```emacs-lisp
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+(load-file "~/.doom.d/private/config.el")
 ```
 
 
@@ -103,11 +105,25 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
           ("https://www.youtube.com/feeds/videos.xml?channel_id=UCFo4kqllbcQ4nV83WCyraiw" youtube) ; 中田敦彦
           ("https://www.youtube.com/feeds/videos.xml?channel_id=UCFdBehO71GQaIom4WfVeGSw" youtube) ;メンタリストDaiGo
           ("https://www.youtube.com/feeds/videos.xml?playlist_id=PL3N_SB4Wr_S2cGYuI02bdb4UN9XTZRNDu" youtube) ; 与沢の流儀
+          ("http://www.aaronsw.com/2002/feeds/pgessays.rss" blog) ; Paul Graham
           ))
   (setq-default elfeed-search-filter "@1-week-ago +unread ")
   (defun elfeed-search-format-date (date)
     (format-time-string "%Y-%m-%d %H:%M" (seconds-to-time date)))
   )
+```
+
+
+### Habitica {#habitica}
+
+```emacs-lisp
+(use-package! habitica
+  :commands habitica-tasks
+  :init
+  (bind-key "C-x t g" 'habitica-tasks)
+  :config
+  (setq habitica-show-streak t)
+  (setq habitica-turn-on-highlighting nil))
 ```
 
 
@@ -128,8 +144,8 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 (use-package! avy
   :bind
   ("M-g c" . avy-goto-char) ;; doom の keybind 上書き.
-  ("M-g g" . avy-goto-line) ;; doom の keybind 上書き.
-  ("M-g s". avy-goto-word-1))
+  ("M-g l" . avy-goto-line) ;; doom の keybind 上書き.
+  ("M-g g". avy-goto-word-1))
 
 ;; うまく動かないので封印 doom との相性が悪いのかも.
 ;; ひとまず migemo したいときは isearch で対応.
@@ -158,6 +174,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ;; company はなにげに使いそうだからな，TAB でのみ補完発動させるか.
 (setq company-idle-delay nil)
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
+
 ```
 
 
@@ -229,6 +246,11 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ;; Emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (pixel-scroll-precision-mode)
+
+;; doomだとhelpが割り当てられていたがdoomのhelpはF1をつかう.
+
+(global-set-key (kbd "C-h") 'backward-delete-char)
+(global-set-key (kbd "C-c h r") 'doom/reload)
 ```
 
 
@@ -283,8 +305,34 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 
 ## Lang {#lang}
 
-```emacs-lisp
 
+### Clojure {#clojure}
+
+ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/clojure/README.org)
+
+とりあえず，doomのclojureモジュール有効.
+
+-   cider
+-   clj-refactor
+-   flycheck-clj-kondo
+
+その他，
+
+-   rainbow-delimiters, smartparensはdoomのcoreパッケージとしてすでにはいっている.
+-   pereditはciderの中に入っている.
+
+検討中...
+
+-   clj-kondo ([ref](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)) : linter
+-   cljstyle ([ref](https://qiita.com/lagenorhynque/items/a5d83b4a36a1cf1cacbe)) : formatter
+
+<!--listend-->
+
+```emacs-lisp
+(add-hook! 'clojure-mode-hook 'smartparens-strict-mode)
+
+;; やりすぎindent mode
+(add-hook! 'clojure-mode-hook 'aggressive-indent-mode)
 ```
 
 
@@ -293,20 +341,80 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ```emacs-lisp
 ;; OS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'exwm-randr)
-(setq exwm-randr-workspace-output-plist '(0 "HDMI-1"))
-(add-hook 'exwm-randr-screen-change-hook
-         (lambda ()
-           (start-process-shell-command
-            "xrandr" nil "xrandr --output HDMI-1 --primary --right-of eDP-1 --auto")))
-(exwm-randr-enable)
+(use-package! exwm
+  :after counsel
+  :init
+  (setq counsel-linux-app-format-function #'counsel-linux-app-format-function-name-only)
+  (map!
+        :leader
+        :prefix ("z" . "exwm")
+        "c" #'exwm-reset
+        "o" (lambda (command)
+                         (interactive (list (read-shell-command "$ ")))
+                         (start-process-shell-command command nil command))
+        "z" #'exwm-workspace-switch
+        "a" #'counsel-linux-app
+        "s" #'counsel-search  ;; open chrome and search
+        )
+  (add-hook 'exwm-input--input-mode-change-hook
+            'force-mode-line-update)
+  (add-hook 'exwm-update-class-hook
+            (lambda ()
+              (exwm-workspace-rename-buffer exwm-class-name)))
+  :config
+  (require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist '(0 "HDMI-1"))
+  (add-hook 'exwm-randr-screen-change-hook
+            (lambda ()
+              (start-process-shell-command
+               "xrandr" nil "xrandr --output HDMI-1 --primary --right-of eDP-1 --auto")))
+  (exwm-randr-enable)
 
-(require 'exwm-systemtray)
-(exwm-systemtray-enable)
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
 
-(require 'exwm)
-(require 'exwm-config)
-(exwm-config-default)
+  ;; edit-server的な. C-c 'で編集できるのでよりbetter
+  ;; 一度入力したものを再度開くと文字化けする.
+  (require 'exwm-edit)
+  (setq exwm-edit-split t)
+
+  (setf epg-pinentry-mode 'loopback)
+  (defun pinentry-emacs (desc prompt ok error)
+    (let ((str (read-passwd
+                (concat (replace-regexp-in-string "%22" "\""
+                                                  (replace-regexp-in-string "%0A" "\n" desc)) prompt ": "))))
+      str))
+
+  ;; from https://github.com/ch11ng/exwm/wiki/Configuration-Example
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (fringe-mode 1)
+
+  ;; Turn on `display-time-mode' if you don't use an external bar.
+  (setq display-time-default-load-average nil)
+  (display-time-mode t)
+  (display-battery-mode 1)
+
+  (setq exwm-workspace-number 2)
+
+  (setq exwm-input-simulation-keys
+        '(([?\C-b] . [left])
+          ;; Chromeページ内検索のために空ける
+          ;; Chrome Extentionsをつかってもカスタムで検索のキーバインドは設定できないので
+          ;; ([?\C-f] . [right])
+          ([?\C-p] . [up])
+          ([?\C-n] . [down])
+          ([?\C-a] . [home])
+          ([?\C-e] . [end])
+          ([?\M-v] . [prior])
+          ([?\C-v] . [next])
+          ([?\C-d] . [delete])
+          ([?\C-m] . [return])
+          ([?\C-h] . [backspace])
+          ([?\C-k] . [S-end delete])))
+
+  (exwm-enable))
 ```
 
 
@@ -433,7 +541,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
            :kill-buffer t)
           ("p" "🍅 Pomodoro" entry
            (file+headline (lambda () (my/create-date-org-file "~/keido/notes/journals/daily"))
-                          "Pomodoros")
+                          "DeepWork")
            "* 🍅 %?\n%T"
            :empty-lines 1
            :unnarrowed t
@@ -454,7 +562,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
            (file (lambda () (my/create-date-org-file "~/keido/notes/journals/daily")))
              "%?\nSource: [[%:link][%:description]]\nCaptured On: %U\n"
            :empty-lines 1
-           :unnarrowed t
+           :unnrrowed t
            :kill-buffer t)
           ("z" "🎓 Zettelkasten" plain
            (file (lambda () (my/create-timestamped-org-file "~/keido/notes/zk")))
@@ -558,7 +666,10 @@ Org-modeで書いたブログ記事をHugoにあったMarkdown形式に変換す
 
 ```emacs-lisp
 (use-package! ox-hugo
-  :after 'ox)
+  :after 'ox
+  :config
+  ;; なんか.dir-locals.elに書いても反映してくれないな. ココに書いとく.
+  (setq org-export-with-author nil))
 ```
 
 
@@ -649,23 +760,35 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
         "u" #'my/org-roam-update
         )
   :custom
-  ;; ファイル名を ID にする.
+  ;;ファイル名を ID にする.
   (org-roam-capture-templates
-   '(("d" "default" plain "%?"
-      :target (file+head "%<%Y%m%d%H%M%S>.org"
-                         "#+title: ${title}\n")
-      :unnarrowed t)
-     ("z" "🎓 Zettelkasten" plain "%?"
+   '(("z" "🎓 Zettelkasten" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🎓${title}\n")
+                         "#+title:🎓${title}\n#+filetags: :CONCEPT:\n")
       :unnarrowed t)
      ("w" "📝 Wiki" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:📝${title}\n")
+                         "#+title:📝${title}\n#+filetags: :WIKI:\n")
       :unnarrowed t)
+     ("t" "🏷 Tag" plain "%?"
+      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
+                         "#+title:List of ${title} (alias 🏷${title}) \n#+filetags: :TAG:\n")
+      :unnarrowed t)
+     ("i" "📂 TOC" plain "%?"
+      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
+                         "#+title:Index of {title} (alias 📂${title})\n#+filetags: :TOC:\n")
+      :unnarrowed t)
+     ("m" "🏛 MOC" plain "%?"
+      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
+                         "#+title:🏛${title} \n#+filetags: :MOC:\n")
+      :unnarrowed t)
+     ("d" "🗒 DOC" plain "%?"
+      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
+                         "#+title:🗒${title}\n#+filetags: :DOC:\n")
+      :unnarrowrd t)
      ("f" "🦊 Darkfox" plain "%?"
       :target (file+head "darkfox/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🦊${title}\n")
+                         "#+title:🦊${title}\n#+filetags: :DARKFOX:\n")
       :unnarrowed t)
      ("b" "📚 Book" plain
       "%?
@@ -677,9 +800,9 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 - url: http://www.amazon.co.jp/dp/%^{isbn}
 "
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:📚${title} - ${author}(${date})\n")
+                         "#+title:📚${title} - ${author}(${date})\n#+filetags: :BOOK:SOURCE:\n")
       :unnarrowed t)
-     ("t" "🎤 Talk" plain
+     ("s" "🎙‍ Talk" plain
       "%?
 
 - title: %^{title}
@@ -688,7 +811,7 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 - url: %^{url}
 "
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🎤${title} - ${editor}(${date})\n")
+                         "#+title:🎙 ${title} - ${editor}(${date})\n#+filetags: :TALK:SOURCE:\n")
       :unnarrowed t)
      ("o" "💻 Online" plain
       "%?
@@ -698,7 +821,7 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 - url: %^{url}
 "
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:💻${title}\n")
+                         "#+title:💻${title}\n#+filetags: :ONLINE:SOURCE:\n")
       :unnarrowed t)))
   (org-roam-extract-new-file-path "%<%Y%m%d%H%M%S>.org")
   ;;        :map org-mode-map
@@ -877,6 +1000,28 @@ PDFからOutlineを抜き出してOrg fileに生成して，あとはそのOrg-f
 ```
 
 
+### org-anki {#org-anki}
+
+Org-modeとAnkiをつなぐ．
+<https://github.com/eyeinsky/org-anki>
+
+今までanki-editorを利用していたものの，その記法とwikiの相性が悪かった（冗長）.
+これならorg-modeのheadlineがそのままつかえるのでよさそう.
+
+```emacs-lisp
+(use-package! org-anki
+  :after org
+  :custom
+  ;; one big deckの原則に従う.
+  ;; ref: http://augmentingcognition.com/ltm.html
+  (org-anki-default-deck "Default")
+  :config
+  (define-key org-mode-map (kbd "C-c n A s") #'org-anki-sync-entry)
+  (define-key org-mode-map (kbd "C-c n A u") #'org-anki-update-all)
+  (define-key org-mode-map (kbd "C-c n A d") #'org-anki-delete-entry))
+```
+
+
 ## Term {#term}
 
 ```emacs-lisp
@@ -973,4 +1118,8 @@ Emacsの機能でemoji-searchがあるのでこれも設定しておこう.
   ;; default の e でもいいけど，mule 時代に v に bind されてたので, emacs でも v に bind しておく.
   (define-key view-mode-map (kbd "v") 'read-only-mode))
 
+;; EXWMの場合suspend-frameでハングするのはたちが悪いので封印.
+(use-package! frame
+  :bind
+  ("C-z" . nil)
 ```
