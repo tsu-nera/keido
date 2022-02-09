@@ -28,9 +28,9 @@ ref: <https://github.com/tsu-nera/hekireki>
 ;; twittering-mode
 ;; この設定がないと認証が失敗した.
 ;; twittering-oauth-get-access-token: Failed to retrieve a request token
-(add-hook! 'twittering-mode-hook
+(use-package! twittering-mode
+  :init
   (setq twittering-allow-insecure-server-cert t))
-
 ```
 
 
@@ -237,6 +237,13 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 
 ;; 記号の前後にスペースを入れる.
 (use-package! electric-operator)
+
+;; とりあえず100でハイライトしておく.
+;; 今の自分のディスプレイだと100でいいかな.
+(use-package! whitespace
+  :config
+  (setq whitespace-line-column 100) ;; limit line length
+  (setq whitespace-style '(face lines-tail)))
 ```
 
 
@@ -251,6 +258,10 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (global-set-key (kbd "C-c h r") 'doom/reload)
+
+;; Emacs起動時にいちいち質問されるのはうざい.
+;; default tではなぜか無視できないので:allを設定しておく.
+(setq enable-local-variables :all)
 ```
 
 
@@ -329,10 +340,32 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
 <!--listend-->
 
 ```emacs-lisp
-(add-hook! 'clojure-mode-hook 'smartparens-strict-mode)
-
 ;; やりすぎindent mode
 (add-hook! 'clojure-mode-hook 'aggressive-indent-mode)
+;; 自動でalign整形.
+(setq clojure-align-forms-automatically t)
+```
+
+
+#### smartparens {#smartparens}
+
+<https://github.com/Fuco1/smartparens>
+
+Emacsでカッコの対応を取りつつ編集をするminor-mode. pareditを新しくrewriteした.
+
+[doom emacsのsmartparens定義](https://github.com/hlissner/doom-emacs/blob/master/modules/config/default/%2Bemacs-bindings.el). 足りないのは自分で定義する必要あり.
+
+refs:
+
+-   <https://ebzzry.com/en/emacs-pairs/>
+-   <http://kimi.im/2021-11-27-sexp-operations-in-emacs>
+
+<!--listend-->
+
+```emacs-lisp
+(use-package! smartparens-config
+  :config
+  (add-hook! 'clojure-mode-hook 'smartparens-strict-mode))
 ```
 
 
@@ -353,6 +386,7 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
                          (interactive (list (read-shell-command "$ ")))
                          (start-process-shell-command command nil command))
         "z" #'exwm-workspace-switch
+        "m" #'exwm-workspace-move-window
         "a" #'counsel-linux-app
         "s" #'counsel-search  ;; open chrome and search
         )
@@ -413,6 +447,9 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
           ([?\C-m] . [return])
           ([?\C-h] . [backspace])
           ([?\C-k] . [S-end delete])))
+
+  ;; どうもChromeを立ち上げるとハングするので無効にしておく.
+  (winner-mode -1)
 
   (exwm-enable))
 ```
@@ -563,16 +600,7 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
              "%?\nSource: [[%:link][%:description]]\nCaptured On: %U\n"
            :empty-lines 1
            :unnrrowed t
-           :kill-buffer t)
-          ("z" "🎓 Zettelkasten" plain
-           (file (lambda () (my/create-timestamped-org-file "~/keido/notes/zk")))
-           "#+TITLE:🎓%?\n")
-          ("w" "📝 Wiki" plain
-           (file (lambda () (my/create-timestamped-org-file "~/keido/notes/wiki")))
-           "#+EXPORT_FILE_NAME: ~/repo/futurismo4/wiki/xxx.rst
-#+OPTIONS: toc:t num:nil todo:nil pri:nil ^:nil author:nil *:t prop:nil
-#+TITLE:📝%?\n")
-          ))
+           :kill-buffer t)))
 
   ;; org-babel
   ;; 評価でいちいち質問されないように.
@@ -654,6 +682,7 @@ org-modeをTogglと連携させる.
   :config
   (setq org-toggl-inherit-toggl-properties t)
   (toggl-get-projects)
+  (setq toggl-default-project "GTD")
   (org-toggl-integration-mode))
 ```
 
@@ -1121,5 +1150,5 @@ Emacsの機能でemoji-searchがあるのでこれも設定しておこう.
 ;; EXWMの場合suspend-frameでハングするのはたちが悪いので封印.
 (use-package! frame
   :bind
-  ("C-z" . nil)
+  ("C-z" . nil))
 ```
