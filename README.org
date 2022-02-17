@@ -1,0 +1,8 @@
+* keido: Tsunemichi Haradaの知的生産基盤
+
+Wiki & Zettelkastenの実験.
+
+- [[https://futurismo.biz/archives/2500/][🖊Futurismo Wiki 立ち上げ(Dokuwiki)]]
+- [[https://futurismo.biz/archives/6912/][🖊ScrapboxによるFuturismo Wiki復活]]
+- [[https://futurismo.biz/restart-futurismo-wiki-3th-2021/][🖊Futurismo Wiki復活🎉(3回目) with Sphinx]]
+- [[https://futurismo.biz/close-futurismo-wiki-3th-2022/][🖊Futurismo Wikiを閉鎖して新たにデジタルガーデンを立ち上げます]]
