@@ -10,6 +10,16 @@ packageの並び順は [Doom Emacs](https://github.com/hlissner/doom-emacs) の 
 
 ref: <https://github.com/tsu-nera/hekireki>
 
+---
+
+いつも忘れるDoom Emacs Configuration記法は [ここ](https://github.com/hlissner/doom-emacs/blob/master/docs/getting_started.org#configuring-doom).
+
+-   use-package! は:defer, :hook, :commands, or :after が省略されると起動時に loadされる.
+-   after! は package が load されたときに評価される.
+-   add-hook! は mode 有効化のとき. setq-hook!は equivalent.
+
+どれを使うかの正解はないがすべて use-package!だと起動が遅くなるので場合によってカスタマイズせよ，とのこと.
+
 ```emacs-lisp
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 (load-file "~/.doom.d/private/config.el")
@@ -36,7 +46,7 @@ ref: <https://github.com/tsu-nera/hekireki>
 
 ### eww {#eww}
 
-Emacsのテキストブラウザ([Manual](https://www.gnu.org/software/emacs/manual/html%5Fmono/eww.html))
+Emacsのテキストブラウザ([Manual](https://www.gnu.org/software/emacs/manual/html_mono/eww.html))
 
 notes:
 
@@ -174,7 +184,22 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ;; company はなにげに使いそうだからな，TAB でのみ補完発動させるか.
 (setq company-idle-delay nil)
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
+```
 
+
+### affe {#affe}
+
+fuzzy find. あいまい検索 for consult.
+
+<https://github.com/minad/affe>
+
+```emacs-lisp
+(use-package! affe
+  :config
+  (defun affe-orderless-regexp-compiler (input _type)
+    (setq input (orderless-pattern-compiler input))
+    (cons input (lambda (str) (orderless--highlight input str))))
+  (setq affe-regexp-compiler #'affe-orderless-regexp-compiler))
 ```
 
 
@@ -195,13 +220,6 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ```emacs-lisp
 ;; Config
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; memo:
-;; use-package! は:defer, :hook, :commands, or :after が省略されると起動時に load される.
-;; after! は package が load されたときに評価される.
-;; add-hook! は mode 有効化のとき. setq-hook!は equivalent.
-;; どれを使うかの正解はないがすべて use-package!だと起動が遅くなるので
-;; 場合によってカスタマイズせよ，とのこと.
-;; https://github.com/hlissner/doom-emacs/blob/develop/docs/getting_started.org#configuring-packages
 ;;
 ;; doom specific config
 ;; (setq user-full-name "John Doe"
@@ -344,7 +362,30 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
 (add-hook! 'clojure-mode-hook 'aggressive-indent-mode)
 ;; 自動でalign整形.
 (setq clojure-align-forms-automatically t)
+
+(use-package! cider
+  :bind
+  ;; desing journal用にbinding追加
+  ("C-c C-v C-p" . cider-pprint-eval-defun-to-comment)
+  ("C-c C-v M-p" . cider-pprint-eval-last-sexp-to-comment))
 ```
+
+
+#### clj-refactor {#clj-refactor}
+
+Emacs CIDERでClojureを書くための便利なファクタツール提供.
+
+<https://github.com/clojure-emacs/clj-refactor.el>
+
+```emacs-lisp
+(add-hook! clojure-mode
+  (clj-refactor-mode 1)
+  (yas-minor-mode 1) ; for adding require/use/import statements
+  ;; This choice of keybinding leaves cider-macroexpand-1 unbound
+  (cljr-add-keybindings-with-prefix "C-c C-m"))
+```
+
+-   cljr-clean-nsでnamespaceを整理, cljr-project-cleanでプロジェクト全体に適用.
 
 
 #### smartparens {#smartparens}
@@ -353,17 +394,42 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
 
 Emacsでカッコの対応を取りつつ編集をするminor-mode. pareditを新しくrewriteした.
 
-[doom emacsのsmartparens定義](https://github.com/hlissner/doom-emacs/blob/master/modules/config/default/%2Bemacs-bindings.el). 足りないのは自分で定義する必要あり.
-
 refs:
 
 -   <https://ebzzry.com/en/emacs-pairs/>
 -   <http://kimi.im/2021-11-27-sexp-operations-in-emacs>
 
-<!--listend-->
+[doom emacsのsmartparens定義](https://github.com/hlissner/doom-emacs/blob/master/modules/config/default/%2Bemacs-bindings.el). +bindings +smartparensで有効.
+
+```emacs-lisp
+;;; smartparens
+(:after smartparens
+  :map smartparens-mode-map
+  "C-M-a"           #'sp-beginning-of-sexp
+  "C-M-e"           #'sp-end-of-sexp
+  "C-M-f"           #'sp-forward-sexp
+  "C-M-b"           #'sp-backward-sexp
+  "C-M-n"           #'sp-next-sexp
+  "C-M-p"           #'sp-previous-sexp
+  "C-M-u"           #'sp-up-sexp
+  "C-M-d"           #'sp-down-sexp
+  "C-M-k"           #'sp-kill-sexp
+  "C-M-t"           #'sp-transpose-sexp
+  "C-M-<backspace>" #'sp-splice-sexp)
+```
+
+足りないのは自分で定義する必要あり. というかいろいろ再定義するか...
 
 ```emacs-lisp
 (use-package! smartparens-config
+  :bind
+  ("C-<right>" . sp-forward-slurp-sexp)
+  ("M-<right>" . sp-forward-barf-sexp)
+  ("C-<left>"  . sp-backward-slurp-sexp)
+  ("M-<left>"  . sp-backward-barf-sexp)
+  ("C-M-w" . sp-copy-sexp)
+  ("M-[" . sp-backward-unwrap-sexp)
+  ("M-]" . sp-unwrap-sexp)
   :config
   (add-hook! 'clojure-mode-hook 'smartparens-strict-mode))
 ```
@@ -930,7 +996,7 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 
 -   org-ref
 -   ivy-bibtex
-    -   ivyのactionは ivy-bibtexでC-SPCで選択-> C-M-oでaction選択候補を出し，pとかeとか押す.
+    -   ivyのactionは ivy-bibtexでC-SPCで選択-&gt; C-M-oでaction選択候補を出し，pとかeとか押す.
 -   org-roam-bibtex
 
 <!--listend-->
