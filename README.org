@@ -1,6 +1,6 @@
-* kEIDO
+* KEIDO
 
-Wiki & Zettelkastenの実験場 aka. Tsunemichi Haradaの知的生産基盤.
+Wiki & Zettelkastenの実験場 aka. tsu-neraの知的生産基盤.
 
 - [[https://futurismo.biz/archives/2500/][🖊Futurismo Wiki 立ち上げ(Dokuwiki)]]
 - [[https://futurismo.biz/archives/6912/][🖊ScrapboxによるFuturismo Wiki復活]]
