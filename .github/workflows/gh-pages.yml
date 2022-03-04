@@ -36,3 +36,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      - name: send sitemap
+        run: wget "https://tsu-nera.github.io/keido/sitemap.xml"
