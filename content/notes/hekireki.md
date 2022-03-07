@@ -335,6 +335,79 @@ fuzzy find. あいまい検索 for consult.
 
 ## Lang {#lang}
 
+編集補助の中でも特にコーディング支援をまとめる.
+
+
+### Common {#common}
+
+
+#### smartparens {#smartparens}
+
+<https://github.com/Fuco1/smartparens>
+
+Emacsでカッコの対応を取りつつ編集をするminor-mode. pareditを新しくrewriteした.
+
+refs:
+
+-   <https://ebzzry.com/en/emacs-pairs/>
+-   <http://kimi.im/2021-11-27-sexp-operations-in-emacs>
+
+[doom emacsのsmartparens定義](https://github.com/hlissner/doom-emacs/blob/master/modules/config/default/%2Bemacs-bindings.el). +bindings +smartparensで有効.
+
+```emacs-lisp
+;;; smartparens
+(:after smartparens
+  :map smartparens-mode-map
+  "C-M-a"           #'sp-beginning-of-sexp
+  "C-M-e"           #'sp-end-of-sexp
+  "C-M-f"           #'sp-forward-sexp
+  "C-M-b"           #'sp-backward-sexp
+  "C-M-n"           #'sp-next-sexp
+  "C-M-p"           #'sp-previous-sexp
+  "C-M-u"           #'sp-up-sexp
+  "C-M-d"           #'sp-down-sexp
+  "C-M-k"           #'sp-kill-sexp
+  "C-M-t"           #'sp-transpose-sexp
+  "C-M-<backspace>" #'sp-splice-sexp)
+```
+
+足りないのは自分で定義する必要あり. というかいろいろ再定義するか...
+
+```emacs-lisp
+(use-package! smartparens-config
+  :bind
+  ("C-<right>" . sp-forward-slurp-sexp)
+  ("M-<right>" . sp-forward-barf-sexp)
+  ("C-<left>"  . sp-backward-slurp-sexp)
+  ("M-<left>"  . sp-backward-barf-sexp)
+  ("C-M-w" . sp-copy-sexp)
+  ("M-[" . sp-backward-unwrap-sexp)
+  ("M-]" . sp-unwrap-sexp)
+  :config
+  (add-hook! 'clojure-mode-hook 'smartparens-strict-mode))
+```
+
+
+#### symbol-overlay {#symbol-overlay}
+
+シンボルのハイライトをキー入力で制御できる.
+
+<https://github.com/wolray/symbol-overlay/>
+
+-
+
+<!--listend-->
+
+```emacs-lisp
+(use-package! symbol-overlay
+  :config
+  (global-set-key (kbd "M-i") 'symbol-overlay-put)
+  (global-set-key (kbd "M-n") 'symbol-overlay-switch-forward)
+  (global-set-key (kbd "M-p") 'symbol-overlay-switch-backward)
+  (global-set-key (kbd "<f7>") 'symbol-overlay-mode)
+  (global-set-key (kbd "<f8>") 'symbol-overlay-remove-all))
+```
+
 
 ### Clojure {#clojure}
 
@@ -387,53 +460,6 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
 ```
 
 -   cljr-clean-nsでnamespaceを整理, cljr-project-cleanでプロジェクト全体に適用.
-
-
-#### smartparens {#smartparens}
-
-<https://github.com/Fuco1/smartparens>
-
-Emacsでカッコの対応を取りつつ編集をするminor-mode. pareditを新しくrewriteした.
-
-refs:
-
--   <https://ebzzry.com/en/emacs-pairs/>
--   <http://kimi.im/2021-11-27-sexp-operations-in-emacs>
-
-[doom emacsのsmartparens定義](https://github.com/hlissner/doom-emacs/blob/master/modules/config/default/%2Bemacs-bindings.el). +bindings +smartparensで有効.
-
-```emacs-lisp
-;;; smartparens
-(:after smartparens
-  :map smartparens-mode-map
-  "C-M-a"           #'sp-beginning-of-sexp
-  "C-M-e"           #'sp-end-of-sexp
-  "C-M-f"           #'sp-forward-sexp
-  "C-M-b"           #'sp-backward-sexp
-  "C-M-n"           #'sp-next-sexp
-  "C-M-p"           #'sp-previous-sexp
-  "C-M-u"           #'sp-up-sexp
-  "C-M-d"           #'sp-down-sexp
-  "C-M-k"           #'sp-kill-sexp
-  "C-M-t"           #'sp-transpose-sexp
-  "C-M-<backspace>" #'sp-splice-sexp)
-```
-
-足りないのは自分で定義する必要あり. というかいろいろ再定義するか...
-
-```emacs-lisp
-(use-package! smartparens-config
-  :bind
-  ("C-<right>" . sp-forward-slurp-sexp)
-  ("M-<right>" . sp-forward-barf-sexp)
-  ("C-<left>"  . sp-backward-slurp-sexp)
-  ("M-<left>"  . sp-backward-barf-sexp)
-  ("C-M-w" . sp-copy-sexp)
-  ("M-[" . sp-backward-unwrap-sexp)
-  ("M-]" . sp-unwrap-sexp)
-  :config
-  (add-hook! 'clojure-mode-hook 'smartparens-strict-mode))
-```
 
 
 ## OS {#os}
@@ -1140,6 +1166,8 @@ Org-modeとAnkiをつなぐ．
 
 
 ## UI {#ui}
+
+みため周りの設定.
 
 
 ### Doom {#doom}
