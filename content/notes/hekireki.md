@@ -195,6 +195,7 @@ fuzzy find. あいまい検索 for consult.
 
 ```emacs-lisp
 (use-package! affe
+  :after consult
   :config
   (defun affe-orderless-regexp-compiler (input _type)
     (setq input (orderless-pattern-compiler input))
@@ -440,6 +441,7 @@ refs:
 ```emacs-lisp
 ;; OS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package! exwm
   :after counsel
   :init
@@ -461,6 +463,9 @@ refs:
   (add-hook 'exwm-update-class-hook
             (lambda ()
               (exwm-workspace-rename-buffer exwm-class-name)))
+  ;; どうもChromeを立ち上げるとハングするので無効にしておく.
+  (winner-mode -1)
+
   :config
   (require 'exwm-randr)
   (setq exwm-randr-workspace-output-plist '(0 "HDMI-1"))
@@ -491,6 +496,10 @@ refs:
   (scroll-bar-mode -1)
   (fringe-mode 1)
 
+  ;; google-chromeを起動するとmouse on menu-barがpopupしてハングする対策
+  ;; https://stackoverflow.com/questions/17280845/emacs-disable-pop-up-menus-on-mouse-clicks
+  (fset 'menu-bar-open nil)
+
   ;; Turn on `display-time-mode' if you don't use an external bar.
   (setq display-time-default-load-average nil)
   (display-time-mode t)
@@ -513,9 +522,6 @@ refs:
           ([?\C-m] . [return])
           ([?\C-h] . [backspace])
           ([?\C-k] . [S-end delete])))
-
-  ;; どうもChromeを立ち上げるとハングするので無効にしておく.
-  (winner-mode -1)
 
   (exwm-enable))
 ```
@@ -1217,4 +1223,7 @@ Emacsの機能でemoji-searchがあるのでこれも設定しておこう.
 (use-package! frame
   :bind
   ("C-z" . nil))
+
+;; 実験, どうもマウス操作でEmacsの制御が効かなくなることがあるので.
+(setq make-pointer-invisible nil)
 ```

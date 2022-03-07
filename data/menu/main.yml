@@ -4,6 +4,8 @@ main:
     ref: "/notes"
   - name: 勉強記録
     ref: "/notes/20211231162342"
+  - name: 霹靂一閃
+    ref: "/notes/hekireki"
   #   sub:
   #     - name: Level 1.1
   #       ref: "/level-1/level-1-1"
