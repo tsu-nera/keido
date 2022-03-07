@@ -13,8 +13,7 @@ aka. [Futurismo](https://futurismo.biz) 別館.
 
 知識をトピックごとにまとめます.
 
--   [📂Programming]({{< relref "20220214050656.md" >}})
--   [📂Software Development]({{< relref "20220215162439.md" >}})
+-   [📂Computer Science]({{< relref "20220307090518.md" >}})
 -   [📂Startup]({{< relref "20220301073957.md" >}})
 -   📂生産性
     -   [📝勉強法]({{< relref "20220110081806.md" >}})
