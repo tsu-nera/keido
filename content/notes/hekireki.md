@@ -394,9 +394,7 @@ refs:
 
 <https://github.com/wolray/symbol-overlay/>
 
--
-
-<!--listend-->
+使ってないし companyとkeybindがかぶったのでいったん封印.
 
 ```emacs-lisp
 (use-package! symbol-overlay
@@ -553,7 +551,9 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
 ```
 
 
-## Org mode {#org-mode}
+## Org-mode {#org-mode}
+
+ご存知！
 
 ```emacs-lisp
 ;; Org mode
@@ -769,20 +769,37 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
 ```
 
 
-### org-toggl {#org-toggl}
+### org-babel {#org-babel}
 
-org-modeをTogglと連携させる.
-<https://github.com/mbork/org-toggl>
+Org-modeのなかでLiterature Programming.
+
+基本操作:
+
+-   C-c C-, コードブロックの挿入テンプレート呼び出し(org-insert-structure-tempate)
+-   C-c C-c コード実行(org-babel-execute-src-block)
+-   C-c C-o コード実行結果を開く(org-babel-open-src-block-result)
+-   C-c ' ソースコード編集(org-edit-src-code)
+    -   どうもEoom Emacsだと keybindingが外れいてる.
+    -   C-c l '(org-edit-special)で開く.
+
+<!--listend-->
 
 ```emacs-lisp
-(use-package! org-toggl
-  :after org
-  :config
-  (setq org-toggl-inherit-toggl-properties t)
-  (toggl-get-projects)
-  (setq toggl-default-project "GTD")
-  (org-toggl-integration-mode))
+(after! org
+  ;; https://stackoverflow.com/questions/53469017/org-mode-source-editing-indents-code-after-exiting-source-code-block-editor
+  ;; インデント. default 2になっているとへんな隙間が先頭に入る.
+  (setq org-edit-src-content-indentation 0)
+  (setq org-src-preserve-indentation t)
+  ;; TABの挙動
+  (setq org-src-tab-acts-natively t)
+  ;; font
+  (setq org-src-fontify-natively t))
 ```
+
+refs:
+
+-   [org-babel Key bindings and Useful Functions (The Org Manual)](https://orgmode.org/manual/Key-bindings-and-Useful-Functions.html)
+-   [org-modeのコードブロック(Babel)の使い方 | Misohena Blog](https://misohena.jp/blog/2017-10-26-how-to-use-code-block-of-emacs-org-mode.html)
 
 
 ### ox-hugo {#ox-hugo}
@@ -816,6 +833,22 @@ Org-modeで書いたWiki用のページをSphinxで公開するためにreST形�
       (replace-regexp-in-string "\\(\\.org>`_\\)" ">`" (concat ":doc:" text) nil nil 1)))
   (add-to-list 'org-export-filter-link-functions
                'my/rst-to-sphinx-link-format))
+```
+
+
+### org-toggl {#org-toggl}
+
+org-modeをTogglと連携させる.
+<https://github.com/mbork/org-toggl>
+
+```emacs-lisp
+(use-package! org-toggl
+  :after org
+  :config
+  (setq org-toggl-inherit-toggl-properties t)
+  (toggl-get-projects)
+  (setq toggl-default-project "GTD")
+  (org-toggl-integration-mode))
 ```
 
 
@@ -856,7 +889,7 @@ Org-modeで書いたWiki用のページをSphinxで公開するためにreST形�
 ```
 
 
-### Org-roam {#org-roam}
+### org-roam {#org-roam}
 
 Zettelkasten MethodのOrg-roam実装.
 
@@ -908,6 +941,10 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
      ("m" "🏛 MOC" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
                          "#+title:🏛${title} \n#+filetags: :MOC:\n")
+      :unnarrowed t)
+     ("i" "💡 Issue" plain "%?"
+      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
+                         "#+title:💡${title} \n#+filetags: :ISSUE:\n")
       :unnarrowed t)
      ("d" "🗒 DOC" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
@@ -1231,7 +1268,6 @@ Emacsの機能でemoji-searchがあるのでこれも設定しておこう.
 ### Others {#others}
 
 ```emacs-lisp
-
 (setq display-line-numbers-type t) ; 行番号表示
 
 ;; less でのファイル閲覧に操作性を似せる mode.
