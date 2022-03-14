@@ -9,13 +9,14 @@ Wiki &amp; Zettelkastenによるtsu-neraの知的生産基盤
 aka. [Futurismo](https://futurismo.biz) 別館.
 
 
-## 知識まとめ(Wiki) {#知識まとめ--wiki}
+## 📝知識まとめ(Wiki) {#知識まとめ--wiki}
 
-知識をトピックごとにまとめます.
+他者の知識をトピックごとにまとめ.
 
--   [📂計算機科学]({{< relref "20220307090518.md" >}})
--   [📁ソフトウェア工学]({{< relref "20220311194105.md" >}})
--   [📂Startup]({{< relref "20220301073957.md" >}})
+-   [📂計算機科学(Computer Science)]({{< relref "20220307090518.md" >}})
+-   [📁ソフトウェア工学(Software Engineering)]({{< relref "20220311194105.md" >}})
+-   [📂スタートアップ]({{< relref "20220301073957.md" >}})
+-   [📁音楽]({{< relref "20220309205225.md" >}})
 -   📂生産性
     -   [📝勉強法]({{< relref "20220110081806.md" >}})
     -   [📝Zettelkasten Method]({{< relref "20211206071458.md" >}})
@@ -26,38 +27,39 @@ aka. [Futurismo](https://futurismo.biz) 別館.
 -   [📝Youtube]({{< relref "20220107141801.md" >}})
 -   [🏷Twitter]({{< relref "20211217143718.md" >}})
 -   [🏷アニメ]({{< relref "20220227213744.md" >}})
--   [📁音楽]({{< relref "20220309205225.md" >}})
 
 
-## 知恵まとめ {#知恵まとめ}
+## 🎓知恵まとめ(Zettelkasten) {#知恵まとめ--zettelkasten}
 
-いわゆる, Zettelkasten.
+自己の知恵をまとめ. ツェッテルカステンにおける永久保存版メモ.
 
 [🏛知恵まとめ]({{< relref "zettelkasten.md" >}})
 
 
-## 仮説まとめ(Issue) {#仮説まとめ--issue}
+## 💡仮説まとめ(Issue) {#仮説まとめ--issue}
 
 -   🔬自分を変えるアイデア(aka.ライフハック)
 -   [🔬Startup Ideas]({{< relref "20220114203239.md" >}})
 
 
-## 勉強ノート(Literature Notes) {#勉強ノート--literature-notes}
+## 📚勉強ノート(Literature Notes) {#勉強ノート--literature-notes}
+
+ツェッテルカステンにおける文献メモ.
 
 おそらく忠実に書籍の内容をまとめただけだと著作権としてNGなので私見も交えつつ.
 
 [📁勉強記録]({{< relref "20211231162342.md" >}})
 
 
-## 虚無との戦い(DarkFox Project) {#虚無との戦い--darkfox-project}
+## 🦊虚無との戦い(DarkFox) {#虚無との戦い--darkfox}
 
 大学生のころ，生きる意味を探求するためのHPをYahoo geocitiesに構築していた.
 geocities終了とともに閉鎖してしまったHPをここに復活させる.
 
-[📂虚無との戦い]({{< relref "20220128151558.md" >}})
+[🦊虚無との戦い]({{< relref "20220128151558.md" >}})
 
 
-## このサイトについて {#このサイトについて}
+## 🗒このサイトについて {#このサイトについて}
 
 最近の更新履歴は[こちら](https://github.com/tsu-nera/keido/commits/main)?
 

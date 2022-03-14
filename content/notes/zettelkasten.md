@@ -1,5 +1,5 @@
 +++
-title = "🏛知恵まとめ"
+title = "🏛知恵まとめ (Zettelkasten)"
 tags = ["MOC"]
 draft = false
 +++
