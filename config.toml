@@ -11,6 +11,7 @@ refLinksNotFoundURL = "/keido/404.html"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 disablePathToLower = true
+enableGitInfo = true
 
 # Required if you want to render robots.txt template
 enableRobotsTXT = true
@@ -37,3 +38,8 @@ enableRobotsTXT = true
    geekdocEditPath = "edit/main/content"
    geekdocBackToTop = false
    geekdocTagsToMenu = true
+
+[outputs]
+   home = ['HTML', 'RSS']
+   page = ['HTML', 'RSS']
+   section = ['HTML', 'RSS']
