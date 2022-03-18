@@ -333,6 +333,21 @@ fuzzy find. あいまい検索 for consult.
 ```
 
 
+### artist mode {#artist-mode}
+
+[EmacsWiki: Artist Mode](https://www.emacswiki.org/emacs/ArtistMode)
+
+Emacs上でカーソルやマウスを使って線が書ける.
+
+-   M-x artist-modeで起動.
+-   C-c C-c で終了.
+-   defaultでは **.** を描写, Shiftで **-** になる.
+
+昔なんちゃってelispを書いたけど, なんだdefaultであったのか.
+
+ref: [秀丸のような罫線マクロないかなと思ってelisp作成した | Futurismo](https://futurismo.biz/archives/1972/)
+
+
 ## Lang {#lang}
 
 編集補助の中でも特にコーディング支援をまとめる.
@@ -422,11 +437,6 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
 -   rainbow-delimiters, smartparensはdoomのcoreパッケージとしてすでにはいっている.
 -   pereditはciderの中に入っている.
 
-検討中...
-
--   clj-kondo ([ref](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)) : linter
--   cljstyle ([ref](https://qiita.com/lagenorhynque/items/a5d83b4a36a1cf1cacbe)) : formatter
-
 <!--listend-->
 
 ```emacs-lisp
@@ -439,7 +449,13 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
   :bind
   ;; desing journal用にbinding追加
   ("C-c C-v C-p" . cider-pprint-eval-defun-to-comment)
-  ("C-c C-v M-p" . cider-pprint-eval-last-sexp-to-comment))
+  ("C-c C-v M-p" . cider-pprint-eval-last-sexp-to-comment)
+  :config
+  ;; connectとともにREPL bufferを表示.
+  (setq  cider-repl-pop-to-buffer-on-connect t)
+  ;; replに 出力しすぎてEmacsがハングするのを防ぐ.
+  (setq  cider-repl-buffer-size-limit 100)
+)
 ```
 
 
@@ -458,6 +474,25 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
 ```
 
 -   cljr-clean-nsでnamespaceを整理, cljr-project-cleanでプロジェクト全体に適用.
+
+
+#### cljstyle: formatter for Clojure {#cljstyle-formatter-for-clojure}
+
+ref: [GitHub](https://qiita.com/lagenorhynque/items/a5d83b4a36a1cf1cacbe)
+
+Doom Emascの editor/format moduleと連携可能.
+Clojureだとdefaultが node-cljfmtなのでcljstyleを使うには設定が必要.
+
+```emacs-lisp
+(add-hook! clojure-mode
+  (set-formatter! 'cljstyle "cljstyle pipe" :modes '(clojure-mode))
+  (add-hook 'before-save-hook 'format-all-buffer t t))
+```
+
+
+#### clj-kondo: linter for Clojure {#clj-kondo-linter-for-clojure}
+
+ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
 
 
 ## OS {#os}
@@ -523,6 +558,7 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
   ;; google-chromeを起動するとmouse on menu-barがpopupしてハングする対策
   ;; https://stackoverflow.com/questions/17280845/emacs-disable-pop-up-menus-on-mouse-clicks
   (fset 'menu-bar-open nil)
+  (fset 'x-menu-bar-open nil)
 
   ;; Turn on `display-time-mode' if you don't use an external bar.
   (setq display-time-default-load-average nil)
@@ -583,10 +619,6 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
 
   (setq org-startup-folded 'show2levels);; 見出しの階層指定
   (setq org-startup-truncated nil) ;; 長い文は折り返す.
-
-  ;; org-babel のソースをキレイに表示.
-  (setq org-src-fontify-natively t)
-  (setq org-fontify-whole-heading-line t)
 
   ;; electric-indent は org-mode で誤作動の可能性があることのこと
   ;; たまにいきなり org-mode の tree 構造が壊れるから，とりあえず設定しておく.
@@ -700,14 +732,7 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
            :unnrrowed t
            :kill-buffer t)))
 
-  ;; org-babel
-  ;; 評価でいちいち質問されないように.
-  (setq org-confirm-babel-evaluate nil)
-  ;; org-babel で 実行した言語を書く. デフォルトでは emacs-lisp だけ.
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((lisp . t)
-     (shell . t)))
+
   )
 
 ;; org-mode で timestamp のみを挿入するカスタム関数(hh:mm)
@@ -792,8 +817,19 @@ Org-modeのなかでLiterature Programming.
   (setq org-src-preserve-indentation t)
   ;; TABの挙動
   (setq org-src-tab-acts-natively t)
-  ;; font
-  (setq org-src-fontify-natively t))
+  ;; org-babel のソースをキレイに表示.
+  (setq org-src-fontify-natively t)
+  (setq org-fontify-whole-heading-line t)
+
+  ;; 評価でいちいち質問されないように.
+  (setq org-confirm-babel-evaluate nil)
+
+  ;; org-babel で 実行した言語を書く. デフォルトでは emacs-lisp だけ.
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((lisp . t)
+     (shell . t)
+     (clojure . t))))
 ```
 
 refs:
@@ -1225,8 +1261,11 @@ Org-modeとAnkiをつなぐ．
 ;; counselとdoom-modelineが相性悪いようなのでworkspace name表示のためには追加で設定.
 ;; https://github.com/hlissner/doom-emacs/issues/314
 (after! doom-modeline
-  (setq doom-modeline-persp-name t))
+  (setq doom-modeline-icon (display-graphic-p))
+  (setq doom-modeline-major-mode-icon t))
 ```
+
+<https://github.com/seagle0128/doom-modeline>
 
 
 ### emojify {#emojify}
