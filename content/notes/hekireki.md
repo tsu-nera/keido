@@ -829,7 +829,8 @@ Org-modeのなかでLiterature Programming.
    'org-babel-load-languages
    '((lisp . t)
      (shell . t)
-     (clojure . t))))
+     (clojure . t)))
+)
 ```
 
 refs:
@@ -1250,7 +1251,8 @@ Org-modeとAnkiをつなぐ．
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; どうもフォントが奇数だと org-table の表示が崩れる.
 ;; Source Han Code JP だとそもそも org-table の表示が崩れる.
-;; terminal だと大丈夫な模様.そもそも Terminal はこの設定ではなくて Terminal Emulator の設定がきく.
+;; terminal だと大丈夫な模様.そもそも Terminal はこの設定ではなくて
+;; Terminal Emulator の設定がきく.
 
 ;; (setq doom-font (font-spec :family "Source Han Code JP" :size 12 ))
 (setq doom-font (font-spec :family "Ricty Diminished" :size 15))
@@ -1258,7 +1260,8 @@ Org-modeとAnkiをつなぐ．
 (setq doom-theme 'doom-monokai-pro)
 (doom-themes-org-config)
 
-;; counselとdoom-modelineが相性悪いようなのでworkspace name表示のためには追加で設定.
+;; counselとdoom-modelineが相性悪いようなので
+;; workspace name表示のためには追加で設定.
 ;; https://github.com/hlissner/doom-emacs/issues/314
 (after! doom-modeline
   (setq doom-modeline-icon (display-graphic-p))
@@ -1266,6 +1269,23 @@ Org-modeとAnkiをつなぐ．
 ```
 
 <https://github.com/seagle0128/doom-modeline>
+
+
+### display-fill-column-indicator-mode {#display-fill-column-indicator-mode}
+
+Emacsの画面に1行80文字のところに線を薄く引く.
+
+プログラミングの世界では昔から80 columns ruleがあり,
+Emacsで80文字目を表示する機能もいろいろあったものの,
+Emacs 27.0.90からdefault機能として提供されるようになった.
+
+(最も80charは昔の話で,
+今のディスプレイの大きさだと100charがいいという議論もある).
+
+```emacs-lisp
+(setq-default display-fill-column-indicator-column 80)
+(global-display-fill-column-indicator-mode)
+```
 
 
 ### emojify {#emojify}
@@ -1319,7 +1339,8 @@ Emacsの機能でemoji-searchがあるのでこれも設定しておこう.
   ;; less っぼく.
   (define-key view-mode-map (kbd "p") 'view-scroll-line-backward)
   (define-key view-mode-map (kbd "n") 'view-scroll-line-forward)
-  ;; default の e でもいいけど，mule 時代に v に bind されてたので, emacs でも v に bind しておく.
+  ;; default の e でもいいけど，mule 時代に v に bind されてたので,
+  ;; emacs でも v に bind しておく.
   (define-key view-mode-map (kbd "v") 'read-only-mode))
 
 ;; EXWMの場合suspend-frameでハングするのはたちが悪いので封印.
