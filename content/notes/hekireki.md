@@ -1,6 +1,7 @@
 +++
 title = "⚡My Emacs Config - 霹靂一閃"
 author = ["Tsunemichi Harada"]
+tags = ["Emacs"]
 draft = false
 +++
 
@@ -455,6 +456,13 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
   (setq  cider-repl-pop-to-buffer-on-connect t)
   ;; replに 出力しすぎてEmacsがハングするのを防ぐ.
   (setq  cider-repl-buffer-size-limit 100)
+
+  ;; companyでのあいまい補完.
+  (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
+  (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
+
+  ;; stack-frame表示をプロジェクトに限定
+  (setq cider-stacktrace-default-filters '(project))
 )
 ```
 
@@ -495,7 +503,24 @@ Clojureだとdefaultが node-cljfmtなのでcljstyleを使うには設定が必�
 ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
 
 
-## OS {#os}
+### rest {#rest}
+
+```emacs-lisp
+(use-package! restclient
+  :mode (("\\.rest\\'" . restclient-mode)
+         ("\\.restclient\\'" . restclient-mode)))
+(use-package! ob-restclient
+  :after org restclient
+  :init
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((restclient . t))))
+;; (use-package! restclient-jq
+;;  :after restclient)
+```
+
+
+## Os {#os}
 
 ```emacs-lisp
 ;; OS
@@ -644,10 +669,10 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
 
   ;; 何でもかんでも agenda すると思いので厳選.
   (setq org-agenda-files '("~/Dropbox/keido/notes/gtd/gtd_projects.org"
-                           "~/Dropbox/keido/notes/journals/journal.org"
+                           "~/Dropbox/keido/notes/journals/journal.org"))
                            ;; projectsディレクトリにある.orgをみる.
                            ;; その配下のorgファイルは対象にはならない.
-                           "~/Dropbox/keido/notes/gtd/projects"))
+                           ;; "~/Dropbox/keido/notes/gtd/projects")
 
   ;; 期間を限定
   (setq org-agenda-span 7)
@@ -794,6 +819,16 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
 ```
 
 
+### org-capture {#org-capture}
+
+
+#### Google Chrome Extention: Org Capture {#google-chrome-extention-org-capture}
+
+Google Chromeにを入れることでWeb Pageがorg-captureと連携([link](https://chrome.google.com/webstore/detail/org-capture/kkkjlfejijcjgjllecmnejhogpbcigdc?hl=ja)).
+
+ChromeでCtrl + Shift + Lで起動.
+
+
 ### org-babel {#org-babel}
 
 Org-modeのなかでLiterature Programming.
@@ -830,6 +865,7 @@ Org-modeのなかでLiterature Programming.
    '((lisp . t)
      (shell . t)
      (clojure . t)))
+  (org-defkey org-mode-map "\C-u\C-x\C-e" 'cider-eval-last-sexp)
 )
 ```
 
@@ -870,6 +906,19 @@ Org-modeで書いたWiki用のページをSphinxで公開するためにreST形�
       (replace-regexp-in-string "\\(\\.org>`_\\)" ">`" (concat ":doc:" text) nil nil 1)))
   (add-to-list 'org-export-filter-link-functions
                'my/rst-to-sphinx-link-format))
+```
+
+
+### ob-html {#ob-html}
+
+[org-modeのコードブロックでHTMLを「実行」する | Misohena Blog](https://misohena.jp/blog/2021-08-03-execute-html-in-org-mode-code-blocks.html)
+
+```emacs-lisp
+(use-package! ob-html
+  :after org
+  :config
+  ;; C-c C-o でブラウザで開く.
+  (org-babel-html-enable-open-src-block-result-temporary))
 ```
 
 
@@ -1072,7 +1121,9 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 
 #### Org-roam管理下のノートの全文検索 {#org-roam管理下のノートの全文検索}
 
-[deft](https://jblevins.org/projects/deft/) より高速(<https://org-roam.discourse.group/t/using-consult-ripgrep-with-org-roam-for-searching-notes>).
+[Using consult-ripgrep with org-roam for searching notes - How To - Org-roam](https://org-roam.discourse.group/t/using-consult-ripgrep-with-org-roam-for-searching-notes/1226)
+
+consult-ripgrepを [deft](https://jblevins.org/projects/deft/) の代わりに使う. より高速.
 
 ```emacs-lisp
 (defun my/org-roam-rg-search ()
