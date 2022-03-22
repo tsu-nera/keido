@@ -463,6 +463,10 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
 
   ;; stack-frame表示をプロジェクトに限定
   (setq cider-stacktrace-default-filters '(project))
+
+  ;; cider-connectで固定portを選択候補に表示.
+  ;; 固定port自体は tools.depsからのnrepl起動時optionで指定.
+  (setq cider-known-endpoints '(("kotori" "0.0.0.0" "34331")))
 )
 ```
 
@@ -525,11 +529,21 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
 ```emacs-lisp
 ;; OS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+```
 
+
+### EXWM {#exwm}
+
+EmacsのWindow Manager.
+
+もはやこれをつかうと世界がEmacsになりEmacs 引きこもり生活が完成する.
+
+```emacs-lisp
 (use-package! exwm
   :after counsel
   :init
-  (setq counsel-linux-app-format-function #'counsel-linux-app-format-function-name-only)
+  (setq counsel-linux-app-format-function
+        #'counsel-linux-app-format-function-name-only)
   (map!
         :leader
         :prefix ("z" . "exwm")
@@ -553,10 +567,11 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
   :config
   (require 'exwm-randr)
   (setq exwm-randr-workspace-output-plist '(0 "HDMI-1"))
-  (add-hook 'exwm-randr-screen-change-hook
-            (lambda ()
-              (start-process-shell-command
-               "xrandr" nil "xrandr --output HDMI-1 --primary --right-of eDP-1 --auto")))
+  (add-hook
+   'exwm-randr-screen-change-hook
+   (lambda ()
+     (start-process-shell-command
+      "xrandr" nil "xrandr --output HDMI-1 --primary --right-of eDP-1 --auto")))
   (exwm-randr-enable)
 
   (require 'exwm-systemtray)
@@ -570,8 +585,10 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
   (setf epg-pinentry-mode 'loopback)
   (defun pinentry-emacs (desc prompt ok error)
     (let ((str (read-passwd
-                (concat (replace-regexp-in-string "%22" "\""
-                                                  (replace-regexp-in-string "%0A" "\n" desc)) prompt ": "))))
+                (concat (replace-regexp-in-string
+                         "%22" "\""
+                         (replace-regexp-in-string
+                          "%0A" "\n" desc)) prompt ": "))))
       str))
 
   ;; from https://github.com/ch11ng/exwm/wiki/Configuration-Example
@@ -595,8 +612,10 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
   (setq exwm-input-simulation-keys
         '(([?\C-b] . [left])
           ;; Chromeページ内検索のために空ける
-          ;; Chrome Extentionsをつかってもカスタムで検索のキーバインドは設定できないので
           ;; ([?\C-f] . [right])
+          ;; 2022.03.23 やっぱり解除. どうもC-fがスムーズな操作を阻害する.
+          ;; ページ内検索はSurfingkeysというExtensionを利用(/).
+          ([?\C-f] . [right])
           ([?\C-p] . [up])
           ([?\C-n] . [down])
           ([?\C-a] . [home])
@@ -616,11 +635,16 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
 
 ご存知！
 
+-   [doom-emacs/README.org at develop · hlissner/doom-emacs · GitHub](https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/org/README.org)
+    -
+-   [dotfiles/50_org-mode.org at master · tsu-nera/dotfiles · GitHub](https://github.com/tsu-nera/dotfiles/blob/master/.emacs.d/inits/50_org-mode.org)
+    -   昔の設定. すこしずつ移植したい.
+
+<!--listend-->
+
 ```emacs-lisp
 ;; Org mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/org/README.org
-;; https://github.com/tsu-nera/dotfiles/blob/master/.emacs.d/inits/50_org-mode.org
 
 ;; スマホとの共有のため, github を clone したものを Dropbox に置いて$HOME に symlink している.
 (after! org
@@ -683,8 +707,73 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
   ;; Disable tag inheritance in agenda:
   (setq org-agenda-use-tag-inheritance nil)
 
-  ;; org-capture
-  ;; https://orgmode.org/manual/Capture-templates.html
+  )
+
+;; org-mode で timestamp のみを挿入するカスタム関数(hh:mm)
+(after! org
+  (defun my/insert-timestamp ()
+    "Insert time stamp."
+    (interactive)
+    (insert (format-time-string "%H:%M")))
+  (map! :map org-mode-map "C-c C-." #'my/insert-timestamp))
+
+;; +pretty(org-superstar-mode)関連
+;;; Titles and Sections
+;; hide #+TITLE:
+;; (setq org-hidden-keywords '(title))
+;; set basic title font
+;; (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
+;; Low levels are unimportant => no scaling
+;; (set-face-attribute 'org-level-7 nil :inherit 'org-level-8)
+;; (set-face-attribute 'org-level-6 nil :inherit 'org-level-8)
+;; (set-face-attribute 'org-level-5 nil :inherit 'org-level-8)
+;; (set-face-attribute 'org-level-4 nil :inherit 'org-level-8)
+;; Top ones get scaled the same as in LaTeX (\large, \Large, \LARGE)
+;; (set-face-attribute 'org-level-3 nil :inherit 'org-level-8 :height 1.2) ;\large
+;; (set-face-attribute 'org-level-2 nil :inherit 'org-level-8 :height 1.44) ;\Large
+;; (set-face-attribute 'org-level-1 nil :inherit 'org-level-8 :height 1.728) ;\LARGE
+;; Only use the first 4 styles and do not cycle.
+(setq org-cycle-level-faces nil)
+(setq org-n-level-faces 4)
+;; Document Title, (\huge)
+;; (set-face-attribute 'org-document-title nil
+;;                    :height 2.074
+;;                    :foreground 'unspecified
+;;                    :inherit 'org-level-8)
+
+;; (with-eval-after-load 'org-superstar
+;;  (set-face-attribute 'org-superstar-item nil :height 1.2)
+;;  (set-face-attribute 'org-superstar-header-bullet nil :height 1.2)
+;;  (set-face-attribute 'org-superstar-leading nil :height 1.3))
+;; Set different bullets, with one getting a terminal fallback.
+(setq org-superstar-headline-bullets-list '("■" "◆" "●" "▷"))
+;; (setq org-superstar-special-todo-items t)
+
+;; Stop cycling bullets to emphasize hierarchy of headlines.
+(setq org-superstar-cycle-headline-bullets nil)
+;; Hide away leading stars on terminal.
+;; (setq org-superstar-leading-fallback ?\s)
+(setq inhibit-compacting-font-caches t)
+
+;; 読書のためのマーカー（仮）
+;; あとでちゃんと検討と朝鮮しよう.
+;; (setq org-emphasis-alist
+;;   '(("*" bold)
+;;     ("/" italic)
+;;     ("_" underline))
+;;     ("=" (:background "red" :foreground "white")) ;; 書き手の主張
+;;     ("~" (:background "blue" :foreground "white")) cddddd;; 根拠
+;;     ("+" (:background "green" :foreground "black")))) ;; 自分の考え
+
+```
+
+
+### org-capture {#org-capture}
+
+<https://orgmode.org/manual/Capture-templates.html>
+
+```emacs-lisp
+(after! org
   (defun my/create-timestamped-org-file (path)
     (expand-file-name (format "%s.org" (format-time-string "%Y%m%d%H%M%S")) path))
   (defun my/create-date-org-file (path)
@@ -756,70 +845,8 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
            :empty-lines 1
            :unnrrowed t
            :kill-buffer t)))
-
-
-  )
-
-;; org-mode で timestamp のみを挿入するカスタム関数(hh:mm)
-(after! org
-  (defun my/insert-timestamp ()
-    "Insert time stamp."
-    (interactive)
-    (insert (format-time-string "%H:%M")))
-  (map! :map org-mode-map "C-c C-." #'my/insert-timestamp))
-
-;; +pretty(org-superstar-mode)関連
-;;; Titles and Sections
-;; hide #+TITLE:
-;; (setq org-hidden-keywords '(title))
-;; set basic title font
-;; (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
-;; Low levels are unimportant => no scaling
-;; (set-face-attribute 'org-level-7 nil :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-6 nil :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-5 nil :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-4 nil :inherit 'org-level-8)
-;; Top ones get scaled the same as in LaTeX (\large, \Large, \LARGE)
-;; (set-face-attribute 'org-level-3 nil :inherit 'org-level-8 :height 1.2) ;\large
-;; (set-face-attribute 'org-level-2 nil :inherit 'org-level-8 :height 1.44) ;\Large
-;; (set-face-attribute 'org-level-1 nil :inherit 'org-level-8 :height 1.728) ;\LARGE
-;; Only use the first 4 styles and do not cycle.
-(setq org-cycle-level-faces nil)
-(setq org-n-level-faces 4)
-;; Document Title, (\huge)
-;; (set-face-attribute 'org-document-title nil
-;;                    :height 2.074
-;;                    :foreground 'unspecified
-;;                    :inherit 'org-level-8)
-
-;; (with-eval-after-load 'org-superstar
-;;  (set-face-attribute 'org-superstar-item nil :height 1.2)
-;;  (set-face-attribute 'org-superstar-header-bullet nil :height 1.2)
-;;  (set-face-attribute 'org-superstar-leading nil :height 1.3))
-;; Set different bullets, with one getting a terminal fallback.
-(setq org-superstar-headline-bullets-list '("■" "◆" "●" "▷"))
-;; (setq org-superstar-special-todo-items t)
-
-;; Stop cycling bullets to emphasize hierarchy of headlines.
-(setq org-superstar-cycle-headline-bullets nil)
-;; Hide away leading stars on terminal.
-;; (setq org-superstar-leading-fallback ?\s)
-(setq inhibit-compacting-font-caches t)
-
-;; 読書のためのマーカー（仮）
-;; あとでちゃんと検討と朝鮮しよう.
-;; (setq org-emphasis-alist
-;;   '(("*" bold)
-;;     ("/" italic)
-;;     ("_" underline))
-;;     ("=" (:background "red" :foreground "white")) ;; 書き手の主張
-;;     ("~" (:background "blue" :foreground "white")) cddddd;; 根拠
-;;     ("+" (:background "green" :foreground "black")))) ;; 自分の考え
-
+)
 ```
-
-
-### org-capture {#org-capture}
 
 
 #### Google Chrome Extention: Org Capture {#google-chrome-extention-org-capture}
