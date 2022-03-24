@@ -507,6 +507,28 @@ Clojureだとdefaultが node-cljfmtなのでcljstyleを使うには設定が必�
 ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
 
 
+#### portal {#portal}
+
+Data Visualization for Clojure.
+
+ref. <https://github.com/djblue/portal>
+
+```emacs-lisp
+(defun portal.api/open ()
+  (interactive)
+  (cider-nrepl-sync-request:eval
+   "(require 'portal.api) (portal.api/tap) (portal.api/open)"))
+
+(defun portal.api/clear ()
+  (interactive)
+  (cider-nrepl-sync-request:eval "(portal.api/clear)"))
+
+(defun portal.api/close ()
+  (interactive)
+  (cider-nrepl-sync-request:eval "(portal.api/close)"))
+```
+
+
 ### rest {#rest}
 
 ```emacs-lisp
@@ -519,8 +541,6 @@ ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((restclient . t))))
-;; (use-package! restclient-jq
-;;  :after restclient)
 ```
 
 
