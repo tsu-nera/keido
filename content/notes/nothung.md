@@ -5,7 +5,9 @@ tags = ["Emacs"]
 draft = false
 +++
 
-ノートォング(Nothung)とは勇者ジークフリートの持つ伝説の剣である.
+Emacsを極限まで叩き上げ, なによりも強靭な刃にする. 一つのことを極める.
+
+副題のノートォング(Nothung)とは勇者ジークフリートの持つ伝説の剣である.
 
 -   <https://www.youtube.com/watch?v=B6wChr_geAg>
 -   <https://www.youtube.com/watch?v=v31N8zxGhQY>
