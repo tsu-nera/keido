@@ -1,17 +1,20 @@
 +++
-title = "⚡My Emacs Config - 霹靂一閃"
+title = "⚡My Emacs Config - Nothung"
 author = ["Tsunemichi Harada"]
 tags = ["Emacs"]
 draft = false
 +++
 
-Emacsの呼吸壱ノ型, 霹靂一閃.
+ノートォング(Nothung)とは勇者ジークフリートの持つ伝説の剣である.
+
+-   <https://www.youtube.com/watch?v=B6wChr_geAg>
+-   <https://www.youtube.com/watch?v=v31N8zxGhQY>
+
+---
 
 packageの並び順は [Doom Emacs](https://github.com/hlissner/doom-emacs) の [Molule Index](https://github.com/hlissner/doom-emacs/blob/develop/docs/modules.org) (アルファベット順)に従う.
 
-ref: <https://github.com/tsu-nera/hekireki>
-
----
+ref: <https://github.com/tsu-nera/nothung>
 
 いつも忘れるDoom Emacs Configuration記法は [ここ](https://github.com/hlissner/doom-emacs/blob/master/docs/getting_started.org#configuring-doom).
 

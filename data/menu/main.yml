@@ -7,7 +7,7 @@ main:
   - name: Literature Notes
     ref: "/notes/20211231162342"
   - name: Emacs Config
-    ref: "/notes/hekireki"
+    ref: "/notes/nothung"
   #   sub:
   #     - name: Level 1.1
   #       ref: "/level-1/level-1-1"
