@@ -445,7 +445,9 @@ ref: [秀丸のような罫線マクロないかなと思ってelisp作成した
 編集補助の中でも特にコーディング支援をまとめる.
 
 
-### Common {#common}
+### Generals {#generals}
+
+言語に依存しないコーディング支援ツール.
 
 
 #### smartparens {#smartparens}
@@ -512,6 +514,26 @@ refs:
   (global-set-key (kbd "<f7>") 'symbol-overlay-mode)
   (global-set-key (kbd "<f8>") 'symbol-overlay-remove-all))
 ```
+
+
+#### codic {#codic}
+
+よい変数名を教えてくれるwebサービスcodicクライアント.
+
+[codic - プログラマーのためのネーミング辞書](https://codic.jp/)
+
+-   M-x codic: 英語 =&gt; 日本語
+-   M-x codic-translate =&gt; 日本語 =&gt; 英語(要token)
+
+codic-translateを使うにはtokenを codic-api-tokenに設定する必要がある.
+現状は"private/config.el"に書いて読み込んでいる.
+
+```emacs-lisp
+(use-package! codic)
+```
+
+-   [codic - GitHub](https://github.com/emacsorphanage/codic)
+-   [英語力を向上させたいのでまずは Emacs からはじめた | Futurismo](https://futurismo.biz/archives/2538/)
 
 
 ### Clojure {#clojure}
