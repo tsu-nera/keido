@@ -5,7 +5,7 @@ tags = ["Emacs"]
 draft = false
 +++
 
-Emacsを極限まで叩き上げ, なによりも強靭な刃にする. 一つのことを極める.
+Emacsを極限まで叩き上げ, なによりも強靭な刃にする. [一つのことを極める](https://www.youtube.com/watch?v=04L18rQiIgw).
 
 副題のノートォング(Nothung)とは勇者ジークフリートの持つ伝説の剣である.
 
