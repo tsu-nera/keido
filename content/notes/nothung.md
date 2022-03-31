@@ -26,6 +26,8 @@ ref: <https://github.com/tsu-nera/nothung>
 
 どれを使うかの正解はないがすべて use-package!だと起動が遅くなるので場合によってカスタマイズせよ，とのこと.
 
+ref. 過去の設定は[こちら](https://github.com/tsu-nera/dotfiles/tree/master/.emacs.d/inits).
+
 ```emacs-lisp
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 (load-file "~/.doom.d/private/config.el")
@@ -253,6 +255,7 @@ fuzzy find. あいまい検索 for consult.
 ```emacs-lisp
 ;; Editor
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; 英数字と日本語の間にスペースをいれる.
 (use-package! pangu-spacing
   :config
@@ -262,13 +265,61 @@ fuzzy find. あいまい検索 for consult.
 
 ;; 記号の前後にスペースを入れる.
 (use-package! electric-operator)
+(add-hook! 'org-mode-hook #'electric-operator-mode)
+```
 
-;; とりあえず100でハイライトしておく.
-;; 今の自分のディスプレイだと100でいいかな.
+
+### 改行(newline)と折り返し(wrap) {#改行--newline--と折り返し--wrap}
+
+まず改行(newline)と折り返し(wrap)の２つの概念があることに注意.
+
+方針として自動改行は無効, 自動折り返しは許す.
+
+auto-fill-modeで自動改行される. これは無効にする.
+
+```emacs-lisp
+(auto-fill-mode -1)
+```
+
+これにより折り返しで / や $ 記号が表示される. この消し方は調査中.
+
+さらに折り返しの次のラインにインデントが挿入される. これはelectric-indent-modeの仕業. 現在org-modeのみで無効中.
+
+折り返しoff/onは, M-x toggle-truncate-linesで切り替えることができる.
+
+
+### whitespace {#whitespace}
+
+余分な空白/タブに色づけ.
+
+```emacs-lisp
 (use-package! whitespace
   :config
-  (setq whitespace-line-column 100) ;; limit line length
-  (setq whitespace-style '(face lines-tail)))
+  ;; limit lie length -> display-fill-column-indicator-modeを使うためマスク.
+  ;; (setq whitespace-line-column 80)
+  (setq whitespace-style '(face
+                           ;;lines-tail
+                           ))
+  ;; 全角スペースを可視化
+  (setq whitespace-space-regexp "\\(\u3000+\\)")
+  (global-whitespace-mode 1))
+```
+
+
+### display-fill-column-indicator-mode {#display-fill-column-indicator-mode}
+
+Emacsの画面に1行80文字のところに線を薄く引く.
+
+プログラミングの世界では昔から80 columns ruleがあり,
+Emacsで80文字目を表示する機能もいろいろあったものの,
+Emacs 27.0.90からdefault機能として提供されるようになった.
+
+(最も80charは昔の話で,
+今のディスプレイの大きさだと100charがいいという議論もある).
+
+```emacs-lisp
+(setq-default display-fill-column-indicator-column 80)
+(global-display-fill-column-indicator-mode)
 ```
 
 
@@ -1408,23 +1459,6 @@ ref: [Forge User and Developer Manual](https://magit.vc/manual/forge/)
 ```
 
 <https://github.com/seagle0128/doom-modeline>
-
-
-### display-fill-column-indicator-mode {#display-fill-column-indicator-mode}
-
-Emacsの画面に1行80文字のところに線を薄く引く.
-
-プログラミングの世界では昔から80 columns ruleがあり,
-Emacsで80文字目を表示する機能もいろいろあったものの,
-Emacs 27.0.90からdefault機能として提供されるようになった.
-
-(最も80charは昔の話で,
-今のディスプレイの大きさだと100charがいいという議論もある).
-
-```emacs-lisp
-(setq-default display-fill-column-indicator-column 80)
-(global-display-fill-column-indicator-mode)
-```
 
 
 ### emojify {#emojify}
