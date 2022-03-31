@@ -281,11 +281,47 @@ auto-fill-modeで自動改行される. これは無効にする.
 (auto-fill-mode -1)
 ```
 
-これにより折り返しで / や $ 記号が表示される. この消し方は調査中.
+これにより折り返しで / や $ 記号が表示される. 以下の設定で消す.
+
+```emacs-lisp
+;; / を削除
+(set-display-table-slot standard-display-table 'wrap ?\ )
+;; $ を削除
+(set-display-table-slot standard-display-table 0 ?\ )
+```
 
 さらに折り返しの次のラインにインデントが挿入される. これはelectric-indent-modeの仕業. 現在org-modeのみで無効中.
 
 折り返しoff/onは, M-x toggle-truncate-linesで切り替えることができる.
+
+
+### visual-line-mode {#visual-line-mode}
+
+単語単位での折り返しをするEmacs標準実装のモード.
+
+Emacsはウィンドウの右端の近くの単語の境界で折り返すよう試みる. これは単語の途中で折り返さないことにより可読性を高めるため.
+
+<https://ayatakesi.github.io/emacs/25.1/Visual-Line-Mode.html>
+
+この設定はスクリーンの幅によって判定されるためたとえば文字列80で折り返すとかではない.
+
+
+### ターミナルの縦分割線をUTF-8できれいに描く {#ターミナルの縦分割線をutf-8できれいに描く}
+
+ref: [How do I make the vertical window divider more pretty? : emacs](https://www.reddit.com/r/emacs/comments/3u0d0u/how_do_i_make_the_vertical_window_divider_more/)
+
+```emacs-lisp
+(unless (display-graphic-p)
+  ;; ターミナルの縦分割線をUTF-8できれいに描く
+  (defun my-change-window-divider ()
+    (interactive)
+    (let ((display-table (or buffer-display-table
+           standard-display-table
+           (make-display-table))))
+      (set-display-table-slot display-table 5 ?│)
+      (set-window-display-table (selected-window) display-table)))
+  (add-hook 'window-configuration-change-hook 'my-change-window-divider))
+```
 
 
 ### whitespace {#whitespace}
@@ -310,15 +346,14 @@ auto-fill-modeで自動改行される. これは無効にする.
 
 Emacsの画面に1行80文字のところに線を薄く引く.
 
-プログラミングの世界では昔から80 columns ruleがあり,
-Emacsで80文字目を表示する機能もいろいろあったものの,
-Emacs 27.0.90からdefault機能として提供されるようになった.
+プログラミングの世界では昔から80 columns ruleがあり, Emacsで80文字目を表示する機能もいろいろあったものの, Emacs 27.0.90からdefault機能として提供されるようになった.
 
-(最も80charは昔の話で,
-今のディスプレイの大きさだと100charがいいという議論もある).
+(最も80charは昔の話で, 最近のディスプレイの大きさだと100charがいいという議論もある).
+
+今つかっているモニタで縦に３分割すると74がちょうどいいことがわかった. (先頭に行番号表示4char+1charのmarginあり).
 
 ```emacs-lisp
-(setq-default display-fill-column-indicator-column 80)
+(setq-default display-fill-column-indicator-column 74)
 (global-display-fill-column-indicator-mode)
 ```
 
