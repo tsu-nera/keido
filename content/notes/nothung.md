@@ -277,8 +277,32 @@ fuzzy find. あいまい検索 for consult.
 
 auto-fill-modeで自動改行される. これは無効にする.
 
+追記: 方針変更. コードではauto-fillを許す. そして単に(auto-fill-mode -1)をところでmodeのhookによって再度有効になる気がする.
+
+```emacs-lisp
+;; (auto-fill-mode -1)
+```
+
+問題はMarkdownやOrg-modeでautl-fillが発動して改行されるところ. org-modeで再度hookが走り有効になる気がするのでコレで息を止める.
+
+-&gt;息が止まらないので諦めた. いくら無効にしてもorg-mode-hookの延長でauto-fill-modeをonにしてしまう人がいる. そしてその犯人が誰か２時間追求しても結局わからない. Doom Emacsの設定の仕業はある.
+
 ```emacs-lisp
 (auto-fill-mode -1)
+(remove-hook 'org-mode-hook #'auto-fill-mode)
+;; (remove-hook 'org-mode-hook #'turn-on-auto-fill)
+;; (remove-hook 'text-mode-hook #'auto-fill-mode)
+;; (remove-hook 'text-mode-hook #'turn-on-auto-fill)
+;; (add-hook 'org-mode-hook #'turn-off-auto-fill)
+;; (add-hook 'text-mode-hook #'turn-off-auto-fill)
+;; (add-hook 'org-roam-mode-hook #'turn-off-auto-fill)
+```
+
+これによって折り返しの限界を80から99999にすることにして回避する.
+
+```emacs-lisp
+(setq-default fill-column 99999)
+(setq fill-column 99999)
 ```
 
 これにより折り返しで / や $ 記号が表示される. 以下の設定で消す.
@@ -304,6 +328,26 @@ Emacsはウィンドウの右端の近くの単語の境界で折り返すよう
 <https://ayatakesi.github.io/emacs/25.1/Visual-Line-Mode.html>
 
 この設定はスクリーンの幅によって判定されるためたとえば文字列80で折り返すとかではない.
+
+日本語と英語が入り交じるときの解釈が変なので以下を設定した.
+
+```emacs-lisp
+(setq word-wrap-by-category t)
+```
+
+ref: [Word-wrap problem with Chinese or Japanese characters : emacs](https://www.reddit.com/r/emacs/comments/ov2s2r/wordwrap_problem_with_chinese_or_japanese/h76ipjy/)
+
+
+### visual-fill-column {#visual-fill-column}
+
+Doomだといらないかもだけど.
+
+```emacs-lisp
+(add-hook! visual-line-mode 'visual-fill-column-mode)
+```
+
+-   ref.
+    -   [memo: Emacs の visual-fill-column.el が便利だった](http://sleepboy-zzz.blogspot.com/2015/12/emacs-visual-fill-columnel_29.html)
 
 
 ### ターミナルの縦分割線をUTF-8できれいに描く {#ターミナルの縦分割線をutf-8できれいに描く}
