@@ -285,7 +285,7 @@ auto-fill-modeで自動改行される. これは無効にする.
 
 問題はMarkdownやOrg-modeでautl-fillが発動して改行されるところ. org-modeで再度hookが走り有効になる気がするのでコレで息を止める.
 
--&gt;息が止まらないので諦めた. いくら無効にしてもorg-mode-hookの延長でauto-fill-modeをonにしてしまう人がいる. そしてその犯人が誰か２時間追求しても結局わからない. Doom Emacsの設定の仕業はある.
+->息が止まらないので諦めた. いくら無効にしてもorg-mode-hookの延長でauto-fill-modeをonにしてしまう人がいる. そしてその犯人が誰か２時間追求しても結局わからない. Doom Emacsの設定の仕業はある.
 
 ```emacs-lisp
 (auto-fill-mode -1)
@@ -343,11 +343,24 @@ ref: [Word-wrap problem with Chinese or Japanese characters : emacs](https://www
 Doomだといらないかもだけど.
 
 ```emacs-lisp
-(add-hook! visual-line-mode 'visual-fill-column-mode)
+;; (add-hook! visual-line-mode 'visual-fill-column-mode)
 ```
+
+-> perfect-marginとの相性が悪い気がするのでいったん無効.
 
 -   ref.
     -   [memo: Emacs の visual-fill-column.el が便利だった](http://sleepboy-zzz.blogspot.com/2015/12/emacs-visual-fill-columnel_29.html)
+
+
+### perfect-margin {#perfect-margin}
+
+いい感じにmarginをとってくれる (<https://github.com/mpwang/perfect-margin>)
+
+```emacs-lisp
+(use-package! perfect-margin
+  :config
+  (perfect-margin-mode 1))
+```
 
 
 ### ターミナルの縦分割線をUTF-8できれいに描く {#ターミナルの縦分割線をutf-8できれいに描く}
@@ -566,8 +579,8 @@ refs:
 
 [codic - プログラマーのためのネーミング辞書](https://codic.jp/)
 
--   M-x codic: 英語 =&gt; 日本語
--   M-x codic-translate =&gt; 日本語 =&gt; 英語(要token)
+-   M-x codic: 英語 => 日本語
+-   M-x codic-translate => 日本語 => 英語(要token)
 
 codic-translateを使うにはtokenを codic-api-tokenに設定する必要がある.
 現状は"private/config.el"に書いて読み込んでいる.
@@ -831,6 +844,7 @@ EmacsのWindow Manager.
   (setq org-return-follows-link t) ;; Enter でリンク先へジャンプ
   (setq org-use-speed-commands t)  ;; bullet にカーソルがあると高速移動
   (setq org-hide-emphasis-markers t) ;; * を消して表示.
+  (setq org-pretty-entities t)
 
   (setq org-footnote-section "Notes") ;; defaultではFootnotesなので変える.
   (setq org-footnote-auto-adjust t)
@@ -1079,6 +1093,58 @@ refs:
 -   [org-modeのコードブロック(Babel)の使い方 | Misohena Blog](https://misohena.jp/blog/2017-10-26-how-to-use-code-block-of-emacs-org-mode.html)
 
 
+### org-export {#org-export}
+
+Org-modeのファイルをエクスポートする機能.
+
+サブパッケージが数多くあるが, ここでは共通情報まとめ.
+
+org-export-with-xxxという設定項目でいろいろ制御できる.
+
+[Export Settings (The Org Manual)](https://orgmode.org/manual/Export-Settings.html)
+
+しかし, 以下が自動的に変換されてしまう...この文字に対する制御方法が見つからない...
+
+-   > &gt;
+-   < &lt;
+-   & &amp;
+
+どうもHTML tagとかHTML Entitiesと呼ばれている(ref. [The Org Manual](https://orgmode.org/org.html#Headlines-in-HTML-export)).
+
+> The HTML export back-end transforms ‘<’ and ‘>’ to ‘&lt;’ and ‘&gt;’.
+
+ただox-html.elにはこういう設定がdefaultでされている. 他のexportへの移植が必要.
+
+```emacs-lisp
+(setq org-export-html-protect-char-alist
+  '(("&" . "&amp;")
+    ("<" . "&lt;")
+    (">" . "&gt;"))
+```
+
+[Advanced Export Configuration (The Org Manual)](https://orgmode.org/manual/Advanced-Export-Configuration.html)
+
+おそらく, exportをかけたあとにhook関数によって文字列変換が必要.
+
+```emacs-lisp
+(defun my-hugo-filter-html-amp (text backend info)
+  (when (org-export-derived-backend-p backend 'hugo)
+    (replace-regexp-in-string "&amp;" "&" text)))
+(defun my-hugo-filter-html-gt (text backend info)
+  (when (org-export-derived-backend-p backend 'hugo)
+    (replace-regexp-in-string "&gt;" ">" text)))
+(defun my-hugo-filter-html-lt (text backend info)
+  (when (org-export-derived-backend-p backend 'hugo)
+    (replace-regexp-in-string "&lt;" "<" text)))
+(add-to-list
+'org-export-filter-plain-text-functions 'my-hugo-filter-html-amp)
+(add-to-list
+'org-export-filter-plain-text-functions 'my-hugo-filter-html-gt)
+(add-to-list
+'org-export-filter-plain-text-functions 'my-hugo-filter-html-lt)
+```
+
+
 ### ox-hugo {#ox-hugo}
 
 Org-modeで書いたブログ記事をHugoにあったMarkdown形式に変換する.
@@ -1092,6 +1158,8 @@ Org-modeで書いたブログ記事をHugoにあったMarkdown形式に変換す
   ;; なんか.dir-locals.elに書いても反映してくれないな. ココに書いとく.
   (setq org-export-with-author nil))
 ```
+
+このox-hugoで出力されるMarkdownはどうもリスト表示でスペースが4つ入ってしまう. GitHub Favorite Markdownのようにリストでのスペース２であって欲しいものの解決方法が見つからない.
 
 
 ### ox-rst {#ox-rst}
@@ -1357,7 +1425,7 @@ consult-ripgrepを [deft](https://jblevins.org/projects/deft/) の代わりに�
 
 -   org-ref
 -   ivy-bibtex
-    -   ivyのactionは ivy-bibtexでC-SPCで選択-&gt; C-M-oでaction選択候補を出し，pとかeとか押す.
+    -   ivyのactionは ivy-bibtexでC-SPCで選択-> C-M-oでaction選択候補を出し，pとかeとか押す.
 -   org-roam-bibtex
 
 <!--listend-->
@@ -1478,6 +1546,29 @@ Org-modeとAnkiをつなぐ．
 ```
 
 
+### org-modern {#org-modern}
+
+[GitHub - minad/org-modern: Modern Org Style](https://github.com/minad/org-modern)
+
+開発途中なのかいまいち, コードブロックの線もでない...様子見かな...
+
+```emacs-lisp
+(after! org-modern
+  (setq
+   ;; Agenda styling
+   org-agenda-block-separator ?─
+   org-agenda-time-grid
+   '((daily today require-timed)
+     (800 1000 1200 1400 1600 1800 2000)
+     " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+   org-agenda-current-time-string
+   "⭠ now ─────────────────────────────────────────────────"))
+
+(add-hook 'org-mode-hook #'org-modern-mode)
+(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+```
+
+
 ## Term {#term}
 
 ```emacs-lisp
@@ -1548,7 +1639,7 @@ ref: [Forge User and Developer Manual](https://magit.vc/manual/forge/)
 ;; (setq doom-font (font-spec :family "Source Han Code JP" :size 12 ))
 (setq doom-font (font-spec :family "Ricty Diminished" :size 15))
 ;; doom-molokaiやdoom-monokai-classicだとewwの表示がいまいち.
-(setq doom-theme 'doom-monokai-pro)
+(setq doom-theme 'doom-molokai)
 (doom-themes-org-config)
 
 ;; counselとdoom-modelineが相性悪いようなので
@@ -1587,14 +1678,33 @@ Emacsの機能でemoji-searchがあるのでこれも設定しておこう.
 ```
 
 
-### perfect-margin {#perfect-margin}
+### svg-tag-mode {#svg-tag-mode}
 
-いい感じにmarginをとってくれる (<https://github.com/mpwang/perfect-margin>)
+TODOほかラベルを美しく.
+
+[GitHub - rougier/svg-tag-mode](https://github.com/rougier/svg-tag-mode)
 
 ```emacs-lisp
-(use-package! perfect-margin
+(use-package! svg-tag-mode
   :config
-  (perfect-margin-mode 1))
+  (setq svg-tag-tags
+        '(
+          ;; :XXX:
+          ("\\(:[A-Z]+:\\)" . ((lambda (tag)
+                                 (svg-tag-make tag :beg 1 :end -1))))
+          ;; :XXX|YYY:
+          ("\\(:[A-Z]+\\)\|[a-zA-Z#0-9]+:" . ((lambda (tag)
+                                                (svg-tag-make tag :beg 1 :inverse t
+                                                              :margin 0 :crop-right t))))
+          (":[A-Z]+\\(\|[a-zA-Z#0-9]+:\\)" . ((lambda (tag)
+                                                (svg-tag-make tag :beg 1 :end -1
+                                                              :margin 0 :crop-left t))))
+          ;; :#TAG1:#TAG2:…:$
+          ("\\(:#[A-Za-z0-9]+\\)" . ((lambda (tag)
+                                       (svg-tag-make tag :beg 2))))
+          ("\\(:#[A-Za-z0-9]+:\\)$" . ((lambda (tag)
+                                       (svg-tag-make tag :beg 2 :end -1))))
+          )))
 ```
 
 
