@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Emacs on Keido</title><link>https://keido.site/tags/Emacs/</link><description>Recent content in Emacs on Keido</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://keido.site/tags/Emacs/index.xml" rel="self" type="application/rss+xml"/><item><title>⚡My Emacs Config - Nothung</title><link>https://keido.site/notes/nothung/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/nothung/</guid><description>Emacsを極限まで叩き上げ, なによりも強靭な刃にする. 一つのことを極める.
+副題のノートォング(Nothung)とは勇者ジークフリートの持つ伝説の剣である.
+https://www.youtube.com/watch?v=B6wChr_geAg https://www.youtube.com/watch?v=v31N8zxGhQY packageの並び順は Doom Emacs の Molule Index (アルファベット順)に従う.
+ref: https://github.com/tsu-nera/nothung
+いつも忘れるDoom Emacs Configuration記法は ここ.
+use-package! は:defer, :hook, :commands, or :after が省略されると起動時に loadされる. after! は package が load されたときに評価される. add-hook! は mode 有効化のとき. setq-hook!は equivalent. どれを使うかの正解はないがすべて use-package!だと起動が遅くなるので場合によってカスタマイズせよ，とのこと.
+ref. 過去の設定はこちら.
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*- (load-file &amp;#34;~/.doom.d/private/config.el&amp;#34;) App Twitter ;; App ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; twittering-mode ;; この設定がないと認証が失敗した.</description></item></channel></rss>

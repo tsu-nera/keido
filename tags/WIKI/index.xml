@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WIKI on Keido</title><link>https://keido.site/tags/WIKI/</link><description>Recent content in WIKI on Keido</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://keido.site/tags/WIKI/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://keido.site/notes/20220302144013/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220302144013/</guid><description>Clojureのファイル操作他.
+up: 📂Clojure Core Languages
+clojure.core slurp 引数で与えられたファイルを読み込んで文字列を返す.
+with-open clojure.java.io clojure.java.io/file java.io.Fileオブジェクトを作成する.
+(require &amp;#39;[clojure.java.io :as io]) (io/file &amp;#34;config.edn&amp;#34;) ;; =&amp;gt; #object[java.io.File 0x71fda6e1 &amp;#34;config.edn&amp;#34;] (io/resource &amp;#34;config.edn&amp;#34;) ;; =&amp;gt; #object[java.net.URL 0x7f3b3463 &amp;#34;file:/home/tsu-nera/hogehoge/resources/config.edn&amp;#34;] io/fileでJavaのFileオブジェクトを扱う. io/resourceで resource-pathにあるFileオブジェクトを扱う. メモ, これはJava7で導入された java.nio.fileとは違うことに注意. 昔Javaのファイル周りはけっこう調べて業務的に詳しかったことを思い出した.
+🖊Java7 の Java.nio.file.Files で ファイルのコピーをしてみる | Futurismo clojure.java.io/resource https://clojuredocs.org/clojure.java.io/resource
+ここでいうresourceとは, Javaの仕組みの１つ.</description></item><item><title>🎓火縄銃のリバースエンジニアリングは歴史的なジパングハッキング</title><link>https://keido.site/notes/20220217165650/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220217165650/</guid><description>戦国時代のゲームチェンジャーである火縄銃.
+種子島に鉄砲伝来といわれているものの実際はバラバラに解体して改良して大量生産した. そしてそのテクノジーでもって武田騎馬軍を織田鉄砲隊が長篠の戦いで駆逐した.
+これはリバースエンジニアリングによってゲームチェンジャーな技術力を作り上げて力に変えた日本の歴史の好例だ.
+日本のスタートアップは海外のビジネスモデルをパクるだけではなくて, バラバラに解体した上でキモをもとにつくりあげればいいのに(D前館).</description></item><item><title>👨Elon Musk</title><link>https://keido.site/notes/20220406180436/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220406180436/</guid><description> tags: 🏷Founder news: 2022/04/06 イーロン・マスクがTwitter社の筆頭株主 &amp;amp; 取締役へ 2022/04/11イーロン、Twitterの取締役就任を当日朝になって辞退 | ギズモード・ジャパン</description></item><item><title>👨Eric Normand</title><link>https://keido.site/notes/20220324214106/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220324214106/</guid><description> tags: 🏷Clojurians info: blog: Eric Normand - Functional Programming and Clojure 💡clojure.specは Schemaではない book: Grokking Simplicity| Amazon</description></item><item><title>👨Jack Dorsey</title><link>https://keido.site/notes/20220124100401/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220124100401/</guid><description>Founder of Twitter. 🏷Twitter 🏷Founder
+2021-11-30: Jack Dorsey TwitterCEO引退. https://twitter.com/jack/status/1465347002426867720</description></item><item><title>👨James Reeves(@weavejester)</title><link>https://keido.site/notes/20220320183317/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220320183317/</guid><description>ピエロみたいな人. https://github.com/weavejester
+🏷Clojurians</description></item><item><title>👨Paul Graham</title><link>https://keido.site/notes/20211215145929/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211215145929/</guid><description> Wizard Programmer of 📝Common Lisp Founder of 📝Y Combinator tags: 🏷Founder refs: 📚ハッカーと画家 あなたはハッカーですか？ハッカーと画家から学ぶハッカー気質について。 | Futurismo My Visit with THE LORD OF THE STARTUPS: Y Combinator&amp;rsquo;s Paul Graham - YouTube ポールグレアム（Paul Graham）の日本語訳エッセー｜Jack｜note</description></item><item><title>👨Stuart Halloway(@stuarthalloway)</title><link>https://keido.site/notes/20220324181935/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220324181935/</guid><description>📚Programming Clojure の著者. @stuarthalloway - Twitter Twitterのアイコンと背景画像がチベット仏教僧は危険性を示す. Datomic 開発メンバ. 🏷Clojurians 🏷Cognitect</description></item><item><title>📚コンピュータプログラミングの概念・技法・モデル</title><link>https://keido.site/notes/20220305080947/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220305080947/</guid><description>up: 📁Programming Paradigms
+私に大きな影響を与えた書籍.
+🖊プログラミングの世界観を変える衝撃！Paradigms of Computer Programmingで震えるほどの知的感動を体験した | Futurismo
+若き日の感動体験. わたしのストレングスファインダーの収集性にどストライクした. いまだに鈍器を部屋においてチラチラみてる.
+コンピュータプログラミングの概念・技法・モデル コンピュータプログラミングの概念・技法・モデル.
+原題は, Concepts, Techniques, and Models of Computer Programming
+CTMCP, ガウディ本と言われることが多い.
+コンピュータプログラミングの概念・技法・モデル | Peter Van-Roy, Seif Haridi Amazon
+Amazonの中古本の値段がとんでもないことになっている&amp;hellip;. 現在37743円!!(2022).
+edX: Paradigms of Computer Programming Paradigms of Computer Programming – Fundamentals | edX Paradigms of Computer Programming – Abstraction and Concurrency | edX 著者のPeter Van RoyさんがYoutubeで2022になった今も毎年講義動画をアップロードしている.
+https://www.youtube.com/user/PeterVanRoy
+板書がそもそもみえないがありがたさがSICP動画のようだな.</description></item><item><title>📝adb</title><link>https://keido.site/notes/20211229061513/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211229061513/</guid><description>adb（Android Debug Bridge）はAndroid端末をデバッグする為のツール.1 Android SDK Platform-Toolsのひとつなので，インストールはSDK Platform-Toolsをインストールする.2
+PCとAndroid端末をTCP通信で接続することでPCから様々な設定や操作が可能になる.USB経由で接続する方法とWiki経由で接続する方法がある.
+adbをAndroidで利用するには，開発者向けオプションが有効になっている必要がある.3 またAndroid v10以前ではUSB経由でadbに乗り込んでportを開ける手順が必要(adb tcpip 5555).v11以上ならAndroidからの設定だけでよい.
+External Links Android Debug Bridge（adb） - Android Developers公式(ja)の説明.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+https://developer.android.com/studio/releases/platform-tools?hl=ja&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+https://developer.android.com/studio/command-line/adb?hl=ja#Enabling&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description></item><item><title>📝Alex Miller</title><link>https://keido.site/notes/20220320181411/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220320181411/</guid><description>Clojureの開発メンバ Clojure Updateお知らせ係 https://clojure.org/news/news puredanger https://twitter.com/puredanger 純粋危険氏と読む. 🏷Clojurians</description></item><item><title>📝Clean Architecture</title><link>https://keido.site/notes/20220228062229/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220228062229/</guid><description>Robert C.Martinさんの提唱したソフトウェアアーキテクチャ.
+ソフトウェアのロジックを4つのレイヤに分けて依存関係を一方向にする.
+tag: 🏷ボブおじさん
+refs
+クリーンアーキテクチャ(The Clean Architecture翻訳) | blog.tai2.net Clean Architecture 達人に学ぶソフトウェアの構造と設計 | Robert C.Martin, 角 征典, 高木 正弘 | Amazon 訳は角さんなのか！ 4つのレイヤ Enterprise Businsess Rules Entities. ドメイン, 関心領域, 操作対象. Application Business Rules Use Cases. モジュールの呼び出し制御を担当. Interface Adapters Controllers, Gateways, Presenters Framworks &amp;amp; Drivers Driver, Framework, Client&amp;hellip;etc. 外部とのやり取りを担当. Fitnesse https://github.</description></item><item><title>📝Clojure API Client Development</title><link>https://keido.site/notes/20220209102028/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220209102028/</guid><description>主にサービスのAPIを叩くクライアントプログラムのノウハウまとめ.
+ref: 📝Clojure Web Development から分離.
+up: 📂Clojure tags: 🏷Clojure refs: 📝Clojure with Twitter Development
+Clojure HTTP Client 主なクライアントライブラリにhttp-kitとclj-httpがある.
+https://github.com/http-kit/http-kit https://github.com/dakrone/clj-http httpリクエストに関してはどちらも同じことができる. 非同期発行も.
+ただしポイントはwebsocketがt統合されているかどうか.
+http-kitは2022年現在メンテナンス状況が怪しく見えた.
+clj-http https://github.com/dakrone/clj-http
+Ring の影響を受けているため Request Mapを入力としてResponse Mapを返す.
+tips: debug 出力 {:debug true} をRequest Mapに含めると, 標準出力にRequest Mapの内容が表示される.
+tips: clj-httpにおけるjsonの扱い ClojureでJSONを扱うライブラリである darkrone/cheshire をインストールすると, json との連携が{:as :json} でできる. この指定がされると clj-httpはrepsonse dataをcheshire でjsonにパースする.
+なお 単純に {:headers {:accept &amp;ldquo;application/json&amp;rdquo;}}を設定したいだけなら {:accept :json}を指定する.</description></item><item><title>📝Clojure API Server Development</title><link>https://keido.site/notes/20220226220442/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220226220442/</guid><description>📝Clojure Web Development から分離.
+tag: 🏷Clojure
+Clojure: Pedestal Yet another Ring, 情報収集中&amp;hellip;まだ試してない.
+http://pedestal.io/ Clojureサービス開発ライブラリPedestal入門 - Qiita Lisp meetup#69 - YouTube Interceptors: Into the Core of Pedestal ref: 📝Clojure: Ring 🏷Web Server Abstruction
+Clojure: Routing Librareis 🏷HTTP Routing
+compojure bidi ataraxy reitit pedestal 🔗References Clojure Web Routing Library Recommendations [2020]​ 2020時点でのオススメ. reititはいいぞ – valeblog Reference 🔗Clojure x ClojureScript で深める Web 開発 - Qiita https://github.</description></item><item><title>📝Clojure Architecture</title><link>https://keido.site/notes/20220314120812/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220314120812/</guid><description>Clojureのアプリケーション設計.
+ref: 📝Clean Architecture 🏷Clojure Development 🏷Software Design
+プログラミング言語とシステムデザイン Clojureの設計指針 by t_yano. namespaceをドメインにするればいい. データを関心領域としてそこに対する操作が関数. ドメインに操作を関数定義すればいい. システムの複雑さはどこから来るのか – Out of the tar pitを読む - Uzabase Tech これもby t_yano. ref: 📝Clojure Records Clojure Recordを積極的につかう. REPLライフをもっと快適に Component 単位でシステムをつくるというアイデア, なるほど🤔 Clojure x ClojureScript で深める Web 開発 Duct x Clean Architecture フォルダ構造が参考になる.</description></item><item><title>📝Clojure Async</title><link>https://keido.site/notes/20220118091058/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220118091058/</guid><description>up: 📂Clojure Core
+Clojure core.asyncについて. 非同期プログラミングをうまく行う.
+https://github.com/clojure/core.async
+わたしの拙い記憶だと, 非同期処理をJava やPythonでうまく処理するには，同期キューを用いたproducer-consumer patternをつかうのが鉄板だが，それをcore.asyncをつかうことによってかんたんに実装できる(素晴らしい).
+一応過去記事をみると，共有メモリ方式ではなく，決定性データフローモデル??(忘れた).
+refs 🖊Java で Producer-Consumer Pattern を実装してみた | Futurismo 🖊データフロー変数 (Oz) で実現する Producer-Consumer Pattern | Futurismo Clojure: atom/delay/future/promiseの比較 いずれも同じ関数deref/@(reader macro)で読み出せるところがややこしい.
+atom: メモリ共有 スレッド内のメモリ共有の仕組みあり状態を扱う. delay: 遅延評価 force or deref or @ をつかって評価してはじめて計算がはじまる. future: バックグラウンド実行 評価はバックグラウンド(i.e.別スレッド)で始まるが, その結果は参照してはじめてわかる (or まだ計算が終わってないかもということもわかる). promise: バックグラウンド実行 + 遅延評価. promiseはfutureに似ている.</description></item><item><title>📝Clojure Collections and Sequences</title><link>https://keido.site/notes/20220116080205/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116080205/</guid><description>refs: 📂Clojure Core
+Clojureのシーケンスや高階関数を巧みに扱うことができるとモテるとか. こういうのは知っているか知らないかなのでイディオムを覚えてモテよう.
+-&amp;gt; 📝Clojure Idioms
+Clojure: Collections ClojureのCollectionはimmutableでpersistent.
+refs 📝immutable 📝persistent イミュータブル時代の言語としてのClojure - Qiita Clojure Collection操作 よく使うものを列挙.
+conj: コレクションの結合. 他の言語ではpush, concat, appendとか. Clojure Sequences(clojure.core.sequence) refs: Clojure - Clojureを学ぼう - シーケンシャルなコレクション
+シーケンス型 には4種類の重要なデータ構造がある.
+list: () vector: [] map: {} set: #{} Clojure: into into は第一引数のコレクションに, 第二引数のシーケンスの要素全てを, 元のコレクションにとって自然な形で追加 (conj) してくれる関数.</description></item><item><title>📝Clojure Data Science</title><link>https://keido.site/notes/20220324181510/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220324181510/</guid><description>Clojure Data Visualization Tools Clojure 1.10より導入された tapを活用するツールが便利.
+refs. clojure tap - clojure.org 📝clojure.core tap
+Cognitect REBL Site Datomic開発元でおなじみCognitectが開発している. OSSではないものの Stuart HallowayとCognitectのサポートは強そう. Reveal GitHub Read Eval Visualize Loop for Clojure OSSであり REBLの対抗馬. REPLのように振る舞ういVM上のペインでDataを可視化. つまり起動するとJavaアプリとして立ち上がる. Portal GitHub Web技術で開発されている. つまり起動するとChrome PWAアプリとして立ち上がる. revealより後発なので機能的にはrevealが先行している. UIがrevealよりもイケイケ感がある. (revealはEclipse感があり若干のダサさがある). Portal Example 以下は portal でintegrantの状態を表示.
+tapについてはだいたい他も同じ.</description></item><item><title>📝Clojure Date/Time/Timestamp</title><link>https://keido.site/notes/20220313061121/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220313061121/</guid><description>Clojureにおける時間の扱いについてまとめ.
+up: 📂Clojure Core Languages tag: 🏷Date/Time/Timestamp
+clojure.instant 文字列を読み取る関数がいくつか定義されている.
+https://clojuredocs.org/clojure.instant
+parse-timestamp: RFC3339-likeフォーマットのparse. read-instant-xxx clj-time https://github.com/clj-time/clj-time
+おそらくデファクトスタンダードなClojure のライブラリ.
+バックエンドのJoda Time Javaライブラリのラッパー.
+しかし注意書きとして Java8以降はJava Timeをラップしている clojure.java-time を使ったほうがいいとのこと.
+JavaではJava8よりJava Timeというパッケージが標準で使えるようになり, それ以前に使われていた Joda Timeを置き換えるようになった.
+そのためclojureの方針としてもJoda TimeではなくJava Timeをつかうのがいい.
+clojure.java-time A Clojure wrapper for Java 8 Date-Time API.
+https://github.com/dm3/clojure.java-time
+Java Libraries Interop Javaの関数を呼び出してもいい.
+SimpleDataFormatを使う例.
+(import &amp;#39;[java.text SimpleDateFormat]) (def twitter-timestamp &amp;#34;Sat Mar 12 20:34:57 +0000 2022&amp;#34;) (def twitter-format &amp;#34;EEE MMM dd HH:mm:ss Z yyyy&amp;#34;) (def locale java.</description></item><item><title>📝Clojure Expression Problem</title><link>https://keido.site/notes/20220307162746/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220307162746/</guid><description>主にデータと操作の抽象を扱う.
+Clojureでは,
+データ抽象として deftype/defrecord, 操作の抽象としてdefprotocol/multimethod という仕組みが用意されている.
+言語で定義されたマクロはこっち =&amp;gt; Reader Macros 汎用マクロはこっち: 📝Clojure Macros cf. Javaではデータ抽象としてクラス, 操作の抽象としてインタフェースがある.
+refs. 📂Clojure Core Languages 🏷Expression Problem
+マルチメソッド(multimethod) Javaの オーバーライドをClojureで実現する方法.
+同一名称のメソッドで異なる型によって処理を分けるようなことをしようとすると Clojureでは,
+defmulti で複数の処理を分岐させるための同一名称のメソッドを定義. defmethod で異なる処理を型ごとに記述. defmultiで与えられた引数のどれをdispatchのための分岐条件にするかを定義する. いいかえれば, 引数をばらして分岐条件を決める. defmethodで分岐条件に基づいて与えられた引数を処理する.
+;; 引数 sに対するバラし方を定義 (defmulti my-print class) ;; 引数sがstring, つまり (class s) =&amp;gt; String ;; ならば(.write *out* s)を実行. (defmethod my-print String [s] (.write *out* s)) (defmethod my-print nil [s] (.</description></item><item><title>📝Clojure Flows</title><link>https://keido.site/notes/20220116083656/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116083656/</guid><description>refs: 📝Clojure Logics 📂Clojure Language Spec Clojure - Clojureを学ぼう - フロー制御 Clojure Flow Basics Clojureのフロー制御まとめ.
+if when true判定. if-let letで定義したロジック判定のシンボルをifでテストする. これは，たとえば複雑な真偽判定のロジックにシンポルを割り当てることで可読性を上げるために利用できる. when-letもある. cond 複数のifを書くときのわかりやすい記法. 条件に当てはまらない場合の処理をelseで実施することができる. case condにおいて判定する値が１つしかない場合. Clojure:副作用の繰り返し(dotimes/doseq/for) Clojure - Clojureを学ぼう - フロー制御
+dotimes 式n回評価, nilを返す. doseq シーケンスに対して順列に繰り返す. 遅延シーケンスは評価を強制. nilを返す. 複数のシーケンスに対しはforEachのように振る舞う.</description></item><item><title>📝Clojure Functional Programming</title><link>https://keido.site/notes/20220116094551/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116094551/</guid><description>いわゆる関数型プログラミングのパラダイムで登場する用語のClojure実現方法.
+Clojure - Clojureを学ぼう - 関数
+ref: 📂Clojure Core 🏷Functional Programming
+Clojure: Function defn で定義.
+ref: 🔗Clojure - Learn Clojure - Functions 🏷Function
+Clojure: Multi-arity Functions Multi-arity functionsをサポート.
+arityはアリティと発音する, 関数の取りうる個数.
+(defn messenger ([] (messenger &amp;#34;Hello world!&amp;#34;)) ([msg] (println msg))) ref: アリティ | arity
+Clojure: 可変長引数関数 | Variadic Functions 可変長引数 をサポートする関数, variadic = 可変長, aka. オプション引数.
+Clojureでは &amp;amp; を用いて指定する.
+(defn hello [greeting &amp;amp; who] (println greeting who)) オプション引数が関数呼び出してで指定されない場合はnilがbindされる.</description></item><item><title>📝Clojure Idioms</title><link>https://keido.site/notes/20220302101805/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220302101805/</guid><description>refs: 📂Clojure Core 🏷Clojure
+Idiomsを駆使するとモテるとか.
+Clojureの主にデータ操作に関する小技を書き溜めていく.
+Ankiに突っ込むことで記憶もしていく.
+andとorを条件分岐につかう orに当たらえれた式で真になるものが見つかったら残りを評価せずに真を返す. ex. yogthos/config andに当たらえれた式で偽になるものが見つからない限り残りを評価する. ref: 📚Land of Lisp p47に書いてあった.
+ネストしたCollection操作にget-in/assoc-in/update-in get-in/assoc-in/update-in をつかう.
+https://clojuredocs.org/clojure.core/assoc-in
+;; assoc-in into a nested map structure (def foo {:user {:bar &amp;#34;baz&amp;#34;}}) (assoc-in foo [:user :id] &amp;#34;some-id&amp;#34;) ;;=&amp;gt; {:user {:bar &amp;#34;baz&amp;#34;, :id &amp;#34;some-id&amp;#34;}} ref: 📝Clojure Map(clojure.core.map)
+条件付きMap操作 assoc-if/update-if もしvalueがnilでなければMapを操作したい場合は以下のようにする.
+(defn assoc-if [m key value] (if value (assoc m key value) m)) (-&amp;gt; m (cond-&amp;gt; value (assoc key value))) 関数の引数にデフォルト値を指定するには？ いわゆるデフォルト引数というものだが, 位置引数に値を設定する方法は見当たらない(見つけられてないだけかも).</description></item><item><title>📝Clojure Java Interop</title><link>https://keido.site/notes/20220117172324/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220117172324/</guid><description>up: 📂Clojure Core refs: 🏷Java
+ClojureとJavaのやりとりをまとめ.
+ClojureからJavaを呼び出し メソッドを呼ぶには，メソッド名の前に.を書く. クラスを生成するには，クラス名のあとに.を書く. Clojure-Java HashMap Interop howto: Clojure - JavaのHashmapの変換 (def java-map (java.util.HashMap. test-data)) (def clj-map (into {} java-map)) howto: Clojureのkeywordを stringにするには？ clojure.walkライブラリ使える. https://clojuredocs.org/clojure.walk
+strinify-keys: keywords to string keywordize-keys: string to keywords Clojure-Java Class howto: Javaのclassを生成するには? ref: https://clojure.org/reference/compilation
+namespaceに (:gen-class)を記述する. namespaceを持つ .classファイルが生成される.</description></item><item><title>📝Clojure Logics</title><link>https://keido.site/notes/20220116081924/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116081924/</guid><description>Clojureの論理制御のシンタックスまとめ.
+true? false? nil? not = not= empty? seq up: 📂Clojure Core Languages
+シーケンスに対する述語 第一引数に条件(predicate), 末尾にCollectionを取る.
+(xxx pred coll)
+これらはfilter関数とあわせて用いられる.
+every? any? not-any? not-every? some someはシーケンスのいづれかの値が条件を満たすかどうかを判定する.
+(some pred coll)
+戻り値に注意!
+述語がtrueを返したら直ちにその値を返す. 全てがfalseならnilを返す.
+副作用に関わるClojureの述語(do) いわゆるdoなんちゃら.
+do doto dorun(cf. doall) do は複数のフォームを手続き的に評価するときに利用する. いちおうなくてもいいけどClojureは関数型パラダイムなので副作用を伴う一連の手続きはdoを書いたほうが親切.
+doto は 第一引数に対して手続き的な操作を行うときに利用する. 主な利用シーンはDBに対してのコマンド発行.
+dorun, doall は遅延シーケンスのコンテキストで登場する. どちらも遅延評価されたものを強制的に評価して実行する. そのさい, dorunは単に評価してその結果を考慮せずにnilを返す, つまり副作用があろうが関係ない.</description></item><item><title>📝Clojure Macros</title><link>https://keido.site/notes/20220302111024/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220302111024/</guid><description>Clojureマクロ.
+up: 📂Clojure Core Languages refs: 🏷Lisp 🏷LISP Macro 📝Clojure Abstruction
+predefinedなmacroはこっち =&amp;gt; Reader Macros
+Clojure マクロの仕組み 2stepにわけられる.
+マクロ展開 コンパイル Clojureはマクロに出会うと, マクロがまず展開され, その結果がプログラム中のマクロのあった位置に置き換えられる(マクロ展開時処理). その次に通常のコンパイルが動く(コンパイル時処理).
+Clojure Macro Syntax defmacro で宣言する. symbolの前にquote(&amp;rsquo;)をつけるとdefmacro内で評価されない. nilは何度評価してもnilなのでなにもつけない. macroexpand-1 をREPLで叩くとマクロ展開をテストできる. マクロ利用の指針 マクロ利用の指針 from Programming Clojure マクロを書くな. それがパターンをカプセル化する唯一の方法ならば, マクロを書け. 同等の関数に比べて, 呼び出し側が楽になるならばマクロを書いても構わない. 繰り返し現れる 特殊形式 (ex. if) を マクロで共通化する.
+デザインパターンとは, 多態的なインスタンス化のパターンに過ぎない. 同様にして, マクロとは共通部分を括りだす層であり, プログラミング言語そのものの記法などの, 既存の文法では括りだすことが難しいところを共通部分として切り出す.</description></item><item><title>📝Clojure Product Development</title><link>https://keido.site/notes/20220211142329/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220211142329/</guid><description>up: 📂Clojure Development tags: 🏷Clojure
+Clojureプロダクト開発で役立つライブラリとフレームワークまとめ.
+必要に応じてトピックごとにリファクタリングすること.
+refs: 📝Clojure Web Development =&amp;gt; Web関係はこっち 📝Clojure API Client Development =&amp;gt; Client API関係はこっち 📝Clojure Style Rules &amp;amp; Conventions =&amp;gt; コーディング規約や慣習はこっち 📝Clojure Architecture =&amp;gt; 設計周り Clojure: Backend Framework Clojure: Duct https://github.com/duct-framework https://github.com/duct-framework/core Integrant をベースにした拡張機能を提供(作者が同じ). Webフレームワークではなくもっと汎用的なもの.
+Ductモジュール入門 はじめてのDuct - Uzabase for Engineers Document how to use duct with tools.</description></item><item><title>📝Clojure REPL Driven Development</title><link>https://keido.site/notes/20220117205249/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220117205249/</guid><description>🏷Clojure 🏷ソフトウェア開発手法
+REPL-Oriented Programmingとも. RDDと略されたりもする.
+ソースコードを即時にエディタで評価してインライン表示などすることで，素早くフィードバックをえることができる.
+正確にはREPLにエディタからソースコードを評価した結果をもらったものを表示だが，操作的にはソースコードと対話するように開発ができる.
+TDDは細かくテストを書くことで素早くフィードバックを得ることで先の不安を事前に取り除き前に進むための確信を得ることが目的のひとつだった. 継続的インテグレーション，継続的デリバリーなども. それらのサイクルの単位よりもRDDは圧倒的にフィードバックが早い! もはや最小単位.
+REPLとは REPLとは以下の略.
+read evaluate print loop REPLの説明は以下がわかりやすかった. 少し抜粋.
+ref: 🔗REPL Driven Programming - tyano&amp;rsquo;s Techlog
+REPLでnamespaceを読み込むということは簡易実行環境ではなく あなたが書いたプログラム内部に潜り込んでコンソールを開いた状態 そのもの. Clojureにインタープリタは存在しない. 関数をバイトコードにして実行するのみ.
+Road to Common Lispの中で Lisp as a System という章も，例題がCommon Lispではあるものの実体はRDD.
+Lispプロセスを起動。 プロジェクトを読み込む。 コードをエディタで編集。 動作中のプロセスに、編集したコードだけをコンパイルさせる。 プロセス中の変更したコードと対話。 REPL や HTTP request などを通して行う。 出力を調査 （コンソール、ブラウザなどで）。3に戻る。 &amp;gt; Common Lispを書くことは、生物や呼吸する組織とやりとりすること、もしくは 熱心な助手に物事を教えることのように感じることができます。
+ref: 💻A Road to Common Lisp - Steve Losh(2018)</description></item><item><title>📝Clojure spec</title><link>https://keido.site/notes/20220323030746/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220323030746/</guid><description>up: 📂Clojure Core Languages
+clojure.specとは Clojureにおいて 契約プログラミング を実施するためのライブラリ.
+Clojure 1.9から導入された. これは 2017.12 の話なので古い書籍だとそもそもclojure.specの話題を扱っていない.
+clojure.spec Usages Basics s/def 満たすべき条件を宣言 s/valid? 条件を検証 s/coll-of 条件を満たす集合を宣言 s/keys 条件を満たす名前付きの値の集合(ie. Map)の条件を定義 :reqは必須のキーワード, :optは任意のキーワード. s/explain 検証が失敗した理由を出力. s/conform 条件を満たす場合のみ与えられた値を検証を通過したキーワードに束縛. s/cat 束縛されるキーワードとその条件をまとめるという宣言. 以下の記事を参考.
+What Clojure spec is and what you can do with it - Pixelated Noise Blog</description></item><item><title>📝Clojure State and Concurrency</title><link>https://keido.site/notes/20220116191927/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116191927/</guid><description>Clojureの並行プログラミングについて.
+up: 📂Clojure Core ref: 🏷Concurrent Programming
+Clojure: 状態(State) 状態とは，ある時系列におけるある時点での 同一実体 である.
+Clojureにおいて値は immutable であり persistent である.
+しかし，変更不可なオブジェクトに対して変更可能な参照を作成することで変更不可のものを管理することができる.
+Clojureでは，値と同一実体を明確に区別して扱う. 4つの参照型を用意している.
+ref: 協調的，同期的な変更を管理. atom: 独立的, 同期的な変更を管理. agent: 非同期な変更を管理. var: スレッドローカルな変更を管理. Clojure: atom WIKI Clojureにおける atom は非協調的(Independent)で同期的(Syncronous)な変更を管理する.
+atomの更新ではトランザクションは不要. reset! 関数を用いる.
+swap! 関数は，atomを引数にとり更新した値を返す関数を適用するための関数.
+;; atomの宣言 (def foo (atom 0)) ;; atomがbindされた. foo ;; 参照先の値をリーダマクロ@で読む @foo ;; 値の更新 (reset! foo 2) ;; 関数値の設定 (swap! foo (fn [_] (+ 1 1))) atomでのreset!</description></item><item><title>📝Clojure Syntax</title><link>https://keido.site/notes/20220116162321/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116162321/</guid><description>up: 📂Clojure Core refs:
+Clojure.org - syntax Clojure: フォーム Clojureの構成要素にいろいろ種類がある. Clojureではとくに フォーム という.
+いったん整理したい.
+number 1 symbol Clojureの世界での表現されるものはシンボルといってもいい. 関数: foo, bar Javaクラス 名前空間 : user/foo 演算子: +, - etc&amp;hellip; string &amp;ldquo;hoge&amp;rdquo; keyword :hoge character \h boolean true/false/nil list (1 2 3) Clojure: リーダマクロ | Reader Macros cf.</description></item><item><title>📝Clojure Transducer</title><link>https://keido.site/notes/20220331203002/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220331203002/</guid><description>up: 📂Clojure Core
+Transducerとは Clojure 1.7より追加されたライブラリ.
+reduce(高階関数) の概念を拡張. 合成可能なアルゴリズム変換. 関数合成(comp)により組み合わせ可能 (transducer + transducer =&amp;gt; transducer). composableな ストラテジパターン. 入力源や出力先によらず各要素を変換. reducing functionとtransducerの定義 まずは用語の定義, 大事なので注意.
+reducing function とはaccumulateされた結果と新しいinputを合わせて新しいaccumulateを生成する関数. (accumulateがなんと訳すのかわからないけど, いわゆるreduce関数だ).
+;; reducing function signature whatever, input -&amp;gt; whatever transducer とはあるreducing functionを別のreducing functionに変換する.
+;; transducer signature (whatever, input -&amp;gt; whatever) -&amp;gt; (whatever, input -&amp;gt; whatever) Transducerとスレッディングマクロ(-&amp;gt;&amp;gt;)との関係 Transducerとはmapやfilterのcollectionを省いて変換処理だけ抜き出してまとめたもの.
+(-&amp;gt;&amp;gt; coll (map proc1) (filter proc2) (map proc3) (map proc4)) スレッディングマクロで表現されるような４つの処理をたとえば２つをまとめて操作として抽象したり, さらにその関数値を引数にすれば部分的に交換な部品ができたりする.</description></item><item><title>📝Clojure Web Development</title><link>https://keido.site/notes/20220118092453/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220118092453/</guid><description>ClojureによるWeb開発ノウハウまとめ.
+tags: 🏷Clojure 🏷Web Development
+テーマが大きいので分割するかも.
+API Server はこちら: 📝Clojure API Server Development API Client はこちら: 📝Clojure API Client Development Clojure Web Development概論 ClojureではRailsやDjangoのようなデファクトスタンダードな Webフレームワークをつかうよりも 小さなライブラリを組み合わせて開発することが多い.
+そのため機能ごとにいろんなライブラリが存在する.
+Clojure: Web Frameworks Luminus Duct (正確には状態管理ライブラリ + モジュール作成テンプレート). ref: 🏷Web Framework
+Clojure: Ring - Webサーバ抽象 https://github.com/ring-clojure/ring
+ClojureにおけるWeb Server Abstructionのデファクトスタンダード.
+Why Use Ring? · ring-clojure/ring Wiki · GitHub なぜRingをつかうのか？ WebアプリをClojureの関数とMapデータのみで構築するという設計概念を示す.</description></item><item><title>📝Clojure コーディング規約と慣習まとめ</title><link>https://keido.site/notes/20220313110515/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220313110515/</guid><description>Clojureの書き方の慣習まとめ.
+up: 📁Clojure Development
+個人的な思想としてコーディング規約は人間がチェックするものではなく linterやformatterを使って自動整形すべきだと思う.
+📝cljstyle - Clojureフォーマッタ Clojure スタイルガイド Clojureスタイルガイド が大変参考になる. あとはGitHubで他人のコードリーディング.
+このスタイルが実質Clojure界隈でデファクトスタンダードになっていて, いろんなリポジトリを覗いてもこれに従って書かれている.
+ここにはとりあえず身につけたい努力目標をメモしていく. 本当はスタイルとかは個人の努力に頼るのはアンチパターンでツールでチェックするのがいい.
+関数名や変数名は kebab-case aka. lisp-case ref: https://totakke.github.io/clojure-style-guide/#lisp-case
+🏷kebab-case
+別の命名規約との変換のライブラリとして, Clojureでは camel-snake-kebab というものが有名.
+https://github.com/clj-commons/camel-snake-kebab
+マイクロサービス開発だと, 各言語によって変数名が異なるので変換が必要.
+Clojureで作ったAPIをマイクロサービスの海に隠す - ayato-p
+Protocols/Records/Structs/TypesはPascalCase ref: https://totakke.github.io/clojure-style-guide/#CamelCase-for-protocols-records-structs-and-types
+🏷PascalCase
+private functionsには defn- で印をつける ref: https://totakke.github.io/clojure-style-guide/#private
+副作用の持つ関数は!, 変換をする関数の名称はtoではなく-&amp;gt; e.g.) reset!
+Java Classでパフォーマンスが下がったら^でType Hintsをつける reflection抑止によるコンパイル速度向上.</description></item><item><title>📝Clojure デバッグ</title><link>https://keido.site/notes/20220309085644/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220309085644/</guid><description>Clojure 開発におけるデバッグまとめ.
+refs: 📝Clojure DX 📝Clojure REPL Driven Development
+printデバッグ 古代人から現代まで引き継がれている由緒正しきデバッグ手法, aka. わたしの得意技.
+print/println Clojureでもっとも有名な標準出力関数.
+pr/prn/pr-str オブジェクトの内容をいい感じに出力してくれる.
+(println &amp;ldquo;おれはここだよ&amp;rdquo;)のようなトレースデバッグにはprintlnをつかい, データの中身をみる(Inspectする)にはprnをつかうのが使い分け.
+str clojure.pprint Pretty Print for Clojure.
+clojure.pprint namespace | ClojureDocs.
+REPL起動すると読み込まれている. pprint: いい感じに出力.
+prnでオブジェクトを表示すると, たとえば大きなネストしたMapは1行に表示されて見にくい.その場合は, clojure.pprint.pprintをつかうと見やすくなる.
+REPLで (pp) と評価すると最終評価結果が表示される. このppの便利な使い方は, 普通に標準出力した結果が複雑だったときに, 再度ppを通じて表示することでさっきのデータ構造がいい感じになる.
+print-method Javaのクラスによく自分で実装するtoStringメソッドがClojureにもほしい！
+-&amp;gt; print-method というmultimethodをつかう.
+toStringをオーバーライドするとJavaのクラスをSystem.out.println するときにクラスの内容表示を自分でカスタマイズできる.
+clojureでは print-methodというmultimethodが定義されている.
+ただし, 基本的にはClojureはデータをMapで扱うことが推奨されているので, そもそもいらないかもしれない.</description></item><item><title>📝Clojure 開発環境</title><link>https://keido.site/notes/20220119063524/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220119063524/</guid><description>tags: 🏷Clojure
+Clojure開発をするときの開発環境(DX)向上のあれこれ.
+主にClojure開発に関わるツールやライブラリまとめ.
+RDDはこちら: 📝Clojure REPL Driven Development Debugはこちら: 📝Clojure デバッグ Emacsに特化したものを別ノートに移動: 📝Cljure 開発環境 with Emacs up: 📂Clojure Development
+Leiningen - Clojure Build tool https://github.com/technomancy/leiningen
+Clojureプロジェクト管理ツール. make的な.
+howto: Java外部ライブラリをいれるには？ [&amp;lt;groupId&amp;gt;/&amp;lt;artifactId&amp;gt; &amp;lt;version&amp;gt;] という記法でproject.cljのdependenciesに追加.
+これが,
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.google.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;google-cloud-firestore&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; こうなる.
+[com.google.cloud/google-cloud-firestore &amp;#34;3.0.2&amp;#34;] howto: lein uberjarでThe Main-Class specified does not exist within the jar main の core.cljのnsに(:gen-class)を追加.
+&amp;gt; Warning: The Main-Class specified does not exist within the jar.</description></item><item><title>📝Clojure 開発環境 with Emacs</title><link>https://keido.site/notes/20220316151158/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220316151158/</guid><description>tags: 🏷Clojure 🏷Emacs Clojure開発環境(IDE)としてのEmacs設定まとめ.
+Emacsに限定しないものは別ノート: 📝Clojure 開発環境
+Emacs CIDER https://github.com/clojure-emacs/cider
+EmacsでClojure開発をするときのデファクトスタンダード.
+ref: quick reference
+Usage C-c l &amp;rsquo; cider-jack-in REPL起動 &amp;amp; 接続 C-c C-zで REPL - Editor間を移動. C-c C-c で現在の定義を評価. C-c C-e でフォームの末尾の手前から評価. C-c M-p で現在の定義をREPLに送信. M-. 定義に移動. C-c C-d C-d documentをみる. jack-inしている状態で2charくらい打ち込んで C-iで補完候補がでる. C-c M-i で cider-inspectorを起動, defの中身が別バッファに表示される. C-c SPC: clojure-align, alignを自動整形. Evaluation M-x cider-pprint-last-eval-to-comment 式の評価結果がコメントとして書かれる. Design Journalとしては便利な機能かも. C-u C-x C-e でも可能.</description></item><item><title>📝Clojure:名前空間と変数束縛(Bindings and Namespaces)</title><link>https://keido.site/notes/20220116080418/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116080418/</guid><description>Clojureでは，変数の名前空間と束縛の関係は以下のようになる.
+ref: 📂Clojure Core
+Clojure: 名前空間(Namespaces) Clojure の名前空間を namespaceという. ns で宣言する. \*ns\* で参照する.
+ある名前空間から別の名前空間を参照するには requireをつかう.
+require のみ 省略なしの表記でアクセスできる(namespace/symbols) require :as 省略した表記でアクセスできる(省略namesapce/symbols) require :refer :all 名前空間を書かない表記でシンボルにアクセスできる(symbols) 🏷environments
+Clojure: 名前空間のスタイルガイド 🏷Clojure Style Guide
+Clojureスタイルガイド より名前空間に関わる部分を抜き出し
+名前空間は1ファイルに１つ. 名前空間の命名規約はkebab-case(lisp-case). 深い名前空間のセグメントは悪い(せいぜい5つまで). また. library-name.coreみたいなのはLeiningen Projectの慣習.
+名前空間のフォーマットについて.
+refer, require, importの順に並べる. 適切な改行. requireとimportを整理して並べる. Idiomatic な名前空間の名前をつかう. 具体例は以下にいろいろ書いてある. (io, set, pp, etc..). Use Idiomatic Namespace Aliases - bbatsov/clojure-style-guide 要は長い名前を使うのではなくて省略しましょうということ.</description></item><item><title>📝Clojure/ClojureScriptの参考リンクまとめ</title><link>https://keido.site/notes/20220116095639/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116095639/</guid><description>ref: 🏷Clojure
+ここにまとまっているのでもはやわたしがまとめる必要はないかも.
+Clojure/ClojureScript関連リンク集 - Qiita
+とりあえず自分の目を通したものをコメントとともにメモしておく.
+Clojureリファレンス clojure.org - 公式サイト clojure.org の日本語訳 - しっかりと書かれた参考になる日本語資料. ClojureDocs - CommunityでメンテしているClojureドキュメント. https://clojuredocs.org/quickref - クイックリファレンス Clojureスタイルガイド https://github.com/totakke/clojure-style-guide Clojure Destructuring Tutorial and Cheat Sheet · GitHub Clojureb分配束縛についてまとめ Clojure Trend CatchUps ClojureVerse discourse 上のClojure掲示板. 困ったときの知恵袋. https://www.reddit.com/r/Clojure/ Reddit Clojure板. https://twitter.com/search?q=clojure%20lang%3Aja&amp;src=recent_search_click&amp;f=live Twitter検索 clojure lang:ja live.</description></item><item><title>📝Clojureの思想</title><link>https://keido.site/notes/20220116161735/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116161735/</guid><description>Clojureの思想についてまとめる.
+できるだけ他者の意見を集め, それに対する考察は Clojure考察 でまとめる.
+refs: 🏷Clojure 📝Clojureモチベ
+Clojureの設計思想を探るにはYoutubeに投稿されている Clojure Conjの動画をみるのもいいかも. たくさん動画がある.
+Lisp Reloaded Lisp本来の力を持ちながらLispの歴史に成約されない.
+JVMに対する圧倒的な信頼 OSではなくVMが未来のプラットフォームである.
+Code is data, data is code aka. LISPの思想.
+Clojureは不定であり不変 Clojureにおいて値は immutable であり persistent である.
+Simple made Easy &amp;ldquo;Simple Made Easy&amp;rdquo; - Rich Hickey (2011) - YouTube Clojureの世界観 - 紙箱 &amp;ldquo;simple&amp;quot;と&amp;quot;easy&amp;quot;はどう違う？Simple Made Easyを解説 Part1 - ログミーTech 🎓フルベンオタクなのでシンプルなものは美しい Prefer data over fucntions データ &amp;gt; 関数 &amp;gt; マクロの順に選択する.</description></item><item><title>📝Clojureモチベーション</title><link>https://keido.site/notes/20220116175232/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116175232/</guid><description>Clojureの勉強のモチベをあげる記事. 🏷Clojure 🏷プログラミングモチベ
+Why Clojure | 英語記事まとめ Clojure as a Competitive Advantage スタートアップの言語にClojureを採用した理由. Why Clojure? I’ll tell you why…. Clojure is a functional programming… | by Ertuğrul Çetin | Medium Paul GrahamのTwitterリプライにて. I would suggest Clojure now, not CL. Are there any Lisps you would recommend (other than Clojure)? (Or languages?) | Hacker News Hacker newsでのPaul Grahamのコメント(2012) &amp;gt; Clojure is probably the best bet.</description></item><item><title>📝Cognitect</title><link>https://keido.site/notes/20220324182338/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220324182338/</guid><description> Datomic開発元. Clojure開発コアメンバ所属. Nubankに買収された. COGNITECT JOINS NUBANK(2020/07/23) List of Cognitect Developers 👨Stuart Halloway(@stuarthalloway)</description></item><item><title>📝Common Lisp</title><link>https://keido.site/notes/20211211065629/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211211065629/</guid><description> tags: 🏷Programming Language 🏷Lisp wiki: Common Lisp - Wikipedia Common Lisp Books 📚Land of Lisp - Conrad Barski(2013) 📚実践Common Lisp - Peter Seibel(2008) 📚On Lisp - Paul Graham(1993) 2022年のCommon Lispの学習本はこれだ! References 💻A Road to Common Lisp / Steve Losh</description></item><item><title>📝DarkHorse</title><link>https://keido.site/notes/20220127181529/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220127181529/</guid><description>DarkHorseとは，今まで見向きもされなかったのに，型破りな方法で突然快進撃をはじめ勝者となる人を指す言葉.
+ref: 📚Dark Horse - Todd Rose, Ogi Ogas(2021-08-20)
+偉人とはかけ離れた平凡な普通の人がある日からダークホースになっていった.
+ダークホースを研究するダークホースプロジェクトによって，法則性を発見した. いろいろバラバラな部分があった.大胆さも孤独もアウトローも, 一例であり反例もある.
+しかしたった１つの共通点は 充足感の追求 だった.
+さらに研究が明らかにしたのは,充足感を追求して生きるという,
+充足感に従う断固とした決意.
+既存の成功法則 = 標準化時代(Standardization) 産業革命が標準化時代の幕開け，標準化することによる生産システムの効率の最大化. そして工場生産の標準化を発展させた結果，人間の標準化に進んだ.
+カーネギー，ナポレオン・ヒル，ジムロジャーズ&amp;hellip; これらは標準化時代というパラダイムにおける成功法則, 物語に過ぎない. 個別化時代というウラ世界が存在する.
+自分の目的地を知り，それに向かって懸命に取り組み，コースから外れるな.
+ヒエラルヒーのトップを目指して金と力を求めて努力する. 組織の上層部を目指す人々にとっては都合の良い考えや習慣.
+これからの成功法則 = 個別化時代(Personalization) 万人に通じる成功法則はなく，あなたにとっての成功法則を探す必要がある. 誰ひとりとして，平均的な人間はいないというのが，個性学の概念.
+社会では金と力で成功が測れる，しかし個人では充足感と達成感で測れる.
+目標の職業を選択してそのヒエラルヒーのトップへ上り詰めることを断固とした決意でやりぬき金と名声を手に入れる, この物語には充足感が登場しない.清貧の誓い, 苦難の克服, これらは標準化時代の成功哲学の物語にすぎない. 個別化という裏の世界にはワクワク感しかない.
+本当の成功とは, 世界一ではなく最高の自分になること.
+DarkHorse物語の共通点 社会のレールに従った日常を生きる生活や人生に対して 小さな違和感 を感じる. 小さなモチベーション に気づく(これが最重要かつ第一の要素). いくつもの小さなモチベーションを収集する. 人生の転機を体験し，充足感を追求して生きるという決意をする. DarkHorseの4つの成功ステップ 1. 自分の中の「小さなモチベーション(micro motives)」をみつける 重要キーワード: 小さなモチベーション(Micro-Motives)</description></item><item><title>📝DarkHorse的な生き方をしている人まとめ</title><link>https://keido.site/notes/20220129084156/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220129084156/</guid><description>なかやまきんに君 t.8:15 筋肉とお笑いをかけ合わせればなにかが起こるという根拠のない自信.
+ref: 私、なかやまきんに君は吉本興業を退所致します - YouTube
+HIKAKIN スーパーの店員をしながらヒューマンビートボックスの動画を月に数本Youtubeに投稿していた.
+2010/06/19ある日突然 Super Mario Beatbox がいきなり世界中からみられるようになった.
+refs: 【漫画】ヒカキンブレイクまでの軌跡 - YouTube 好きなことで、生きていく - HIKAKIN - YouTube [ Long ver. ] - YouTube 古今亭志ん生 ref: 知ってるつもり？！古今亭志ん生（五代目） - YouTube
+ISSA(DA PUMP) DAPUMP～解散危機からの復活～P.A.R.T.Y. ～ユニバース・フェスティバル - YouTube
+武井荘 ref: けいちょんが自宅に凸してきた！！！ - YouTube</description></item><item><title>📝Date/Time/Timestamp概論</title><link>https://keido.site/notes/20220326063706/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220326063706/</guid><description>up: 📂ソフトウェア開発
+各論 📝Clojure Date/Time/Timestamp Timezone: タイムゾーン タイムゾーンとは、地球上で同一の標準時を採用している地域の集合のこと. コンピュータなどで機器内部の時刻をどの地域の標準時で運用するかを定めた設定項目.
+UTC: 協定世界時 JST: 日本標準時 日本の地域は 日本標準時JST(Japan Standard Time)に定められている.
+UTCから9時間進めた時刻(UTC+9)を日本標準時と定義してある.
+Locale: ローケル システムやソフトウェアにおける言語や国・地域の設定のこと.
+これを設定することで例えば日本では月/年のような表記が扱える.
+Active Recalls 時刻の設定でtimezoneとlocaleの違いはなんですか？ timezoneはどの時間帯をソフトウェアで採用するかの設定項目.
+localeはどの国や地域の表記に従うかの設定項目.</description></item><item><title>📝Datomic</title><link>https://keido.site/notes/20220215162555/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220215162555/</guid><description>Clojureの作者, Rich Hickey の開発したDatabase.
+https://www.datomic.com/
+tags: 🏷Clojure 🏷Rich Hickey 🏷Cognitect
+💡Datomic First Impression Downloadは登録が必要でFreeだと年1回のUpdateか.
+どうも期待していたものと違うな. 個人でさくっと試したり遊んだりするものでなくてガッツリ企業が金を払ってサポートも受けながらProduct開発するものだな. SalesForceみたいな.
+流行らない理由がわかったかもしれない. さくっとやってみた系の記事も仕事でこれから使う人しか書かない気がする. 最小構成のDatomic Cloudすら月3500円はちょっと敷居が高い.
+Datomic をとりあえず無料でつかってみるには Datomic On-PremのStarterを使う. Webサイトに会員登録が必要, 登録するとライセンスキーが発行されるのでそれをつかってダウンロード. Starterの場合更新は1年に1回の制限がある.
+もしくは Local Dev versionというものは, メモリ上にデータを保持するので再起動でデータが消えるけどお試しならこれでもいい.
+なによりDatomicはOSSではなかった, 自由に使えると勘違いしてた(笑). 2020にNubankがCognitectを買収したらしいのでこれで風向きが変わるといいな.
+ref. Cognitect Joins Nubank
+Datomic On-Prem Datomicは現在AWS で動かす Cloud とローカルで動かす On-Prem がある.
+Datomic - On-Prem Document Index | Datomic References from @hden Toreta CTO https://note.</description></item><item><title>📝Declarative Domain Modeling</title><link>https://keido.site/notes/20220312121007/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220312121007/</guid><description>システムを1つの大きな関数として捉える
+system = fn(logic, state, model).
+宣言型プログラミング のパラダイムがベース.
+up: 📂ソフトウェア設計
+用語の整理 system logic state model References Declarative Domain Modeling for Datomic Ion/Cloud - Tiago Luchini - YouTube</description></item><item><title>📝Dependency Ingection</title><link>https://keido.site/notes/20220310114456/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310114456/</guid><description>以下は同じ用語.
+Dependency Ingection DI 依存性注入 refs:
+📝Clojure: Integrant 猿でも分かる! Dependency Injection: 依存性の注入 - Qiita</description></item><item><title>📝DMM Development</title><link>https://keido.site/notes/20220322082226/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220322082226/</guid><description>tags: 🏷Development
+主に DMM Web API について.
+DMM API SDK 公式と非公式合わせて, 各言語ごとにまとめ.
+official(link) JavaScript: https://github.com/dmmlabo/dmm-js-sdk PHP: https://github.com/dmmlabo/dmm-php-sdk Go: https://github.com/dmmlabo/dmm-go-sdk unofical Java: https://github.com/r-fujiyama/dmm-java-sdk Scala: https://github.com/SuzumiyaAoba/dmm4s Ruby: https://github.com/r7kamura/rdmm Python: https://github.com/miya/dmm-search3 DMM API Web Services https://github.com/nickwph/JavPlexAgent.bundle https://github.com/libredmm References 📝Tech系のアダルトサイト制作事例まとめ</description></item><item><title>📝Docker</title><link>https://keido.site/notes/20220316081935/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220316081935/</guid><description>ref: 🏷Domains
+📝Jib: Build container images for your Java applications refs: 🔗GitHub 🏷Java 📝Google Cloud Run w/ Clojure
+Googleの開発したJavaアプリのためのコンテナ作成ツール.
+Dockerfileを書かなくてもImageをBuildできることが特徴.
+Jib を使用して Java コンテナを構築する | Google Cloud
+🔗References Comming soon&amp;hellip;</description></item><item><title>📝Emacs</title><link>https://keido.site/notes/20211228180209/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211228180209/</guid><description>🏷Emacs
+readonly repositories
+https://emba.gnu.org/emacs/emacs https://github.com/emacs-mirror/emacs/commits/master Emacs Tips tip: Linux上で動作するEmacsで親指シフトの最適解(2022) ref: 🖊Linux上で動作するEmacsで親指シフト入力をする最適解(2022)
+note:
+ブログへ文章を移動した. &amp;lt;2022-01-12 水&amp;gt; こういう流動的なものはwikiに置かないほうがいいかも. howto: fcitxでEmacs GUIの日本語入力ができないときの対処方法 環境変数でLC_CTYPE=zh_CN.UTF-8を設定して起動する.
+link: https://fcitx-im.org/wiki/Input_method_related_environment_variables
+#!/bin/bash LC_CTYPE=zh_CN.UTF-8 emacs 日本語情報がなくて苦戦したが中国語でも同じ課題があるだろうという観点で検索したら解決方法か見つかったので載せておく.
+howto: init.elをOrg Fileから生成するには? see
+Emacsの設定（その2）設定ファイル（init.el）をorg-modeで管理する | A perfect autumn day init.elをOrg Fileから生成してそうなサイト https://takaxp.github.io/init.html https://www.grugrut.net/posts/my-emacs-init-el/ https://mugijiru.github.io/.emacs.d/basics/custom-file/ example: Doom Emacs実装 わたしの場合，Doom Emacsをつかっている(2022現在)ので，init.</description></item><item><title>📝Expression Problem</title><link>https://keido.site/notes/20220307102236/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220307102236/</guid><description>様々なプログラミング言語のプログラミングパラダイムについての長所と短所を議論する際に用いられる用語.
+型変換や条件分岐を使用せずに、既存のデータ型に機能を追加するにはどうすれば良いのか、という問題.
+Expression problem - Wikipedia (ja) Expression problem - Wikipedia refs:
+📝ポリモーフィズム 📝Clojure Expression Problem データ型の追加 条件分岐 switch パターンマッチ 関数の追加 インタフェース up: 📁Programming Paradigms</description></item><item><title>📝git</title><link>https://keido.site/notes/20220308203433/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220308203433/</guid><description>refs: 📂ソフトウェア開発
+Git Emoji Prefix git commit messageのprefixに絵文字をつかってテンションを上げようという流行.
+gitmoji というOSSなど支援ツールもあるものの, 絵文字の種類が多すぎて覚えられないし不要なものもある.
+そのため独自ルールを設定して運用する. 大事なのは決められたルールで統一することなので.
+wikiの都合上, unicodeとgithubの両方の絵文字を記載.
+🎉init: はじめてのコミット(:tada:) ✨feat: 新しい機能追加(:sparkles:) 🔥fix: バグ修正(:flame:) 💪improve: 機能改善(:muscle:) 🎨refactor: リファクタリング(:art:) 📝docs: ドキュメント修正(:pencil:) ✅test: テスト, 評価(:white_check_mark:) 🔨chore: 雑務(:hammer:) 🐥wip: 取り掛かり中(:hatched-chick:) 動物なら何でもいい 💥refactor: 破壊的変更(:boom:) 逆引きgit: hotto gitの操作であれどうやるのをまとめていく.
+howto: gitのローカルのブランチ名を変更したい 古いブランチ名から新しいブランチ名に変更.
+$ git branch -m &amp;lt;古いブランチ名&amp;gt; &amp;lt;新しいブランチ名&amp;gt; 今開いているブランチをリネーム.
+$ git branch -m &amp;lt;新しいブランチ名&amp;gt;</description></item><item><title>📝Google APIs</title><link>https://keido.site/notes/20220412162504/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220412162504/</guid><description>:pencil:Google Indexing API up: 📂ソフトウェア開発ドメイン
+Google APIとは Google のサービスをプログラムから利用するためのAPI群.
+Google API ライブラリの整理(Java) GitHubのリポジトリをみてもいろんな種類がありややこしい.
+一度整理する(Java).
+まずBaseとなるのが以下のHTTPやoAuthのライブラリ.
+https://github.com/googleapis/google-oauth-java-client https://github.com/googleapis/google-http-java-client google-api-clientはおそらく最も有名. httpやoauthを元に作成されている.
+https://github.com/googleapis/google-api-java-client google-api-client-servicesはgoogle-api-clientを元に使いやすくしたwrapper. これはこれでいいのだがドキュメントが不十分で結局google-api-clientを使うことになる.
+https://github.com/googleapis/google-api-java-client-services This repository contains the generated source for individual APIs that utilize Google APIs Client Library for Java.
+Googleのサービスはたくさん種類があり，マイナーなものであればあるほどドキュメントがOutdatedだったりイマイチなのでissueやstackoverflowやGitHubの他人のコードを漁ることになる.</description></item><item><title>📝Google Cloud</title><link>https://keido.site/notes/20220311153749/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220311153749/</guid><description>Googleの提供するクラウドサービス群
+Firebase は Google Cloudのなかで特にアプリケーション開発に使うものをパッケージングして名前をつけたもの.
+📝Google Firestore up: 📂ソフトウェア開発ドメイン</description></item><item><title>📝Google Cloud Firestore</title><link>https://keido.site/notes/20220311153829/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220311153829/</guid><description>Goolge Cloudの提供するサーバレスなNoSQLサービス.
+Google Cloud からFirestoreの機能を切り出したのがFirebase Firestoreなのでここでは同一のもとして述べる.
+🔗Cloud Firestore | Firebase Documentation refs: 🏷NoSQL 🏷Google Cloud
+Firestoreの特徴 データベースというよりは、検索可能なデータ置き場. 複雑なデータ処理が要求されるようなアプリには余り向いてない.
+Firestoreの操作 Cloud Firestore でデータを取得する | Firebase Documentation Cloud Firestore にデータを追加する | Firebase Documentation Quick Reference いつも忘れるので簡単にまとめておく.
+追加 add: 新規作成(IDを自動生成) add(data): CollectionReference =&amp;gt; none set: 新規作成(IDを指定) set(data): DocumentReference =&amp;gt; none set: 新規作成(IDを自動生成) set(data): DocumentReference =&amp;gt; none 取得 get: 単一ドキュメント取得 get(): DocumentReference =&amp;gt; DocumentSnapshot get: 複数ドキュメント取得 get(): CollectionReference =&amp;gt; QuerySnapshot where: 条件指定 orderBy: 並べ替え limit: 個数指定 更新 update: ドキュメント内のフィールド更新 update(data): DocumentReference =&amp;gt; none Map型フィールドを更新: ドット表記 でネストしたデータを更新.</description></item><item><title>📝Google Indexing API</title><link>https://keido.site/notes/20220411211559/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220411211559/</guid><description>up: 📁Google Cloud
+Google Indexing APIとは Googleのクローラーにサイトを巡回してもらうようにリクエストを送るAPI.
+Indexing APIでできることは，
+URLを更新する URLを削除する リクエストのステータスを取得する インデックス登録の一括リクエストを送信する これらの操作はGoogle Search ConsoleからWebUIでできる.
+しかし操作をリクエストしても実際にGoogleが対応してくれるかどうかはわからない. うわさだとIndexing APIで直接URLを指定するとあっという間にクローラーが対応してくれるとか.
+実際, 私のサイト はGoogle Search Consoleから何度サイトマップを送信しても３ヶ月以上シカトされている.
+Indexing APIの使い方 他のGoogle Cloudのサービスと同様に予めサービスアカウントを登録してそれに紐づくcredentialsを利用して認証してAPIをつかう.
+RESTと各種言語のクライアントSDKでAPIを叩ける.
+具体的なRESTの送信方法は以下を参照.
+ref. Indexing API の使用
+batchリクエストについてはgoogle-api-clientで提供されているbatch機能と組み合わせて使うことが必要.
+References Indexing API クイックスタート REST Resource - RESTの使い方Spec googleapis/google-api-java-client - Java Client Google APIs Client Library for Java google-api-services-indexing/v3 - GitHub google-api-clientを使いやすくしたものだがドキュメントほぼないので今はapi-clientをつかったほうがよさげ.</description></item><item><title>📝GTD</title><link>https://keido.site/notes/20220103071935/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220103071935/</guid><description>Getting Things Done.</description></item><item><title>📝HTTP Protocol</title><link>https://keido.site/notes/20220324072101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220324072101/</guid><description>tags 🏷Protocol refs. Hypertext Transfer Protocol - Wikipedia HTTP Protocolとは Hypertext Transfer Protorolの略.
+HTTP Header 💡application/jsonにおけるAccept と Content-Typeの違い AcceptはClientがどんなデータを処理できるかを示す.
+Content-Typeはどんな形式のデータを送信したかを示す.
+Accept {&amp;ldquo;Accept&amp;rdquo;: &amp;ldquo;application/json&amp;rdquo;} サーバがクライアントにデータをレスポンスするときの情報. 特に指定がなければ通常text/textを好む慣習がある. Content-type {&amp;ldquo;Content-Type&amp;rdquo; &amp;ldquo;application/json&amp;rdquo;} GET Requestでは不要, Post Requestでは必須. 具体的には POST requestにおけるbodyのデータ形式を指定. HTTP GET クエリ文字列 WebブラウザなどがWebサーバに送信するデータを送信先を指定するURLの末尾に特定の形式で表記したもの.</description></item><item><title>📝Java</title><link>https://keido.site/notes/20220303203801/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220303203801/</guid><description>refs: 🏷Programming Language
+Javaとは ジェームズ・ゴスリン - Wikipedia が開発.</description></item><item><title>📝JVM Base Concepts</title><link>https://keido.site/notes/20220214041613/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220214041613/</guid><description>refs: 🏷JVM
+JAR JAR Java ARchiveの略. Java Classファイルとメタデータをアーカイブしたもの.
+Using JAR Files: The Basics (The Java™ Tutorials &amp;gt; Deployment &amp;gt; Packaging Programs in JAR Files) jar - Java Archive ツール UberJAR 生産物のJarだけでなく依存関係のjarも含むjarの塊.
+Javaをつかってスタンドアロンアプリケーションとして起動することができる.
+&amp;gt; java -jar exampleapp.jar
+Javaのソフトウェアを配布しようとしたときにサードパーティの依存ライブラリも含めてまとめて配布(all-in-one)できるというメリットがあるものの, 冗長が多くなったり容量が大きくなるなどのデメリットもある.
+fat JAR, JAR with dependenciesともいう. Uberはドイツ語でOverの意. UberEatsとは無関係.
+Uber-JAR - imagej java - What is a shaded jar? And what is the difference/similarities between uber jar and shaded jar?</description></item><item><title>📝Lisp Base Concepts</title><link>https://keido.site/notes/20211211065603/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211211065603/</guid><description>refs: 🏷Lisp
+Lispとは LISPとも表記する. その意味は，LISt Processing.
+🔗LISP - Wikipedia
+LISPは神である 神曲: Land of Lisp- The Music Video! - YouTube Lispはなぜ神の言語と呼ばれるのか - SEむううみんのプログラミングパラダイス Lispは神の言語:Geekなぺーじ https://www.gnu.org/fun/jokes/eternal-flame.html ハッカーにになろう - エリック・レイモンド
+それをモノにしたときにすばらしい悟り体験が得られるのです。この体験は、その後の人生でよりよいプログラマーとなる手助けとなるはずです。たとえ、実際には LISP そのものをあまり使わなくても。
+Lispは力である Beating the Averages LISP Macro</description></item><item><title>📝Lispの思想</title><link>https://keido.site/notes/20220310060216/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310060216/</guid><description>🏷Lisp 🏷Programming Language Design
+LISPは神である 神曲: Land of Lisp- The Music Video! - YouTube Lispはなぜ神の言語と呼ばれるのか - SEむううみんのプログラミングパラダイス Lispは神の言語:Geekなぺーじ https://www.gnu.org/fun/jokes/eternal-flame.html ハッカーにになろう - エリック・レイモンド
+それをモノにしたときにすばらしい悟り体験が得られるのです。この体験は、その後の人生でよりよいプログラマーとなる手助けとなるはずです。たとえ、実際には LISP そのものをあまり使わなくても。
+Lispは力である Beating the Averages</description></item><item><title>📝Org-mode</title><link>https://keido.site/notes/20211211071525/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211211071525/</guid><description>🏷Emacs
+org-capture アイデアを素早くorg-modeのノートにメモするための機能.
+howto: Google Chomeの閲覧内容をorg-captureするには? org-protocol と Chrome ExtentionのOrg Capture を利用する.
+仕組みとしては，Chromeにインストールした拡張機能がorg-protocolというMIME type(アプリケーションを識別する体系)を発行するので，それをemacsclientで受け取って処理をする.
+具体的にはemacslicentのデスクトップアプリケーションを作成して，org-protocolを処理するデフォルトアプリケーションでそのアプリケーションを指定.
+Manjaro Linuxの例(xfce) ~/.local/share/applications/emacsclient.desktop作成
+[Desktop Entry] Name=Emacsclient Exec=emacsclient %u Icon=emacs Type=Application Terminal=false MimeType=x-scheme-handler/org-protocol ~/.config/mimeapps.listに x-scheme-handler/org-protocol=emacsclient.desktop を追記.
+update-desktop-databbaseをコマンドラインから実行.
+org-captureの設定例.
+(&amp;#34;p&amp;#34; &amp;#34;browser&amp;#34; entry (file &amp;#34;~/gtd/inbox/inbox.org&amp;#34;) &amp;#34;* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%:initial\n#+END_QUOTE\n\n\n%?&amp;#34;) (&amp;#34;L&amp;#34; &amp;#34;browser link&amp;#34; entry (file &amp;#34;~/gtd/inbox/inbox.org&amp;#34;) &amp;#34;* %? [[%:link][%:description]] \nCaptured On: %U&amp;#34;) ポイントはorg-captureのトリガキーをpとLにすること.これはorg-capture-extensionなのでこれを守らないと動かない.もしくは自分でブックマークレットを作成する.
+learn more
+Org-Protocol XDG MIME Applications - ArchWiki https://github.</description></item><item><title>📝Org-roam</title><link>https://keido.site/notes/20211204183600/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211204183600/</guid><description>EmacsでZettelkasten Methodを実現するためのOrg-mode実装.
+Org-roam まとめ Org-roamを解説した有料記事 An Orgmode Note Workflow - Rohit Goswami
+Org-roam-bibtexやOrg-noterと連携した文献管理方法を解説.
+How I note
+Org-roamでZettelkastenを実現するための方法を解説.
+ref: How I note
+Org-roamから生成したサイトまとめ a.k.a. Digital Garden.
+https://commonplace.doubleloop.net/ How I publish my org-roam wiki with org-publish - doubleloop https://braindump.jethro.dev/ https://braindump.badykov.com/about/ My Braindump - Kraken of Thought https://github.com/ayrat555/braindump https://www.alexeyshmalko.com/ https://notes.alexkehayias.com/ https://hugocisneros.com/notes/ My Org-roam Notes Workflow - Hugo Cisneros https://seds.</description></item><item><title>📝Overtone</title><link>https://keido.site/notes/20220313164122/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220313164122/</guid><description>Clojure製Sound Programming Library.
+🏷Clojure
+むかしすこし試した. またやりたいと思っている.
+Emacs でテクノを奏でる?! overtone 連携 と Emacs Live と を試す | Futurismo Clojure で楽器を演奏しよう! Overtone をインストールしてみた | Futurismo References illiichi 俺のlisp - YouTube</description></item><item><title>📝ox-hugo</title><link>https://keido.site/notes/20211231044406/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211231044406/</guid><description>Org-modeからHugoに適したMarkdownとfrontmatterを出力するためのEmacs Package.
+ref: 🗒Keido Tips
+ox-hugo Tips howot: exportをスキップする方法 ref: https://ox-hugo.scripter.co/doc/tags-and-categories/#marking-files-to-not-be-exported
+file baseでは，#+hugo_tags に noexport subtree baseでは，#+filetags に noexport org-export-exclude-tagsに除外対象のタグを設定する.
+howto: ox-hugoで画像を記事に埋め込むには? ox-hugoは/staticをrootにして画像を探すので，パスは/staticからの相対パスで書く.
+ox-hugoはOrg fileに添付された画像をExportするときに自動でMarkdownファイルと同じディレクトリに配置してくれる.これは管理上とても楽である.
+参考: Images in Content — ox-hugo - Org to Hugo exporter</description></item><item><title>📝Programming Base Concepts</title><link>https://keido.site/notes/20220305075933/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220305075933/</guid><description>up: 📂プログラミング
+Program: プログラム プログラム (コンピュータ) - Wikipedia
+パラダイムによって, 定義がことなる.
+命令型パラダイム &amp;hellip; コンピュータが行うべき命令の列 オブジェクト指向型パラダイム &amp;hellip; オブジェクトとメッセージング 関数型パラダイム &amp;hellip; 関数そのもの. SICP より プロセスは計算機のなかに潜む抽象的な存在. プロセスはもう一つの抽象的な存在, データを操作する. プロセスの進行は, 規則のパターン, プログラムにしたがう.
+プログラムは二つの要素をもつ.
+手続き: データの処理方法 (能動的) データ: 処理したいもの (受動的) Expression: 式 計算機の解釈系に渡される前の表現. 解釈系に評価されると, 式はプロセスになる.
+ref: 式 (プログラミング) - Wikipedia
+言語によって定められた優先順位や結びつきの規定に則って評価される値, 変数, 演算子, 関数の組み合わせ.
+Process: プロセス プロセスは計算機のなかに潜む抽象的な存在. プロセスはもう一つの抽象的な存在, データを操作する. プロセスの進行は, 規則のパターン, プログラムにしたがう.</description></item><item><title>📝Relational Database技術</title><link>https://keido.site/notes/20220310170617/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310170617/</guid><description>📂Software Development Domains
+O/R mapper(ORM) Object-Relational Mappter, ORM.
+オブジェクト指向言語においてオブジェクトとデータベースの間の関係を定義するだけで, データベースアクセスが行える仕組み.
+refs:
+O/Rマッピング（O/Rマッパー）とは - IT用語辞典 e-Words 🏷OOP</description></item><item><title>📝Sphinx</title><link>https://keido.site/notes/20211227052646/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211227052646/</guid><description>Python製のドキュメント作成エンジン及びサイト.
+Sphinx Tips howto: SphinxのThemeを変更するには? read: テーマの変更 — Python製ドキュメンテーションビルダー、Sphinxの日本ユーザ会
+tip: MarkdownでSphinxドキュメントを書く方法 MyST-Parserという拡張を利用する.
+note: recommonmarkを使う方法は情報が古い(2021)
+links
+Markdown — Sphinx documentation - 公式 Get started with MyST in Sphinx - MyST公式によるSphinx導入方法 tip: Emacs Org-modeでSphinxドキュメントを書く方法 howto: Emacs Org-modeからreSTファイルを生成するには? ox-rstをつかう(https://github.com/msnoigrs/ox-rst).
+org-exportの項目としてreSTへの出力を組み込むことができる.または，M-x org-rst-export-to-rst コマンドでOrg fileをreST file変換して出力することが可能.
+ox-rstで出力されるフォーマットを細かく設定するには，org-modeのexport設定をする必要がある(https://orgmode.org/manual/Export-Settings.html).
+たとえば，
+author:nilで, authorのexportを抑止. num:nilで, headlineのナンバリングを抑止. #+OPTIONS: author:nil num:nil howto: ox-rstをCLIから実行するには?</description></item><item><title>📝Startup Online Courses</title><link>https://keido.site/notes/20220301074527/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220301074527/</guid><description>Startupがオンラインで学べるコンテンツまとめ.
+up: 📂Startup
+:pencil:Y Combinator 米国最強アクセラレーター. YC Startup Library | Y Combinator Y Combinator - YouTube Channel Found Xで日本語の翻訳情報が見れるのはよい. Disciplined Entrepreneurship - Bill Aulet, MIT edX: Entrepreneurship 101: Who is your customer? | edX Entrepreneurship 102: What can you do for your customer? | edX Entrepreneurship 103: Show Me The Money | edX MIT Bootcamps - YouTube Startupは学習可能との理念(なはず)なので当然教材開発にも熱心(なはず). The SXtarup Owners Manual - Steve Blank How to Build a Startup | Udacity Free Courses Design Sprint - Google Product Design | Udacity Free Courses Design Sprint Foundations | Udacity 最近nanodegree化されたのかな?</description></item><item><title>📝Stuart Sierra</title><link>https://keido.site/notes/20220320182327/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220320182327/</guid><description>GitHub Clojureの状態管理ライブラリ, Component の作者. Reloaded Workflow を言い出した. 🏷Clojurians</description></item><item><title>📝Tech系のアダルトサイト制作事例まとめ</title><link>https://keido.site/notes/20220119143140/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220119143140/</guid><description>refs: 🏷個人開発 📝DMM Development
+なんか昔まとめた記憶もある.
+というより10年以上このテーマを追求している気が. 定期更新.
+驚異のFANZA女優検索(2021) AzureFaceAPI 【個人開発】DMM.comの女優APIを使って約5万人の女優を検索できる驚異のサービスを作った - Qiita 👓メガネをかけたFANZA女優をピックアップした - Qiita 似た顔のFANZA女優を顔写真から検索出来るようにした - Qiita Calendar for 驚異のFANZA女優検索（ひとり） | Advent Calendar 2021 - Qiita https://fanza-actress-bust-search.azurewebsites.net/ https://github.com/fabsabsfabsabs/FanzaActressBustSearch
+💡なるほど，女優のTwitterアカウントはWikipediaからのスクレイピングか.
+TwitterとInstagramをやっているFANZA女優を一覧で表示するページを作った - Qiita
+AIで画像から似ている○○女優を解析するシステム(2020) AIで画像から似ている○○女優を解析するシステムを作ってみた - Qiita
+サイトは終了
+Face API AV半額オブザーバー(2020) 〇〇のセールを見逃さないサービス作りました。【AV半額オブザーバー】 - Qiita
+Vue.js Node.js AVの作品名から特徴量抽出(2020) AV女優の特徴ってなんだろう？作品名から推測してみた！(^_^)/~~ - Qiita
+WordCloud AV女優判定(2020) Google Cloud AutoML Vision で、10人の女優を識別する - Qiita</description></item><item><title>📝Twitter API</title><link>https://keido.site/notes/20220124080358/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220124080358/</guid><description>🏷Twitter
+Twitter APIまとめ.
+Twitter API Visual Documentation v2 v1.1 💡その他考察 💡 statusという用語について もしかしたらv2からはstatusという用語そのものが撤廃しようという動きがあるかも.
+一部の互換性のためところどころstatusという単語は属性に現れるものの, 全体的にほぼない.
+たしかにstatusというのは直感的にはそれがツイートと同一とはわからない. 逆に言えば, Twitter Developerでしかツイートをstatusとは言わないのでは？
+しかし元を考えれば, 当初は今の状態をつぶやくだけのサービスだったので, その用語は適切だったのかもしれない. これはTwitterの思想の論争につながる.
+ref: いまなにしている? vs いまどうしている?</description></item><item><title>📝Twitter Development with Clojure</title><link>https://keido.site/notes/20220307193727/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220307193727/</guid><description>refs: 🏷Clojure 🏷Twitter 📝Clojure Web Development 📂Twitter Development
+Twitter API Client twttr: Clojure Twitter Client https://github.com/chbrown/twttr twitter-api: Clojure Twitter Client https://github.com/adamwynne/twitter-api 2022からTwitter API v2が正式になったので過渡期ではある. これはClojureに限ったことではない. 自分でv2対応してもいいし, Javaの資産を活用してもいい.
+Clojure Twitter Bot Examples GitHub repos 検索結果: https://github.com/search?l=Clojure&amp;q=Twitter&amp;type=Repositories
+https://github.com/akivascript/xyzzwhy ファイル構成は参考になりそう. https://github.com/mwunsch/sonic-sketches 未完のbotだけどaws s3に音声ファイルを送信したり apiで天気取得したり. https://github.com/chr15m/c64core cljsで作成されている. nbbというbabashkaのcljs versionを利用している. https://github.</description></item><item><title>📝Twitter Histories</title><link>https://keido.site/notes/20220308065008/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220308065008/</guid><description>refs: 🏷Twitter 📝Jack Dorsey 📝Elon Musk
+2022/04/06 イーロン・マスクがTwitter社の筆頭株主 &amp;amp; 取締役へ なんとあのイーロン・マスクがTwitter社の取締役へ&amp;hellip;
+https://twitter.com/paraga/status/1511320953598357505 ツイッター イーロン・マスク氏が取締役に就任と発表 | NHK | IT・ネット ツイッター 投稿内容変更できる機能 数か月以内に試験導入へ | NHK | IT・ネット -&amp;gt; 辞退した
+イーロン、Twitterの取締役就任を当日朝になって辞退 | ギズモード・ジャパン
+いまなにしている? vs いまどうしている? 2009/11, Twitterの問いかけが「いまなにしてる？」から「いまどうしてる？」に変わる. 英語表現だと, &amp;ldquo;What are you doing&amp;rdquo; to &amp;ldquo;What&amp;rsquo;s Happing&amp;rdquo;.
+これは, Twitterの設計思想上の大きな変化.
+今なにをしている？は, 話題の中心は自分であり, 今をつぶやく. 今どうしている？は, 他者への情報発信であり, 将来をつぶやく.
+ジャックドーシーは前者, エヴァン・ウィリアムズが後者. そしてエヴァンの支持する価値観が勝ち, ドーシーはTwitter社を去る.
+SNSとそれを支える広告ビジネスにおいては後者の思想のほうが圧倒的に儲かるだろう.
+refs:
+Twitterの歴史と思想、4人の創業者たちのドラマ～Twitterはどこから来て、どこへ向かうのか～ Twitter、「いまなにしてる？」から「いまどうしてる？」へ | TechCrunch Japan</description></item><item><title>📝Twitter Private API</title><link>https://keido.site/notes/20220124053244/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220124053244/</guid><description>🏷Twitter
+Twitterの非公式API情報まとめ.
+Twitter Private API解析 GET UserSessionList https://twitter.com/settings/sessions セッションリスト取得 GET account/multi/list.json https://twitter.com/i/api/1.1/account/multi/list.json ログイン中のアカウントを取得 おそらくauth_multiで判定. response cookieにてauth_multiを確認. References Articles TwitterScraperの代わりになるような情報収集モジュール作成しまし(Python3)｜神瀬来未｜note TwitterのフロントエンドAPIの使い方(Python3)｜神瀬来未｜note twitter.com/i/という形式のAPIはheader情報(authorization, x-guest-token)を設定すると利用できる. 【Twitterスクレイピング】twintの代わりにstweetをインストール | ジコログ TwitterAPIめっちゃ調べてみた - Qiita TwitterをCookieで操作する - Qiita https://www.libertyspecialtymarkets.com/static/2020-07/Liberty-specialy-markets-cookies.pdf 実行したいAPIの特定はChrome Developer ToolsのNetworkタブから Copy -&amp;gt; Copy as cURL(bash)を選択してそれっぽいものをコピー. https://curlconverter.com/ で別の言語に変換して実行. Logic using cURL, PHP and Twitter without using API - Stack Overflow Cookieを使ってTwitterになりすまし投稿してみよう | すずきライフ How to Hack APIs in 2021 by Hakluke and Farah Hawa | Detectify Labs SPAアーキの時代はPrivate API-based AutomationはWebdriver-basedによりも有利な時代になったという話.</description></item><item><title>📝Twitter Scraping</title><link>https://keido.site/notes/20220124080448/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220124080448/</guid><description>🏷Twitter
+Twitter Scrapingまとめ
+Playwright は2022の銀の弾丸 セキュリティの会社ですらplaywrightを利用したbotの判定が今や難しい.
+https://datadome.co/bot-detection/will-playwright-replace-puppeteer-for-bad-bot-play-acting/
+Example of Twitter Automation.
+https://www.martinmcgee.dev/starting-microsoft-playwright/</description></item><item><title>📝Twitter Technologies</title><link>https://keido.site/notes/20220205072101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220205072101/</guid><description>🏷Twitter
+Twitterの技術まとめ.
+どうもReactがWebフロントエンドな気がするのは気のせいか？
+Twitter Retweet ID ref: TwitterでリツイートIDを調べる方法｜Guest｜note
+Twitter snowflake TwitterのIDはsnowflakeというOSSを利用しているらしい(ref)
+https://github.com/twitter-archive/snowflake
+タイムスタンプ、マシンID, 同一マシン内でのシーケンスIDを元に64ビットの一意なIDを生成 IDから時系列比較可能. IDから時間の復元が可能. 69年でオーバーフロー. ref: Twitterのsnowflakeについて</description></item><item><title>📝Twitter ルール</title><link>https://keido.site/notes/20220410054748/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220410054748/</guid><description>tags: 🏷Twitter
+主に以下の話題を扱う.
+通知規制 シャドウバン アカウントロック アカウント凍結 Twitterの扱う個人情報について Twitterの扱う個人情報についてまとめる.
+ref. 個人情報の推測に基づくカスタマイズについて
+これらの情報がさまざまな規制や凍結に利用されている.
+セッション情報 ブラウザの 設定 &amp;gt; セキュリティとアカウントアクセス &amp;gt; アプリとセッション &amp;gt;セッションから確認できる.
+https://twitter.com/settings/sessions
+このページでブラウザリフレッシュをすると, UserSessionList というget requestが発行され, 現在のセッションが取得できる.
+端末名 ブラウザ名 ログインの場所 最終ログイン時間 が表示されているということはその情報を保持していることをtokenと紐付けて管理していることを示す. cookieの認証情報の期限がログインから5年後を示しているとすると, ログアウトしない限り5年は保持されている可能性あり.
+新規IPからログインをするとログイン通知がされる.
+新規ログインDevice: ChromeにLinuxから Location*: 神奈 横浜市 中区, 日本 When: 2022年4月10日日曜日 at 午後2:18 GMT-7 (3 分前)*場所はログイン時のIPアドレスに基づいて推定されています。
+セッションとIPを紐付けて管理していてknown_hostsなIPに対して通知を出している可能性がある. ただしブラウザから通信を解析した結果IPがresponseとして帰ってきてはいない(session IDやtokenなどはある)ため, これはサーバ側でしか管理していない情報. ということは, クライアントからログインしたときに情報を意図的に保存しておかないとわからなくなってしまう.
+もしくはAndroid/iPhoneのアプリからのログインなら アカウントアクセス履歴 から閲覧可能(Twittr for Android/Twitter for iPhone).</description></item><item><title>📝Twitterシャドウバン</title><link>https://keido.site/notes/20220415080505/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220415080505/</guid><description>tags: 🏷Twitter
+Twitterのシャドウバンについてのまとめ.
+Twitterシャドウバンとは Twitterシャドウバンは俗語でありTwitter公式ではその用語はない.
+さらにはチェックサイトが2018年くらいにできてそれで用語が定着していったがTwitterの仕様は常に変わっているため現状の規制と乖離しはじめている.
+たとえばSearchBanやGhost BanはEntities(Text/URL/Media)ごとに規制されるようになった. そしてSearch BanがかかることとGhost Banがかかることは同じなので両者を分ける必要もないかもしれない. Reply Deboostingについてはかつては攻撃的な内容を含むだったが, 2022現在はヌード, 暴力, センシティブの３つに細分化されている.
+また2020年ごろから，アカウントをロックや凍結をするのではなくツイートを隠したり通知規制をするようになった気がする. それはコロナ流行やアメリカ大統領選挙にあわせて都市伝説やデマを拡散するTwitter Botが大量生産されたための対策のように思われる. つまり本人は今までどおり情報発信をしていてもタイムラインに流れなかったりリプライが届かなかった通知欄に表示されなかったり. その変化によって最近(2022現在)より一層このあたりのアルゴリズムが変化している.
+shadowban.euによるシャドウバンの分類 本家サイトはすでに閉鎖済み. 4つに規制を分類している.
+Search Suggestion Ban This type of ban causes an account to not populate search suggestions and people search results when it is searched for while being logged out. Twitter seems to take tie strength or a similar metric into account.</description></item><item><title>📝Twitter検索オプション</title><link>https://keido.site/notes/20220415120253/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220415120253/</guid><description>tags: 🏷Twitter
+逆引きTwitterオプション 引用動画ツイートを特定するには？ screen-nameのアカウントのツイートを引用したツイートを特定するには, 非公開アカウントにて,
+&amp;#39;twitter.com/{screen_name}/status&amp;#39; -from:@{screen_name}&amp;#39; &amp;#39;url:{screen-name} -from:@{screen-name}&amp;#39; アフィリエイトIDが同じアカウントを特定するには？ 同一人物による複数アカウント特定方法は、`{keyword} url:{affiliate-id}`
+アフィリエイトをしている場合自演RTをしているケースが多いので whotwi で関連ユーザを調べるのもよい.
+同一人物のAPI投稿を特定するには？ source:{xxx} をつかう.</description></item><item><title>📝Web Development Basic</title><link>https://keido.site/notes/20220220095102/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220220095102/</guid><description>汎用的なWeb開発技術まとめ.
+言語間に共通する技術の集積を目指す.
+各言語ごと各論はタグでまとめる. 🏷Web Development
+Web: World Wide Web World Wide Web. インターネット上で提供されるハイパーテキストシステム.
+World Wide Web - Wikipedia Web の歴史 Web1.0 ・・・クライアントは静的ページを Web サーバから取得する. ウェブページ. ウェブを読む. Web2.0 ・・・クライアント/ サーバ側で動的にページを作成する. ウェブサービス. ウェブを使う. Web3.0 ・・・クライアントごとがつながりあう. データの上のメタデータをあつかう. クラウドコンピューティング ・・・あらゆるデバイスがネットにつながる. セマンティックウェブ ・・・ビックデータの統計解析から価値を生み出す. ref: 迫り来る Web3.0 時代を生き抜くエンジニアが持たなければいけない 3 つの視点 | DMTC Magazine
+HTTP Protocols HTTP は, Hypertext Transfer Protocol の略.
+Hypertext Transfer Protocol - Wikipedia Web ブラウザと Web サーバの間で, HTML などのコンテンツの送受信に用いられる通信プロトコル.</description></item><item><title>📝Y Combinator</title><link>https://keido.site/notes/20220301075027/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220301075027/</guid><description>Paul Grahamなどが立ち上げた最強 Startup Accelerator.
+tags: 🏷Paul Graham
+日本では馬田さんが中心になってY Combinatorの情報発信をしているのはありがたい.
+https://resource.foundx.jp/beginner/
+refs My Visit with THE LORD OF THE STARTUPS: Y Combinator&amp;rsquo;s Paul Graham - YouTube Paul GrahamさんによるY Combinatorの紹介.</description></item><item><title>📝Youtube</title><link>https://keido.site/notes/20220107141801/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220107141801/</guid><description>動画サービス.
+Youtube Tips YoutubeのプレイリストのRSSを取得するには? プレイリストのページを開いてplaylist_idを取得して以下のURLで設定.
+https://www.youtube.com/feeds/videos.xml?playlist%5Fid=%7Bplaylist%5Fid}</description></item><item><title>📝Zettelkasten Method</title><link>https://keido.site/notes/20211206071458/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211206071458/</guid><description>Zettelkasten Methodとは Niklas Luhmannの考案した, 思考をするための方法論，フレームワーク.
+Zettelkastenという単語はZettelkastenのフレームワークを指す場合とZettlekastenで管理するPermanent Noteを入れる箱(Slipbox)を指す場合の2つがある.これらは書き手や文脈で統一されてないので情報を得るときは注意が必要.
+ZK method, Zettelと省略されることもある.
+Zettelkasten Methodまとめ Zettelkasten Methodでは以下の4種類のノートの概念がある.
+Fleeting Notes Literature Notes Parmanent Notes Reference Notes 📝Fleeting Notes 思いついた思考を書き留めたもの.何でもOK, 思いついたら何でも書く.
+道具は紙でも電子でもなんでもよいが，トピックごとだとあとで整理しやすい.
+メインのシステムにNoteを移動したら捨てる,もしくは移動せずにそのまま捨てる.
+Daily Notesについて Zettelkasten Methodの文脈での時系列のFleeting NotesとしてDaily Notes(DNP)という単語がある.
+とはいえ，Niklus LuhmanやZonke Ahrensの著作ではこの概念は登場しない.
+Roam ResearchやObsidianなどのZettelkastenのソフトウェア実装の文脈でよく登場する.
+📝Literature Notes 日本語訳では，文献メモとも言われる.Lit Notes, lit notesと略されることもある.
+インプットするたび書く.読んだ本，みたYoutube動画，受けた講座などなど.
+覚えておきたいこと. 自分の思考. アウトプットに使いたいもの. 自分の言葉でリライトしながら書く. 著者の思想を自分の思想に翻訳する意味が有る.自分が理解していないものに対しては自分で書くことができない.</description></item><item><title>📝Zotero</title><link>https://keido.site/notes/20211229203145/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211229203145/</guid><description>Zotero(ゾテロ)とは，論文管理を目的にしたオープンソースの文献管理ソフトウェア.
+https://www.zotero.org/
+Zoteroまとめ Zoteroは勉強したインプットのメタ情報の取得とアーカイブが可能 論文管理が目的とはいえ，論文でなくてもいろいろ管理することが可能.1
+Web記事 Amazon(書誌情報) Youtube PDF etc&amp;hellip; たとえば，AmazonやYoutubeをZoteroに送信するとメタ情報がZotero画面に表示される. PDFで購入した電子書籍に対してAmazonのページからメタ情報を取得してPDFをその情報に添付することでPDFとメタ情報を管理できる.
+さらに，Web記事はスクリーンショットという機能でhtmlとしてローカルに保存することも可能.
+Zoteroは個人用のローカルはてなブックマーク，メモも管理できる annotationという形でその文献に対するメモを管理することが可能. いわば，はてなブックマークを詳細情報を含めてローカルで個人管理するようなもの.
+参考文献 quick start guide : Zotero公式のクイックスタートガイド(ja) 【令和最新版】文献管理ソフト Zoteroのすゝめ｜SD｜note : 日本語の良記事 注釈 わたしの目的は文献一般を管理すること.論文はなかなか縁がない.&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description></item><item><title>📝Z世代</title><link>https://keido.site/notes/20211217134744/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211217134744/</guid><description>1996-2012に生まれた世代.
+Generatin Z, GenZともいう.</description></item><item><title>📝イベント駆動型プログラミング</title><link>https://keido.site/notes/20220310100122/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310100122/</guid><description>refs:
+📝組み込みシステムパターン 📝フロー駆動型プログラミング up: 📁Programming Paradigms
+イベント駆動型プログラミング(Event-Driven Programming)とは イベント駆動型パラダイムの重要概念 イベント イベントループ イベントハンドラ 他のパラダイムとの関係 対概念は フロー駆動型プログラミング.
+他のドメインとの関係 アプリ開発との関係 T.B.D.
+組込み開発との関係 フロー駆動がフローチャートを重視するならばイベント駆動は状態遷移図を重視する. 状態とはイベントループそのもの.
+🏷組込み開発
+References イベント駆動型プログラミング - Wikipedia イベント駆動型プログラミング | IT用語辞典 | 大塚商会</description></item><item><title>📝オブジェクト指向プログラミング</title><link>https://keido.site/notes/20220117174424/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220117174424/</guid><description>up: 📂プログラミングパラダイム
+refs:
+📝ポリモーフィズム 💻【超絶IQ列伝】苫米地メソッド EX 「抽象度とは何か？」苫米地英人 オブジェクト指向プログラミング - Wikipedia オブジェクト指向プログラミングとは オブジェクト指向パラダイムにおけるプログラミング.
+以下の要素をそなえもつ.
+データ抽象(Data Abstruction) Inheritance Polymorphism 現在オブジェクト指向言語と呼ばれているものは,実際には,
+Abstruct Data Type (Java Integer 型) オブジェクト (Java Object 型) の 2 つを合わせもっている.
+その意味で, オブジェクト指向言語と言うよりは抽象データ言語というほうが正しい.
+データ抽象(Data Abstruction) データ抽象, Data Abstruction. Expression Problem における解決策.
+3 つの構成要素がある.
+Input Output Interface データ抽象は内部と外部からなるプログラムかつ, 両者がインターフェースを通じてやりとりするもの.
+&amp;gt; A data abstraction is a part of a program that has an inside, an outside, and an interface in between The inside is hidden from the outside.</description></item><item><title>📝コーディング規約概論</title><link>https://keido.site/notes/20220401042325/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220401042325/</guid><description>コーディング規約やスタイルについての一般論をまとめる.
+命名規約については別ページに移動 =&amp;gt; 📝命名規約概論.
+各論 📝Clojure コーディング規約と慣習まとめ 🎓１行の長さ80文字問題と個人的な見解 どうも一般論がよくわからないので推測も兼ねてまとめる.
+まずコードとテキストという２つの分類ができる.
+コードに関してはコーティング規約があったほうが統一感があってよい. かつてLinuxは80文字だった. これは当時のディスプレイサイズを考慮したもので2020には適切でないとして100charに緩和された.
+テキストメールもLinuxにならい80文字, またはさらに少なめの76文字にする慣習が生まれた. これはみやすさのため.
+ゲームチェンジャーはWebのCSSによって自動折り返しが登場こと. Webだとレスポンシブに自動で調整することができる. そのため手動で改行しなくてもよくなった.
+これからのテキストの折り返しは基本的にエディタなりブラウザなりが自動で折り返しをしてくれることを期待して書くのがよい. もちろんみやすさのための折り返しなのでより見やすいように手動で調整するのはよい
+またコードに関しては規約は必要なため, 80なり100なりのなんらかのルールが必要. 個人的なルールに留めるなら自分がつかっているディスプレイサイズに最適なものがいい.
+refs. メールの１行が78文字の理由【日記 2019/10/23】 Linuxカーネルコード、1行の文字制限を80字から100字まで緩和 | TECH+</description></item><item><title>📝コンパイラ</title><link>https://keido.site/notes/20220214050955/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220214050955/</guid><description>コンパイラ, またはコンパイリング技術まとめ.
+コンパイル方式 AOT compilation 事前コンパイル, AOTはAhead-of-timeの略.
+アプリケーション実行前に事前にコンパイルすること.
+JVM系言語のバイトコンパイルの文脈でよく登場する. C言語やC++では事前コンパイルが当たり前のため, 単にコンパイルと言われる.
+対義語はJITコンパイル.
+refs:
+Ahead-of-time compilation - Wikipedia 事前コンパイラ - Wikipedia JIT compilation 実行時コンパイル, JITはJust-In-Timeの略.
+ソフトウェアの実行時にコードのコンパイルを行うことで実行速度の向上を図る.
+インタプリタのJITコンパイルによって高速化！という文脈で登場することが多い. またはJITによってJavaでもJShellのようなREPLを実現する.
+対義語はAOT.
+refs:
+実行時コンパイラ - Wikipedia Active Recalls AOTコンパイルとJITコンパイルの違いはなんですか？ AOTは事前に機械語にコンパイルする, JITは実行時に機械語にコンパイルする.</description></item><item><title>📝コンフォートゾーン</title><link>https://keido.site/notes/20220327060248/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220327060248/</guid><description>ref: 💡ダンテの神曲との関係
+🏷心理学</description></item><item><title>📝システム制御パターン</title><link>https://keido.site/notes/20220309190147/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220309190147/</guid><description>信頼性に関わる設計パターンまとめ.
+わたしがかつてF通ストレージシステムのシステム制御チームとして命を賭けた(= 爆死)領域.
+up: 📂ソフトウェア設計
+Fault tolerant フォールトトレラント.
+フォールトトレラントシステム - Wikipedia 構成部品の一部が故障しても正常に処理を続行すること.
+Fault tolerant の条件 Wikipedia より.
+1 単一障害点がないこと (障害に対して全体の障害とならないよう対策が施されていること)) 2 単一故障点がないこと (ハードウェア故障についても同様) 3 障害部品の隔離ができること (部分縮退) 4 障害の伝播を防ぐこと 5 代替モードがあること
+dependable system 高信頼システム. 以下の要求を満たす.
+可用性 &amp;hellip; システムがすぐに使えるようになるという性質. 信頼性 &amp;hellip; システムが障害をおこすことなく実行しつづける性質. 安全性 &amp;hellip; システムが一時的に正常にどうさしない状況でも, 重大な問題が生じないこと 保守性 &amp;hellip; システムが容易に回復できること. システムの状態について
+故障 (fail): システムが予定した行動をとれなくなった場合 エラー (error): 障害を引き起こすかもしれない状態. エラーの要因を障害 (fault) という.</description></item><item><title>📝ソフトウェアアーキテクチャ概論(Software Architecture Basic)</title><link>https://keido.site/notes/20220323121452/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220323121452/</guid><description>ソフトウェアアーキテクチャ概論.
+up: 📂ソフトウェア設計
+ソフトウェアアーキテクチャ用語まとめ ソフトウェアアーキテクチャに関わる用語の整理.
+文脈や人によって説明が異なるところがやっかい. しかしだからこそ共通点を抽象することでまとめることに価値はある.
+Interface 外部との境界.
+Boundary Clojure Duct Framework: Boundaries の文脈での説明.
+&amp;gt; Boundaries are protocols that provide an interface to an external service.
+Clojure Protocol とはポリモーフィズムにおける操作抽象であるので, その意味するところはinterfaceのグルーピング &amp;amp; 抽象化.
+よくDatabaseの例が挙げられる. これはシステムが10年の寿命対してだいたい5年もたてば新しい技術へのreplace開発が必要になるので事前にadaptiveに開発しておこうというベストプラクティスだが, 個人開発には必要ないかもしれない.
+Adapter Controller Presenterの対概念.
+Presenter Coltrollerの対概念.
+Gateway</description></item><item><title>📝ソフトウェア開発環境(IDE)</title><link>https://keido.site/notes/20220316182358/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220316182358/</guid><description>up: 📂ソフトウェア開発
+🏷Linter 🏷Formatter</description></item><item><title>📝データ指向プログラミング</title><link>https://keido.site/notes/20220310095153/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310095153/</guid><description>データ指向プログラミング(Data-Oriented Programming)まとめ
+up: 📁Programming Paradigms データ指向プログラミングとは データ指向プログラミング(Data-Oriented Programming, DOP).
+データ駆動型プログラミング(Data-Driven Programming)とも呼ばれる.
+データ駆動設計(Data-DrivenArchitecture)と混同しがち. これはドメイン駆動設計の業界用語.
+Data-Oriented Programmingの方がClojure界隈で使われているようだ.
+またデータ指向設計(Data-Oriented Design)という用語がゲーム業界やC++界隈で使われているように見える(たぶん違う概念).
+データ指向プログラミングのコンセプト 📚Data-Oriented Programming by Yehonathan Sharvit より.
+Separate code from data. Model entities with generic data structures Data is immutable Data is Comparable by value Data has a literal representation Thinking in Data の動画もよい.
+ClojureはDefaultでData-Oriented Programmingできるので, どちらかというとClojureのDataに対する設計思想みたいなものが感じられた.
+data as code example コードをデータとして扱う.</description></item><item><title>📝デザインパターン</title><link>https://keido.site/notes/20220309184220/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220309184220/</guid><description>GoF デザインパターン.
+デザインパターン (ソフトウェア) - Wikipedia
+パターンとは 建築環境に繰り返し現れる課題を解決に導く具体的な方策を記述したもの.
+アレクサンダーのパターン形式 パターン名 写真 上位パターンへのつながり 本文 下位パターンへのつながり パターンランゲージ 建築において繰り返し現れる構造を再利用しやすい形式でまとめたもの. あるいは, パターンを集めて一つの体系としてまとぬあげたもの.
+建築家クリストファーアレクサンダーが考えた建築手法.
+マイスターになるためには, 型をにつけ, 型を破る! パターン, Wiki, XP,を読んだ読書メモ | Futurismo 時を超える建築の道 パターンランゲージを記した建築理論. 本の題名.
+角谷信太郎さんのおもしろいはなしの youtube 動画も見つけた.
+https://www.youtube.com/watch?v=SctvxjoKDGA 無名の質 生き生きとした建築や街が備えている特性. 古い街並みに潜む住みやすさや美しさ.
+生成に関するデザインパターン Factory の原則 生成と実装を分離することで, プログラムはシンプルになる.
+生成パラメータの指定方法をシンプルに 生成後の管理をシンプルに 生成するオブジェクトの指定方法をシンプルに 特定のケースで特定のオブジェクトを生成するのは手続き思考的.</description></item><item><title>📝パレオさんの食事についての情報まとめ</title><link>https://keido.site/notes/20220120032054/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220120032054/</guid><description> 「1日2食」と「8時間睡眠」でハイパフォーマー｜最高の体調-パレオな男に聞いてみた ここで掲載されている写真に感銘をうけた. 真似したい.</description></item><item><title>📝フロー駆動型プログラミング</title><link>https://keido.site/notes/20220310102005/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310102005/</guid><description>refs: 📁プログラミングパラダイム 📝イベント駆動型プログラミング
+フローチャート</description></item><item><title>📝プログラミング: データ構造</title><link>https://keido.site/notes/20220310124045/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310124045/</guid><description>データ構造とは データの集まりをコンピュータの中で効果的に扱うため, 一定の形式に系統立てて格納するときの形式.
+データ構造 - Wikipedia Container: コンテナ コンテナとはオブジェクトの集まりを表現するデータ構造. コレクションともいう.
+コンテナ (データ型) - Wikipedia 配列 スタック キュー 連想配列データと別のデータやデータ構造を一対一に関連付けて格納する ハッシュテーブル ルックアップテーブル 線形リストデータが次の (あるいは前の) データへの参照を持つ. グラフデータが任意の他のデータへの参照を持つ. 木構造一つの頂点から樹状に枝分かれしたグラフ. 各データ構造の詳細 Record データと別のデータやデータ構造を一対一に関連付けて格納するもの.
+もっとも基本的なデータ型.
+Atom Tuple List List Tuple,Struct 異なるデータ型であっても格納できる.</description></item><item><title>📝プログラミング: 型システム</title><link>https://keido.site/notes/20220310123730/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310123730/</guid><description>refs: 📝データ構造 📝ポリモーフィズム 📂プログラミング言語処理系
+Type: 型 型, データ型, Type.
+データ型 - Wikipedia 互いに関係する値の集合. (OOP においては) 値の集合と値に対する操作の集合を一緒にしたもの.
+Type System: 型システム プログラミング言語において, その式などの部分が持つ値を, その種類 (型 (type)) に沿って分類し, プログラムが正しく振る舞うこと, といった性質について保証する手法である.
+型システムは, 型理論に基づいており, プログラミング言語の理論において最も確立された軽量形式手法である.
+型システム - Wikipedia 型の分類 型があるかないかよる分類
+型なし (untyped) 型あり (typed) 動的片付けと静的片付けよる分類
+動的片付け .. 実行時に型検査 静的片付け .. コンパイル時に型検査 データによる分類
+基本型: 言語でサポートされた型. -&amp;gt; プリミティブ型 - Wikipedia 抽象データ型 (ADT): 自身で定義した型.</description></item><item><title>📝プログラミングエッセイまとめ</title><link>https://keido.site/notes/20220215061448/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220215061448/</guid><description>ネットで読める無料コンテンツまとめ.
+Xが知るべき97のこと プログラマが知るべき97のこと ソフトウェアアーキテクトが知るべき97のこと プロジェクト・マネジャーが知るべき97のこと ゲームクリエイターが知るべき97のこと ゲームクリエイターが知るべき97のこと 2 ポールグレアム(🏷Paul Graham) naoya_t:ポール・グレアムのエッセイと和訳一覧 ポールグレアム（Paul Graham）の日本語訳エッセー｜Jack｜note 普通のやつらの上を行け｜Jack｜note a.k.a. beating the averages Hackers and Painters - ハッカーと画家 エリック・レイモンド The Cathedral and the Bazaar: Japanese - 伽藍とバザール Homesteading the Noosphere: Japanese - ノウアスフィアの開墾 The Magic Cauldron: Japanese - 魔法のおなべ How To Become A Hacker: Japanese - ハッカーになろう GNUプロジェクト30周年と、「自由2.0」PDF版 | オープンソース・ライセンスの談話室 up: 📂プログラミング</description></item><item><title>📝プログラミング意味論</title><link>https://keido.site/notes/20220305093025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220305093025/</guid><description>up: 📁Programming Paradigms
+プログラム意味論 | Semanticsとは プログラム意味論. formal semantics, mathmatical semantics ともいう.
+プログラムの正しさや正確さを理論づけるための方法.
+形式的検証 - Wikipedia
+4 つのアプローチがある.
+操作的意味論 公理的意味論 記述的意味論 論理的意味論 Operational semantics: 操作的意味論 Explains a program in terms of its execution on a rigorously defined abstract machine
+どのパラダイムにおいても適用できる.
+Kernel Language Abstract Machine ref: 操作的意味論 - Wikipedia
+プログラムの正しさを数学的に証明することを目指す.
+Specification: プログラムの入力と出力を定義したものを Program: プログラミング言語によってかかれたデータ Program が Specification を満たしているかを証明する. そのために,</description></item><item><title>📝プログラミング言語用語集</title><link>https://keido.site/notes/20220114074914/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220114074914/</guid><description>いずれ 📝Programming Base Concepts に統合するかもしれない.
+未整理な用語置き場.
+📝immutable WIKI 不変性. 一度値をセット(束縛)したらあとから変更できないということ.
+破壊的変更が起きないともいう. データが変わる心配が不要.
+📝persistent WIKI 永続性. データを変更する際に変更前のバージョンを常に保持するデータ構造の性質.
+永続データ構造と訳される.
+ref: 永続データ構造 - Wikipedia
+note: deep copy vs shallow copy ❓Active Recalls Immutableなデータとはなんですか? 不変なデータ. つまり，値を１度セットしたらあとから変更できないデータ.
+Persistentなデータとはなんですか? 永続的データ. つまり，データを変更する際に変更前のバージョンを常に保持するデータ構造の性質.</description></item><item><title>📝ベートーヴェン</title><link>https://keido.site/notes/20211215145556/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211215145556/</guid><description>クラシック音楽の作曲家.
+🏷クラシック音楽 🏷作曲家
+💡ベートーヴェンは音楽家を職人から芸術家にした これは Paul Grahamの Hackers and Painters のテーマとまさに同じである. (🎓作曲家が楽譜を書くのとハッカーがコードを書くことに違いはない)
+ref: モーツァルトとベートーヴェンの決定的な違い | テンミニッツTV
+&amp;gt; こうした音楽家の位置付けを画期的に変えたのがベートーヴェンでした。ベートーヴェンを境に音楽家は「職人」から「芸術家」へと変容を遂げました。作曲することで依頼人から報酬を得ることはかないませんが、いわばフリーランスとして自分の作りたい音楽を一音、一音にいたるまでこだわり、自分が気に入るまで徹底的に吟味して昇華させていく。こうした芸術家の時代になったのです。
+ref: ルートヴィヒ・ヴァン・ベートーヴェン〈前編〉 | Tokyo Art Navigation
+&amp;gt; 音楽家の地位を、「雇われ職人」から「自律した芸術家」へと高めた
+📚Books 📚ベートーヴェンの手紙 小松雄一郎編訳 岩波文庫 傑作といわれる楽曲はいずれも彼にとって解決しなければならぬ, 緊張度の高い生活上の問題であった. それは彼個人だけの問題ではなく, 当時の社会にとって「偉大とされるものは何か」「信仰とは何か」を市民的な立場で音楽で考えたものであった. そして彼は自分の考えを曲げず, 自我に従って規制の権威にも習俗にも屈せず生活し音楽にした.
+大切なことは, 奏者も聴衆もベートーヴェンの音楽から彼の生活の仕方を摂取し, わが身につけることである.
+彼の音楽は彼の生活から生まれているのだから, 一つ一つの作品は彼の生活が波乱に富んでいるように千変万化しながら一生涯続いている. 彼は次々と新しい課題を発見し, そのために新しく音楽様式, 用語を発展させ, 永遠の挑戦を続けている. ベートーヴェンが提起している問題と, 提起している仕方を全作品との関連でつかまえなければベートーヴェンの音楽にならない.
+1801 年 6 月 29 日 僕は惨めな生活を送っているというべきだろう. 僕は自分がつんぼです, とはとても人には言えない.
+だからこの二年来すべての社交というものをほとんど避けてきた. なにかほかの職業に携わっているのならまだしも, 僕の仕事では, これは恐ろしい事態だ.</description></item><item><title>📝ポリモーフィズム</title><link>https://keido.site/notes/20220310125619/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310125619/</guid><description>up: 📂プログラミング言語処理系
+refs:
+📝プログラミング: Expression Problem 📝データ抽象(Data Abstruction) 📝抽象データ型(ADT) ポリモーフィズム(Polymophism/多相性)とは ポリモーフィズムとは, 各要素 (定数, 変数, 式, オブジェクト, 関数, メソッドなど) についてそれらが複数の型に属することを許すという性質.
+Polymophism, 多相性ともいう.
+同種のクラスをカテゴリに分類してまとめ, 基本的な動作・設計部分を統一することで, オブジェクトインスタンスの扱いに柔軟性と規律を持たせるための機能.
+多相型は いくつか分類できる
+アドホック多相: 関数を適用する型を制限する パラメータ多相: 具体的な型について言及しないことにより, 新しい型に対応できるようにする サブタイプ多相: たとえば Java だと
+アドホック多相: オーバーロード パラメータ多相: ジェネリクス サブタイプ多相: 継承 refs:
+🖊Java におけるポリモーフィズムの整理 | Futurismo ポリモーフィズム - Wikipedia Polymorphism (computer science) - Wikipedia, the free encyclopedia A Gentle Introduction to Haskell: Classes Polymorphic type: 多相型 データ構造のコンテナ.</description></item><item><title>📝モーツァルト</title><link>https://keido.site/notes/20220327055825/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220327055825/</guid><description>tags: 🏷作曲家 🏷クラシック音楽
+魔笛 ドイツ語で書かれたオペラ. 主人公は日本の王子?</description></item><item><title>📝並行プログラミング</title><link>https://keido.site/notes/20220116195030/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116195030/</guid><description>up: 📂プログラミングパラダイム
+Concurrency.
+同一実体(Identity) 時間が経過して値が変化してもそれを指し示すものは変わらない参照.
+Software transactinal memory(STM) いわゆるSTM(表記が長いじゃないか&amp;hellip;).
+ref: 🔗ソフトウェアトランザクショナルメモリ - Wikipedia
+3つの重要な特性がある.
+Atomic 複数のメモリを更新しても外部からはひとつのイベントで観測される. Consistent 更新は一貫している. 更新後のvalidationが失敗すれば全ての更新処理は失敗する. Isolated あるトランザクションから別のトランザクションをみることはできない. References 📝Clojure Concurrency Acitve Recalls ソフトウェアの並行性と並列性の違いはなんですか? ロックとトランザクションの違いはなんですか? 同一実体とはなんですか? 時間が経過して値が変化してもそれを指し示すものは変わらない参照.
+Software Transactional Memoryの３つの性質はなんですか？ 単一性(Atomic), 一貫性(Consistent), 独立性(Isolated).</description></item><item><title>📝初音ミク</title><link>https://keido.site/notes/20220309205315/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220309205315/</guid><description>初音ミクハック また初音ミクハックしたいなあ.
+🖊iRemoconでミクミクにしてやんよ。 | Futurismo</description></item><item><title>📝勉強法</title><link>https://keido.site/notes/20220110081806/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220110081806/</guid><description> 📝集中力が上がる時間管理まとめ 参照 💻Learning How to Learn - Barbara Oakley(coursera) 💻Augmenting Long-term Memory - Michael Nilsen(2018)</description></item><item><title>📝原田喜右衛門</title><link>https://keido.site/notes/20220218134001/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220218134001/</guid><description>ref: 🔗原田喜右衛門 - Wikipedia 📝原田孫七郎 📝菊池氏族原田家
+原田孫七郎の上司. ルソン壺交易、長谷川法眼と原田喜右衛門以外取引を禁じるように秀吉が許可. ref: https://www.rikkyo.ac.jp/research/institute/caas/qo9edr000000ml88-att/b_36.pdf ルソン壺はフィリピンで日常的に使われる壺なので, そのへんに転がっている壺をタダ同然で仕入れて売りまくって稼いだのか？ 千利休や秀吉がルソン壺を気に入って 値段高騰, 一時期は１壺で家１つ変えたとか. ルソン壺ってどんなツボ？ ルソン壺は後に便所にも使われていることが発覚して叩き壊される. おそらく破産の原因はこれ. しかしルソン壺交易などでフィリピン事情に明るかったからこそ孫七郎と一緒に秀吉の命を受けて交渉の役を受けたのか？ マニラでの中国人2000人一斉蜂起を鎮圧した. 豊臣秀吉とルソン総督間の交渉 - メキシコ情報サイト「アミーゴWEB」 原田喜右衛門のマニラでの活躍の真偽最近ネットでこうした逸話を知りま&amp;hellip; - Yahoo!知恵袋 作り話の可能性あり. 学校では教えない豊臣秀吉が朝鮮に出兵した本当の理由｜小名木善行 - YouTube t.5.00 作り話かもしれないが, 戦闘の素人2000人の蜂起など鎧と刀をつけた元は武士の商人たちにとっては結構簡単にやっつけられるのでは? たとえればいなげやとかマルエツで買い物をしているじいさんばあさんと自衛官の戦いだからね. フィリピン人の人身売買がもとで殺害される. NHK大河ドラマ: 黄金の日日 1978年のNHK大河ドラマに登場.
+黄金の日日 - Wikipedia
+その影響か Twitterとかで検索するとだいたい黄金の日々と関係して情報か見つかる.
+時代劇の悪役キャラとして登場. 黄金の日日 唐十郎 - 原田喜右衛門 - YouTube 大河ドラマの歴史になお残す悪役キャラ，トリックスター？ とても演技がうまい.</description></item><item><title>📝原田孫七郎</title><link>https://keido.site/notes/20220218132917/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220218132917/</guid><description>ref: 📝菊池氏族原田家 🔗原田孫七郎 - Wikipedia 📝原田喜右衛門
+原田喜右衛門の部下. (しかし同じ一族とか). 秀吉の銘でスペイン領フィリピンの総督ゴメスに日本の属国になれという(ヤバイな&amp;hellip;) 台湾に同じことをしようとしに旅に出たが台湾の統一国家が見つからずに帰る. 先祖の可能性がある. mixiのコミュニティで教えてもらった.
+整理すると要点は以下の2点.
+『姓氏家系大辞典』に菊池氏の記述. 肥後熊本の出身. 以前に長崎の商人原田孫七郎の話題に触れましたが、この原田孫七郎は下記のドラマに登場するらしい(未確認）。 黄金の日日 (NHK大河ドラマ) http://ja.wikipedia.org/wiki/%E9%BB%84%E9%87%91%E3%81%AE%E6%97%A5%E6%97%A5_%28NHK%E5%A4%A7%E6%B2%B3%E3%83%89%E3%83%A9%E3%83%9E%29 原田孫七郎は原田喜右衛門の手代とあり、 原田喜右衛門は長崎の豪商、助左を海賊と勘違いし、捕縛。誤解が解け、助左とルソンでイスパニア軍との交易を持ちかけるが、助左に断られた事から船を襲い、五右衛門に命を狙われる。人身売買が元で助左の襲撃に遭い、敗死。 なんか恐ろしげ。 原田孫七郎は定番の『姓氏家系大辞典』には菊池氏に記述があり、また、大蔵氏の流れを汲んだ菊池氏などとあるのですが、どうも肥後熊本の出らしいですね。長崎の貿易港開港で長崎にいたようですが。 肥後熊本の（大蔵の流れかどうかわからないけど？？）菊池氏原田というのは、 肥後国球磨郡原田村の菊池氏から原田氏が出ています。 菊池氏族原田氏はある情報では揚羽蝶紋を用いた記載があるとか。 肥後国球磨群に原田邑あり 『菊池系図』に「持朝―為光（号宇土）－経兼（原田七郎、弟実遠」とあるようです。 肥後 宇土古城 室町時代には宇土忠豊の養子に肥後守護菊池持朝の子為光が迎えられている。明応二年（1493）、重朝が死去すると、そのあとは若冠十二歳の能運（武運）が継いだ。能運を若年と侮った重臣隈部氏が、相良氏と結んで謀叛を起したが、能運はこれを征圧した、しかし、家中の動揺は続き、文亀元年（1501）には叔父で宇土氏を継いでいた宇土為光が守護職を狙って叛旗を翻した。 球磨郡球磨村渡に原田城あり。 原田孫七郎は肥後出身と言う話もあるので、この菊池(宇土）為光から出たとする原田氏の流れをくむ原田氏から孫七郎が出ているのかもしれませんね。 そういえば菊地系図の「経兼（原田七郎・・・」は何か通称孫七郎と関係を感じさせる名前ではありませんか。 ま、孫七郎は長崎にいたかもしれないけど、肥後出身の原田氏だということがあるようですね。菊池氏族と言うのも納得。 きつねさんはじめまして 別の原田コミュでは詳しすぎるのでこちらに移しました。 肥後国球磨群に原田邑あり 『菊池系図』に「持朝―為光（号宇土）－経兼（原田七郎、弟実遠」この流れのようですね。 ちなみに、肥後宇土古城は、室町時代には宇土忠豊の養子に肥後守護菊池持朝の子為光が迎えられている。明応二年（1493）、重朝が死去すると、そのあとは若冠十二歳の能運（武運）が継いだ。能運を若年と侮った重臣隈部氏が、相良氏と結んで謀叛を起したが、能運はこれを征圧した、しかし、家中の動揺は続き、文亀元年（1501）には叔父で宇土氏を継いでいた宇土為光が守護職を狙って叛旗を翻した。 ちなみに、菊池氏の「丸に並び鷹の羽」と似ている「丸に違い鷹の羽」は同じ九州の大蔵姓原田氏も多く用いているようです。おそらくこれは南北朝以降大蔵氏と菊池氏の深い関わりがあったからではないかと考えています。 歴史上の人物で言えば、藤原姓菊池氏族原田氏としては、原田孫七郎が秀吉の下で名前が知れていますが、菊池氏族原田氏とされます。長崎の商人だそうですが元は肥後熊本だそうで、一族の可能性がありますね。 それにしても、この菊池系原田氏が丸に並び鷹の羽というのを知ることができてすっきりしました。 経が続いているのはいいですね。系図とかはあるのでしょうか？ 菊池氏族原田家初代が原田七郎経兼であり孫七郎とは名前が似ている, 孫？年代的には初代から3代離れて孫であっても説明はつく.
+通常, 経Xというのは死ぬときの最後の名前としてつけられるため 生前は経Xの名はつかない.
+さらには苗字をもつということは, 元は武士であった可能性は高い. ただし1500年代というのは比較的苗字は手に入りやすかった, 秀吉あたりから厳しくなったとか.
+ひいおじゃいちゃんが直右衛門, ひいひいおじゃいちゃんが三郎だったかも. あれ, 孫七郎と喜右衛門に名前が似ているな&amp;hellip;困るな😕しかしこのX郎というのは菊池氏の流れでも宇土氏の流れでもなく名戸氏の流れかも.</description></item><item><title>📝命令型プログラミング</title><link>https://keido.site/notes/20220305082606/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220305082606/</guid><description>up: 📁Programming Paradigms
+命令型プログラミングとは Imperative Programming, 命令型プログラミング.
+計算をプログラム状態を変化させる文の列で記述するパラダイム.
+ref: 命令型プログラミング - Wikipedia
+Function paradigm に Cell (状態) の概念を加えたもの.
+Imperative programming = Function paradigm + Cell Declarative Programing の対になる概念. Imperative vs Declaretive is also Stateful vs Stateless.
+命令型パラダイムのプログラミング言語 C 言語 アセンブリ言語 関数型プログラミングと命令型プログラミングの違い cf. 📝Functional Programming
+Function Paradigms と Imperative Paradigm の違いは,
+Functional 状態変化しない (Immunity) 機能追加時にインタフェースの変更の影響度がおおきい. Inperative 機能追加時にインタフェースの変更の影響度がない.</description></item><item><title>📝命名規約概論</title><link>https://keido.site/notes/20220308155618/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220308155618/</guid><description>プログラミング言語の命名規約概論.
+Naming Conventions.
+up: 📂Software Development refs: 📝コーディング規約概論
+変数の命名規約 🏷PascalCase 複合語の先頭が大文字からはじめる. camelCaseと区別するために, CapitalCase, UpperCamelCaseと表現されることもある. 🏷camelCase 複合語の先頭が小文字からはじめる. PascalCaseと区別するために, lowerCamelCaseと表現されることもある. 🏷snake_case 複合語はすべて小文字 単語間の繋がりはアンダーバー _ Python 🏷kebab-case 複合語はすべて小文字 単語間の繋がりはハイフン - lisp-caseともいう. LISP系言語で採用. 🏷Clojure codic codic - プログラマーのためのネーミング辞書
+日本語からよい変数名を生成してくれるWebサービス.
+🎓個人的な命名規約に関するインサイト とりあえず書き溜めておく. これをどうするかは後で考える.
+💡 Web API設計の命名: snake_case vs camelCase 一般的には snake_case or camelCase.</description></item><item><title>📝契約プログラミング(Contract Programming)</title><link>https://keido.site/notes/20220323034550/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220323034550/</guid><description>up: 📁Programming Paradigms refs: 📝Clojure Spec 契約プログラミングとは 契約プログラミング - Wikipedia
+防衛的プログラミング(Defensive Programming) セキュアプログラミング/Secure Programmingともいう.
+外部との境界における引数チェック.
+契約プログラミングと防衛的プログラミングとの違い 契約プログラミングは宣言的, 防衛的プログラミングは手続き的.</description></item><item><title>📝宇土為光</title><link>https://keido.site/notes/20220217110458/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220217110458/</guid><description>ref: 📝菊池氏族原田家 🔗宇土為光 - Wikipedia
+うとためみつ, と読む. 菊池氏19代当主菊池持朝の子. 肥後国宇土城城主. 今の宇土城は 戦国時代の武将, 小西行長が建てた. 宇土氏の治めた城は，今は宇土古城と呼ばれる. 3回くらい本家に対して下剋上しようとしている. お家騒動ゴタゴタかつ滅亡へ導いたトラブルメーカーの重宝人かもしれない&amp;hellip; 実際22代 vs 為光の内輪争いのせいでその後24代で途絶えているし&amp;hellip; 内輪で揉めてるうちに外から滅ぼされるというよくないパターン. 我が家の初代 📝菊池氏族原田家 経兼の父の可能性がある(歴史から消された?). ここからは考察.
+宇土為光 - Wikipedia
+菊池氏族原田家の初代はこの子である(七郎)経兼からはじまるらしい.
+つまり19代から分家. うちは分家なのでNARUTO日向ネジみたtいなもんだ. おそらくお家騒動のゴタゴタで菊池姓を変更せざるをえなくなったのかな？
+22代と争ったがそもそもその後24代で本家が途絶えた&amp;hellip;
+子重光・孫宮光丸とともに処刑され、菊池系宇土氏はここに滅亡する.
+Wikipediaによると滅びたことになってる&amp;hellip;いやわたしがいるよ！
+しかしこの重光が経兼と同一人物なのか, それとも別の人物なのか？そしてそもそもここから菊池姓から原田姓に変わったのは, 史実的には死んだことにして実際は生き延びたのか&amp;hellip;🤔
+どこから菊池から原田に変わったのか, 実はよく知らない. 歴史は消された?
+しかし以下は事実.
+うちの家紋が並び鷹の羽であり先祖が菊池氏族. 初代からことごとく男子に経の字をつけまくって室町時代から400年くらいやってきた. 初代が原田七郎経兼であり40代継続中.(38代だったかも). あとはネットで見つけた 為光 - 経兼の繋がりを菊池系図という書籍で確認すれば全てのピースがつながるわけだ. ネットの情報だけじゃ信頼できない. 熊本県の菊池市や宇土市の図書館に行けば実際の本があるのかな？
+歴史ミステリーにドキドキ!!!
+名和顕忠(なわあきただ)とのかかわりもわからないな.宇土為光の娘を名和顕忠が迎え入れたということは, この娘と経兼は兄弟ということになる. 当然, 初代経兼も名和氏を頼ったはず. 親の為光が謀反者として捉えられたら頼るのは妹の婿とその親のこの人しかいないはず.
+つまり歴史を紐解くキーパーソンの可能性がある.</description></item><item><title>📝宣言型プログラミング(Declarative Programming)</title><link>https://keido.site/notes/20220312122425/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220312122425/</guid><description>up: 📁プログラミングパラダイム
+宣言型プログラミングとは 広義: 処理方法ではなく対象の性質などを宣言することでプログラミングするパラダイム. 狭義: 純粋関数型プログラミング, 論理プログラミング, 制約プログラミングの総称. 数学のための言語. 状態を持たない. 宣言型プログラミング - Wikipedia
+Imperative Programing の対になる概念. &amp;ldquo;Function without State&amp;rdquo; Imperative vs Declaretive is also Stateful vs Stateless HTML は Stateless, Declarative Programming language.
+状態はクッキーを導入してしばしば実現する.</description></item><item><title>📝小咄集</title><link>https://keido.site/notes/20220418001106/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220418001106/</guid><description>tags: 🏷落語
+学生のころに書き溜めたもののバックアップ.
+夫婦喧嘩２ ３日も家空けて帰ってきて、
+「あら、あんた、今ちょうど救急車呼んだところよ」
+「なんか僕に事故があったと思ったの？」
+「事故はこれからよ」
+夫婦喧嘩 「喧嘩よしなよ。いったいどっちがわるいんだ」
+「このひとが悪いのよ。だって殴り返してきたんだもの・・・」
+夫婦喧嘩３ 「私の将来を占ってください」
+「近い将来、あなたの家に悲しいことが起こります。ご主人が災難でしなれます」
+「それは”当たり”です。それよりあたしが捕まるかどうか見てください」
+家庭料理 「ねえ、あなた、”家庭料理”って看板の店があるわよ。入らない？」
+「外に出たときくらい美味しいものをたべようよ」
+写真 「写真屋さん、なによ、あたしのこの写真。ヒドイじゃないの」
+「取る前に気づくべきですよ」
+目覚まし時計 「目覚まし時計で目を覚ましたよ」
+「ベルが鳴ったのかい」
+「いや、女房のやつ、時計でオレの頭を叩きやがった」
+武士と娘 「こら、娘、言うことを聞かぬと赤い血をみせるぞ」
+「言う事をきくと」
+「白い血を見せるぞ」
+列車事故 「列車事故にあったことありますか？」
+「あるよ、汽車がトンネルに入ったとき、
+娘にキスしたつもりが、父親にしてしまったんだ」
+職業安定所 失業者が職業安定所で、
+「私は結婚していてこどもが十四人いるんです」
+「他にできることは」
+休養 「君、すこし休養したらどうだい？」</description></item><item><title>📝手続き型プログラミング</title><link>https://keido.site/notes/20220305083612/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220305083612/</guid><description>up: 📁Programming Paradigms ref: 📝Imperative Programming
+手続き型プログラミングとは Procedural Programming, 手続き型プログラミング.
+プログラムに構造性とモジュール性を持たせたプログラミングパラダイム.
+手続き型プログラミング - Wikipedia
+手順やチェックリストはプログラムではないが, 命令型プログラミングのスタイルに似たコンセプトである. それらのステップが命令であり, 実世界が状態を保持している.
+サブルーチン サブルーチン - Wikipedia
+サブルーチンをプロシージャともいう.</description></item><item><title>📝探索的プログラミング(Exploratory Programming)</title><link>https://keido.site/notes/20220214053417/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220214053417/</guid><description>探索的プログラミング.
+慣れてない言語やAPIをもちいる場合に, いろいろインタラクティブに試しながらコードを書くこと.
+REPLがとても適しているが, こまめなコンパイルで評価でもTDDでもいい.
+🏷ソフトウェア開発手法
+refs:
+Exploratory programming - Wikipedia</description></item><item><title>📝文芸的プログラミング(Literate Programming)</title><link>https://keido.site/notes/20220318202503/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220318202503/</guid><description>tags: 🏷ソフトウェア開発手法 🏷org-babel
+文芸的プログラミング(Literate Programming)とは ドナルド・クヌースさん(Art of Computer Programmingの人)の提唱したプログラミングのスタイル.
+「本を書くようにプログラムを書こう」という運動とそのためのツール.
+具体的にはソースコードとドキュメントを別々のファイルではなく一つのファイルに記述してそこからドキュメントとソースコードを生成することで情報の一元管理を目指す.
+個人的にはorg-babelで発展してJupyter Notebookで完成したとおもった.
+関連ワード 散文的プログラミング Jupyter Notebook org-babel Run book Automation 🔗References 文芸的プログラミング - Wikipedia 🔗coursera で Reproducible Research をうけた | Futurismo 🔗散文的ブログラミングの哲学につら抜かれたCleanCodeでカルチャーショック体験 | Futurismo</description></item><item><title>📝東條英機</title><link>https://keido.site/notes/20220217172513/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220217172513/</guid><description>📂先祖代々の歴史
+都市伝説かもしれないが, おばあちゃんの妹が東條英機の息子と結婚したとか.
+ことによると親戚かもしれない. 血縁関係はない. なぜこれが怪しいかというと, 最近までおばあちゃんすら知らなかったということ. おばあちゃんの妹の葬式で発覚したとか. ネットで検索しても三男の情報がほぼない. 東條英機と東條家の「家訓」 - kakunist ページ！ 「一切語るなかれ」 - 東條英機が遺族に託した家訓 この言葉がとても重いのかもしれない&amp;hellip; 祖父東條英機「一切語るなかれ」 (文春文庫) | 東條 由布子 - Amazon 物騒なタイトルを持つ書籍すらある. 幸か不幸かうちには何も教えられてないんだけど&amp;hellip;
+References 東條英機 - Wikipedia</description></item><item><title>📝池田敏雄</title><link>https://keido.site/notes/20220311143538/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220311143538/</guid><description>ref: 池田敏雄 - Wikipedia
+富士通を富士通たらしめた人, 日本コンピュータの父.
+AppleのJobs, TwitterのJackのような, 奇人異端児が1つの企業を作り変える物語.
+私が入社したときも沢山の人たちが過去にカルフォルニアアムダール出張を経験していた. つまり池田さんと富士通のコンピュータ開発への熱意を若い頃に刻みつけされた人たち.
+refs:
+池田敏雄ものがたり - 池田記念室 : 富士通 IBMに勝った男! コンピュータ界の隠れた巨人!! - YouTube</description></item><item><title>📝神曲 - ダンテ</title><link>https://keido.site/notes/20220327054349/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220327054349/</guid><description>イタリア文学の古典.
+それ以前の文学がラテン語で書かれたのに対してこれはとすかーな方言で書かれた. つまり庶民に向けて書かれた.
+神曲 - Wikipedia 神曲:地獄 - 青空文庫 地獄の門 地獄の門 - Wikipedia
+地獄篇第3歌における描写.
+我を過ぐれば憂ひの都あり、我を過ぐれば永遠の苦患あり、我を過ぐれば滅亡の民あり
+義は尊きわが造り主を動かし、聖なる威力、比類なき智慧、第一の愛、我を造れり
+永遠の物のほか物として我よりさきに造られしはなし、しかしてわれ永遠に立つ、汝等こゝに入るもの一切の望みを棄てよ
+上野の国立西洋美術館の入口となりにロダンの地獄の門がある.
+ここを過ぎて悲しみの街 NHK大河ドラマ: 黄金の日日 にて原田喜右衛門が最期にダンテ神曲の一節を引用して殺される.
+太宰華の道化の華はこの一節から始まる.
+ここを過ぎて かなしみの都。ここを過ぎて、涙の都。さばかりも つれなき海をあとにしてかくてかの 第二の国を歌わまし。人の霊 そこに清まり天高く登るにも ふさわしき者とこそなれ
+地獄の門をくぐる前のシーンか？(推測).
+神曲のクラシック音楽への影響 リストがダンテ交響曲を作曲している. マーラー交響曲第1番第4楽章は神曲との関連を強く感じる. 表題は「地獄から天国へ」, さらにここだけイタリア語. 第2部は人間喜劇. モーツァルトがそれ以前のオペラがイタリア語で書かれていたのに対し, 魔笛をドイツ語で書いたと同じモチベーション. 🏷クラシック音楽
+🎓パニックゾーンとコンフォートゾーンはダンテ神曲の地獄と天国の関係に似ている 成長のためには苦痛を通して学ぶ必要がある.
+パニックゾーン ラーニングゾーン コンフォートゾーン これらの3層レイヤははまさに地獄篇, 煉獄篇, 天国篇と対応するのでは？</description></item><item><title>📝組み込みシステムパターン</title><link>https://keido.site/notes/20220309185051/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220309185051/</guid><description>組込みシステムにおけるパターンまとめ.
+refs: 📁Software Design 🏷組込み開発
+有限オートマン Finate State Machine
+有限オートマン. 状態遷移のための制御方法.
+有限オートマトン - Wikipedia 以下の 5 つの構成要素からなる.
+Inputs Outputs States State Transition Graph (STG) Tree Matrix Output Determination Moore Machine ムーアマシン. 出力が (入力によらず) 現在の状態によってのみ決定される有限オートマトン.
+NextState = f (Input, CurrentState) Output = g (CurrentState) Mealy Machine ミーリマシン. 出力が現在状態と入力によって決定される有限オートマトン.
+Output = h (Input, CurrentState) 実装方法 #define N = 2 typedef enum { yes, no} state; struct FSM { unsigned char out; /* レシジスタへの出力 */ unsigned char next[N] /* 次の状態グラフ.</description></item><item><title>📝組込みソフト開発概論</title><link>https://keido.site/notes/20220310100907/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220310100907/</guid><description>わたしは長年組込みソフトエンジニアだった気がした.
+https://github.com/tsu-nera/futurismo/blob/main/wiki/src/programming/domains/embedded_system.org</description></item><item><title>📝自己肯定感</title><link>https://keido.site/notes/20220327060654/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220327060654/</guid><description>🏷心理学
+自己肯定感と自己効力感の違いは現実を受け入れるか立ち向かうか 自己肯定感とはありのままの自分を認めること. 自己効力感とはやればできるという自信.
+この2つの言葉がややこしいのは，対概念として2つとも自己否定や自己嫌悪というものがある. もう駄目だ，なにもできない，という感情である.
+もう駄目だと思ったときに，そのことを受け入れて受け流せれば自己肯定感. もう駄目ではないと立ち向かうのが自己効力感. つまり受け入れるか立ち向かうか.
+どちらも大事だが，世の中にはどうしようもないことも多いので自己効力感による解決では限界があることも事実. そういう場合は，現実を受け入れて受け流すのが幸せなこともある.</description></item><item><title>📝苫米地英人</title><link>https://keido.site/notes/20211211065505/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211211065505/</guid><description> tags: 🏷Lisp 📝Common Lisp desc: とまべちひでとと読む. Common Lispの伝説的ハッカーとか. Paul Graham のともだちがとまべち😕 refs: 苫米地英人 - Wikipedia 苫米地さんってLisperだったんだよね。 - YouTube 💻【超絶IQ列伝】苫米地メソッド EX 「抽象度とは何か？」苫米地英人 https://www.youtube.com/watch?v=pjUzD3I6u-Q 【CEO動画】エンジニア募集に向けて | エンジニア採用 【CEO動画】国内GAFAMで働く皆さんへ | エンジニア採用 💻Sun Developer News - 21世紀に相応しい仕事をしよう 🖊天才LISP Hacker苫米地英人さんの都市伝説のなぞ | Futurismo</description></item><item><title>📝菊池氏族原田家</title><link>https://keido.site/notes/20220209051608/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220209051608/</guid><description>ref: 📝宇土為光 📝薩摩藩姶良郡蒲生町 up: 📂先祖代々の歴史
+第四十代当主は原田経道？ 初代は, 原田七郎経兼. 正確には, 菊池氏族宇土氏の史実上の最後 宇土為光 の次からが初代経兼が始まる. 家紋は並び鷹の羽. 肥後熊本からから薩摩に移り住み島津家に代々仕える. 薩摩の島津家には原田性は大隈氏族と菊池氏族の２つある. うちは菊池氏族のほう. 鹿児島県姶良郡蒲生町が先祖代々の土地. ひいひいひいおじいちゃんが蒲生八幡神社の神主兼村長とか. 代々男子には経の字がつく. おそらく菊池氏の慣習. Wikipediaをみると菊池氏で経の字を持つものが多い(2~6代目). 菊池氏は経ではなく， 武 をひたすらつける風習がある. アナロジーみたいな感じでひたすら 経 をつけてきたのか？ 西郷隆盛も菊池氏族. 西郷さんは30歳くらいで菊池源吾と名乗り子どもたちに菊の字をあてがったのはきっと菊池氏族の影響. Reference 同族の可能性あり. 📝原田喜右衛門 📝原田孫七郎 熊本県菊池市 菊池一族特設サイト かっこよすぎるじゃないか，バカなの笑？ 菊池氏 - Wikipedia https://mixi.jp/view_bbs.pl?comm_id=155950&amp;id=1854391 https://mixi.</description></item><item><title>📝薩摩藩姶良郡蒲生町</title><link>https://keido.site/notes/20220217152406/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220217152406/</guid><description>refs: 📝菊池氏族原田家 📝宇土為光 up: 📂先祖代々の歴史
+蒲生の大クスと蒲生八幡神社が観光名所になっている. 大クスは日本一の大きさ. 先祖代々の地. たしか上久徳か下久徳のどちらか. ひいひいひいおじいちゃんが蒲生八幡神社の神主と蒲生町の村長とか. ひいひいひいおじいちゃんは18歳, その弟は16歳で西南戦争参加, 生きて帰った. 田原坂決戦敗北後薩摩に向かって逃げてきたが, 18歳という若さだったため西郷さんから君たちは若いので逃げろと言わ城山での戦いの前に隊列を離れたとか. MAPをみると撤退ルートに蒲生がある. 西南戦争をたどる②／撤退敗走。西郷は終焉の地・城山へと向かう 恐ろしいな, 8/31に蒲生を通過してそれから1ヶ月以内に西郷どんは死亡. もっとも西南戦争自体が血気盛んな士族の若者たちが勝手に騒いだ結果はじまったけど&amp;hellip;18歳&amp;hellip; References 蒲生町 (鹿児島県) - Wikipedia 蒲生八幡神社公式ホームページ | 鹿児島 神社 蒲生麓（姶良市） | 薩摩の武士が生きた町 〜武家屋敷群「麓」を歩く〜 おじいちゃんいわく, コレは観光用に整備された通りなので実際は裏の方にある. うちもこの並びにはない. 川の方にあった記憶がある.</description></item><item><title>📝西郷隆盛</title><link>https://keido.site/notes/20211215145811/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211215145811/</guid><description>薩摩藩士. 菊池氏族西郷家, つまりうちの親戚.
+３３歳で奄美大島に３年間流刑, ３6歳で沖永良部島に２年間流刑. 海をみながらひたすら座禅をした. 菊池氏族は曹洞宗. 沖永良部島 - Wikipedia ３０代で菊池源吾を名乗る. 子供に菊の字をつける. 自分の名前を菊池にして子供にも菊をつけるくらい菊池氏族を意識していた. それはそうかもしれない, 流刑生活だと人生の終わりを悟っていたと思う. ルーツを愛したくなったのだろう. 島津久光に地ゴロ発言をしてしまい激怒させる. 空気読めないエピソードが菊池氏族おおくないか？ ref: 📝原田孫七郎 名言 命もいらぬ, 名もいらぬ, 官位も金もいらぬというような人物は処理に困るものである. このような手に負えない人物でなければ, 困難を共にして, 国家の大業を成し遂げることはできない.
+何度も何度もつらく苦しい経験をしてこそ, 人の志は初めて堅くなるのだ. 真の男は玉となって砕けることを本懐とし, 志を曲げて瓦となって生き長らえることを恥とせよ.
+その他 うちの家に西郷さんが寄って書をかいていったとという言い伝えがあった. 鑑定士に見てもらったら偽物だったとか. お父さんは西郷家は薩摩の下士でありうちの家系は上士であり尊敬してはいけないと言っていた. しかし私は西郷さんをとても尊敬している. そもそもうちが上士なことも怪しい. 郷士の間違いでは？ 城下町に住んでないぞ？ そもそも菊池氏族の枠組みならば同じ 菊池十八外城 を治めた西郷氏と宇土氏であり, さらには菊池氏族は 菊池家憲 という合議制をとっていたのでいわば自民党と民主党程度の違いしかなかったはず.</description></item><item><title>📝許光俊</title><link>https://keido.site/notes/20211215145133/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20211215145133/</guid><description>クラシック音楽の批評家.
+🏷クラシック音楽 🏷批評家
+📚Books もっと時間をかけてバラバラに分解して思想をタグ付けして自分の考えたことを付け加えて成熟させよう.
+📚クラシック批評という運命 - 青弓社 江戸川乱歩は, あふれんばかりの残虐, 奇形, 流れる血, 病的な官能の夢想, グロテスクなものに対する偏愛をこれでもかと表現した.
+&amp;lt;猟奇心&amp;gt;とは, なにやらわけのわからない不気味なもの, 美しいもの, 特別なものに引き付けられていく心のあり方である. 猟奇心を通じて, 日常世界の秩序の壊乱に接するのである.
+どういう形であれ音楽が日常から逃れ去る方向を持つものだとしたら, 音楽は猟奇の気配を漂わせているに違いない. それどころか, そんな猟奇事件の中でこそ音楽は本来の力をはっきりして日常性を切り裂くことができよう.
+猟奇と同じく, ロマン性もまた常識的な秩序への反抗である. ロマンティクはラテン的, 古典的価値観に対する異議申し立てなのであり, また文明と理性に対する, 夢想と不合理の夜の反撃なのだ.
+📚生きていくためのクラシック - 許光俊 私の生は, もう十分に退屈で, つまらない. 平凡で, 卑俗だ. 生が何が何でも生きるに値するものとは, どうしても考えられない.
+もっとも, このような思いは, 死を真近に控えつつある人からすれば, 腹が立つほどの戯言だろう. 文明社会の都市文化に青白く咲く, デカダンなセンチメントに過ぎないであろう. とはいえ, 私がこのような思いを吹っ切れないのも事実なのである. 翻ってこう反論することも可能ではないか. 肉体的に生存することが困難でない状態にいるからこそ, 「生は生きるに値しない」という思いはいっそう純粋なのだと.
+私が生きながらえている最大の理由は, なんとなく死が怖いからに過ぎない. そして, 生が何が何でも生きるに値するものとはどうしても考えられないが, 死が何がなんでも死ぬに値するものとはどうしても考えられないからに過ぎない.
+それゆえに, 私は, そのつまらない生を, たとえ束の間であれ, 生きるに値すると思わせてくれるものを求めずにはいられないのである.</description></item><item><title>📝通信プロトコル(Communication Protocol)</title><link>https://keido.site/notes/20220324071728/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220324071728/</guid><description>通信に関する規約.
+up: 📂ソフトウェア開発ドメイン
+OSI参照モデルの分類によるリスト 第1層 第2層 第3層 第4層 第5層(セッション層) 📝HTTP Protocol 第6層 第7層</description></item><item><title>📝関数型プログラミング</title><link>https://keido.site/notes/20220305080412/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220305080412/</guid><description>up: 📁Programming Paradigms refs 📝Clojure Functional Programming 関数型言語 - Wikipedia 関数型言語 すべての計算や処理などを関数の定義の組み合わせとして記述していくタイプのプログラミング言語.
+「同じ入力には必ず同じ出力を返す」「関数の評価が他の関数に影響を及ぼさない」など数学における関数と似た性質を持った関数の定義としてプログラミングを行い, プログラムの実行は記述された関数群の評価として行われる.
+ref: 関数型言語とは 【 functional language 】: IT 用語辞典
+広義の意味では, What をコンピュータに示すもの (How を示さない). 狭義の意味では, プログラミングの中で数学を用いたもの (Function, Relation).
+式と関数でプログラムを組み上げる (Use of MathMatics) 関数を値として扱える (Higher-order programming) 副作用を起こさない (Impliclite State, Stateless) 関数が第一級オブジェクトである言語.
+関数型プログラミング 狭義の意味では,
+状態をもたない 一時変数を持たない loop を持たない 手続的制御構造を持たない 広義の意味では,
+関数に focusing したプログラミング.</description></item><item><title>📝集中力が上がる時間管理まとめ</title><link>https://keido.site/notes/20220120043742/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220120043742/</guid><description>ウルトラディアンリズム 体内時計の90分，20分のリズム.
+57/19 ポモドーロテクニック</description></item></channel></rss>

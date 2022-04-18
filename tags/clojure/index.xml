@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>clojure on Keido</title><link>https://keido.site/tags/clojure/</link><description>Recent content in clojure on Keido</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://keido.site/tags/clojure/index.xml" rel="self" type="application/rss+xml"/><item><title>📝Clojure デバッグ</title><link>https://keido.site/notes/20220309085644/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220309085644/</guid><description>Clojure 開発におけるデバッグまとめ.
+refs: 📝Clojure DX 📝Clojure REPL Driven Development
+printデバッグ 古代人から現代まで引き継がれている由緒正しきデバッグ手法, aka. わたしの得意技.
+print/println Clojureでもっとも有名な標準出力関数.
+pr/prn/pr-str オブジェクトの内容をいい感じに出力してくれる.
+(println &amp;ldquo;おれはここだよ&amp;rdquo;)のようなトレースデバッグにはprintlnをつかい, データの中身をみる(Inspectする)にはprnをつかうのが使い分け.
+str clojure.pprint Pretty Print for Clojure.
+clojure.pprint namespace | ClojureDocs.
+REPL起動すると読み込まれている. pprint: いい感じに出力.
+prnでオブジェクトを表示すると, たとえば大きなネストしたMapは1行に表示されて見にくい.その場合は, clojure.pprint.pprintをつかうと見やすくなる.
+REPLで (pp) と評価すると最終評価結果が表示される. このppの便利な使い方は, 普通に標準出力した結果が複雑だったときに, 再度ppを通じて表示することでさっきのデータ構造がいい感じになる.
+print-method Javaのクラスによく自分で実装するtoStringメソッドがClojureにもほしい！
+-&amp;gt; print-method というmultimethodをつかう.
+toStringをオーバーライドするとJavaのクラスをSystem.out.println するときにクラスの内容表示を自分でカスタマイズできる.
+clojureでは print-methodというmultimethodが定義されている.
+ただし, 基本的にはClojureはデータをMapで扱うことが推奨されているので, そもそもいらないかもしれない.</description></item></channel></rss>
