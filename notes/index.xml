@@ -314,8 +314,10 @@ refs. 📂Clojure Core Languages 🏷Expression Problem
 同一名称のメソッドで異なる型によって処理を分けるようなことをしようとすると Clojureでは,
 defmulti で複数の処理を分岐させるための同一名称のメソッドを定義. defmethod で異なる処理を型ごとに記述. defmultiで与えられた引数のどれをdispatchのための分岐条件にするかを定義する. いいかえれば, 引数をばらして分岐条件を決める. defmethodで分岐条件に基づいて与えられた引数を処理する.
 ;; 引数 sに対するバラし方を定義 (defmulti my-print class) ;; 引数sがstring, つまり (class s) =&amp;gt; String ;; ならば(.write *out* s)を実行. (defmethod my-print String [s] (.write *out* s)) (defmethod my-print nil [s] (.</description></item><item><title>📝Clojure Flows</title><link>https://keido.site/notes/20220116083656/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116083656/</guid><description>refs: 📝Clojure Logics 📂Clojure Language Spec Clojure - Clojureを学ぼう - フロー制御 Clojure Flow Basics Clojureのフロー制御まとめ.
-if when true判定. if-let letで定義したロジック判定のシンボルをifでテストする. これは，たとえば複雑な真偽判定のロジックにシンポルを割り当てることで可読性を上げるために利用できる. when-letもある. cond 複数のifを書くときのわかりやすい記法. 条件に当てはまらない場合の処理をelseで実施することができる. case condにおいて判定する値が１つしかない場合. Clojure:副作用の繰り返し(dotimes/doseq/for) Clojure - Clojureを学ぼう - フロー制御
-dotimes 式n回評価, nilを返す. doseq シーケンスに対して順列に繰り返す. 遅延シーケンスは評価を強制. nilを返す. 複数のシーケンスに対しはforEachのように振る舞う.</description></item><item><title>📝Clojure Functional Programming</title><link>https://keido.site/notes/20220116094551/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116094551/</guid><description>いわゆる関数型プログラミングのパラダイムで登場する用語のClojure実現方法.
+if when true判定. if-let letで定義したロジック判定のシンボルをifでテストする. これは，たとえば複雑な真偽判定のロジックにシンポルを割り当てることで可読性を上げるために利用できる. when-letもある. cond 複数のifを書くときのわかりやすい記法. 条件に当てはまらない場合の処理をelseで実施することができる. case condにおいて判定する値が１つしかない場合. 🔎if-let は処理の結果による分岐でつかう if-letはマクロでありC言語の邪悪な習慣をエレガントにしたとか😕
+なにかの処理をして戻り値がnilか否かで処理を分岐するときにエレガントな書き方ができる. 具体的にはlet とifで以下なものを,
+(let [result (proc)] (if result (do-something result) (do-else))) if-letだと以下のようにかける.
+(if-let [result (proc)] ((do-something result) (do-else))) Java的には関数を処理して異常の場合は戻り値に -1とかfalseとか戻さずに例外を上げるのがベストプラクティスだけど関数型でも同じなのだろうか？そしてこの 関数の呼び出し元に分岐を判断させるのがC言語の邪悪な習慣といっているのだろうか？いずれにしろこういう戻り値にnilをつかって呼び出し元を困らせる邪悪な関数につかう.</description></item><item><title>📝Clojure Functional Programming</title><link>https://keido.site/notes/20220116094551/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220116094551/</guid><description>いわゆる関数型プログラミングのパラダイムで登場する用語のClojure実現方法.
 Clojure - Clojureを学ぼう - 関数
 ref: 📂Clojure Core 🏷Functional Programming
 Clojure: Function defn で定義.

@@ -14,8 +14,8 @@ https://twitter.com/settings/sessions
 新規IPからログインをするとログイン通知がされる.
 新規ログインDevice: ChromeにLinuxから Location*: 神奈 横浜市 中区, 日本 When: 2022年4月10日日曜日 at 午後2:18 GMT-7 (3 分前)*場所はログイン時のIPアドレスに基づいて推定されています。
 セッションとIPを紐付けて管理していてknown_hostsなIPに対して通知を出している可能性がある. ただしブラウザから通信を解析した結果IPがresponseとして帰ってきてはいない(session IDやtokenなどはある)ため, これはサーバ側でしか管理していない情報. ということは, クライアントからログインしたときに情報を意図的に保存しておかないとわからなくなってしまう.
-もしくはAndroid/iPhoneのアプリからのログインなら アカウントアクセス履歴 から閲覧可能(Twittr for Android/Twitter for iPhone).</section><div class=gdoc-post__readmore><a class="flex-inline align-center fake-link" title="Read full post" href=/notes/20220410054748/>Read full post</a></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+もしくはAndroid/iPhoneのアプリからのログインなら アカウントアクセス履歴 から閲覧可能(Twittr for Android/Twitter for iPhone).</section><div class=gdoc-post__readmore><a class="flex-inline align-center fake-link" title="Read full post" href=/notes/20220410054748/>Read full post</a></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>1 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20220415080505/>📝Twitterシャドウバン</a></h1></header><section>tags: 🏷Twitter
 Twitterのシャドウバンについてのまとめ.
@@ -24,15 +24,15 @@ Twitterシャドウバンとは Twitterシャドウバンは俗語でありTwitt
 たとえばSearchBanやGhost BanはEntities(Text/URL/Media)ごとに規制されるようになった. そしてSearch BanがかかることとGhost Banがかかることは同じなので両者を分ける必要もないかもしれない. Reply Deboostingについてはかつては攻撃的な内容を含むだったが, 2022現在はヌード, 暴力, センシティブの３つに細分化されている.
 また2020年ごろから，アカウントをロックや凍結をするのではなくツイートを隠したり通知規制をするようになった気がする. それはコロナ流行やアメリカ大統領選挙にあわせて都市伝説やデマを拡散するTwitter Botが大量生産されたための対策のように思われる. つまり本人は今までどおり情報発信をしていてもタイムラインに流れなかったりリプライが届かなかった通知欄に表示されなかったり. その変化によって最近(2022現在)より一層このあたりのアルゴリズムが変化している.
 shadowban.euによるシャドウバンの分類 本家サイトはすでに閉鎖済み. 4つに規制を分類している.
-Search Suggestion Ban This type of ban causes an account to not populate search suggestions and people search results when it is searched for while being logged out. Twitter seems to take tie strength or a similar metric into account.</section><div class=gdoc-post__readmore><a class="flex-inline align-center fake-link" title="Read full post" href=/notes/20220415080505/>Read full post</a></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+Search Suggestion Ban This type of ban causes an account to not populate search suggestions and people search results when it is searched for while being logged out. Twitter seems to take tie strength or a similar metric into account.</section><div class=gdoc-post__readmore><a class="flex-inline align-center fake-link" title="Read full post" href=/notes/20220415080505/>Read full post</a></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>3 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20220415120253/>📝Twitter検索オプション</a></h1></header><section>tags: 🏷Twitter
 逆引きTwitterオプション 引用動画ツイートを特定するには？ screen-nameのアカウントのツイートを引用したツイートを特定するには, 非公開アカウントにて,
 'twitter.com/{screen_name}/status' -from:@{screen_name}' 'url:{screen-name} -from:@{screen-name}' アフィリエイトIDが同じアカウントを特定するには？ 同一人物による複数アカウント特定方法は、`{keyword} url:{affiliate-id}`
 アフィリエイトをしている場合自演RTをしているケースが多いので whotwi で関連ユーザを調べるのもよい.
-同一人物のAPI投稿を特定するには？ source:{xxx} をつかう.</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+同一人物のAPI投稿を特定するには？ source:{xxx} をつかう.</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>1 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20220220095102/>📝Web Development Basic</a></h1></header><section>汎用的なWeb開発技術まとめ.
 言語間に共通する技術の集積を目指す.
@@ -40,20 +40,20 @@ Apr 18, 2022</time></span></span>
 Web: World Wide Web World Wide Web. インターネット上で提供されるハイパーテキストシステム.
 World Wide Web - Wikipedia Web の歴史 Web1.0 ・・・クライアントは静的ページを Web サーバから取得する. ウェブページ. ウェブを読む. Web2.0 ・・・クライアント/ サーバ側で動的にページを作成する. ウェブサービス. ウェブを使う. Web3.0 ・・・クライアントごとがつながりあう. データの上のメタデータをあつかう. クラウドコンピューティング ・・・あらゆるデバイスがネットにつながる. セマンティックウェブ ・・・ビックデータの統計解析から価値を生み出す. ref: 迫り来る Web3.0 時代を生き抜くエンジニアが持たなければいけない 3 つの視点 | DMTC Magazine
 HTTP Protocols HTTP は, Hypertext Transfer Protocol の略.
-Hypertext Transfer Protocol - Wikipedia Web ブラウザと Web サーバの間で, HTML などのコンテンツの送受信に用いられる通信プロトコル.</section><div class=gdoc-post__readmore><a class="flex-inline align-center fake-link" title="Read full post" href=/notes/20220220095102/>Read full post</a></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+Hypertext Transfer Protocol - Wikipedia Web ブラウザと Web サーバの間で, HTML などのコンテンツの送受信に用いられる通信プロトコル.</section><div class=gdoc-post__readmore><a class="flex-inline align-center fake-link" title="Read full post" href=/notes/20220220095102/>Read full post</a></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>4 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20220301075027/>📝Y Combinator</a></h1></header><section>Paul Grahamなどが立ち上げた最強 Startup Accelerator.
 tags: 🏷Paul Graham
 日本では馬田さんが中心になってY Combinatorの情報発信をしているのはありがたい.
 https://resource.foundx.jp/beginner/
-refs My Visit with THE LORD OF THE STARTUPS: Y Combinator&rsquo;s Paul Graham - YouTube Paul GrahamさんによるY Combinatorの紹介.</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+refs My Visit with THE LORD OF THE STARTUPS: Y Combinator&rsquo;s Paul Graham - YouTube Paul GrahamさんによるY Combinatorの紹介.</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>1 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20220107141801/>📝Youtube</a></h1></header><section>動画サービス.
 Youtube Tips YoutubeのプレイリストのRSSを取得するには? プレイリストのページを開いてplaylist_idを取得して以下のURLで設定.
-https://www.youtube.com/feeds/videos.xml?playlist%5Fid=%7Bplaylist%5Fid}</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+https://www.youtube.com/feeds/videos.xml?playlist%5Fid=%7Bplaylist%5Fid}</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>1 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20211206071458/>📝Zettelkasten Method</a></h1></header><section>Zettelkasten Methodとは Niklas Luhmannの考案した, 思考をするための方法論，フレームワーク.
 Zettelkastenという単語はZettelkastenのフレームワークを指す場合とZettlekastenで管理するPermanent Noteを入れる箱(Slipbox)を指す場合の2つがある.これらは書き手や文脈で統一されてないので情報を得るときは注意が必要.
@@ -67,8 +67,8 @@ Daily Notesについて Zettelkasten Methodの文脈での時系列のFleeting N
 Roam ResearchやObsidianなどのZettelkastenのソフトウェア実装の文脈でよく登場する.
 📝Literature Notes 日本語訳では，文献メモとも言われる.Lit Notes, lit notesと略されることもある.
 インプットするたび書く.読んだ本，みたYoutube動画，受けた講座などなど.
-覚えておきたいこと. 自分の思考. アウトプットに使いたいもの. 自分の言葉でリライトしながら書く. 著者の思想を自分の思想に翻訳する意味が有る.自分が理解していないものに対しては自分で書くことができない.</section><div class=gdoc-post__readmore><a class="flex-inline align-center fake-link" title="Read full post" href=/notes/20211206071458/>Read full post</a></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+覚えておきたいこと. 自分の思考. アウトプットに使いたいもの. 自分の言葉でリライトしながら書く. 著者の思想を自分の思想に翻訳する意味が有る.自分が理解していないものに対しては自分で書くことができない.</section><div class=gdoc-post__readmore><a class="flex-inline align-center fake-link" title="Read full post" href=/notes/20211206071458/>Read full post</a></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>1 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20211229203145/>📝Zotero</a></h1></header><section>Zotero(ゾテロ)とは，論文管理を目的にしたオープンソースの文献管理ソフトウェア.
 https://www.zotero.org/
@@ -76,12 +76,12 @@ Zoteroまとめ Zoteroは勉強したインプットのメタ情報の取得と�
 Web記事 Amazon(書誌情報) Youtube PDF etc&mldr; たとえば，AmazonやYoutubeをZoteroに送信するとメタ情報がZotero画面に表示される. PDFで購入した電子書籍に対してAmazonのページからメタ情報を取得してPDFをその情報に添付することでPDFとメタ情報を管理できる.
 さらに，Web記事はスクリーンショットという機能でhtmlとしてローカルに保存することも可能.
 Zoteroは個人用のローカルはてなブックマーク，メモも管理できる annotationという形でその文献に対するメモを管理することが可能. いわば，はてなブックマークを詳細情報を含めてローカルで個人管理するようなもの.
-参考文献 quick start guide : Zotero公式のクイックスタートガイド(ja) 【令和最新版】文献管理ソフト Zoteroのすゝめ｜SD｜note : 日本語の良記事 注釈 わたしの目的は文献一般を管理すること.論文はなかなか縁がない.&#160;&#8617;&#xfe0e;</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+参考文献 quick start guide : Zotero公式のクイックスタートガイド(ja) 【令和最新版】文献管理ソフト Zoteroのすゝめ｜SD｜note : 日本語の良記事 注釈 わたしの目的は文献一般を管理すること.論文はなかなか縁がない.&#160;&#8617;&#xfe0e;</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>1 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20211217134744/>📝Z世代</a></h1></header><section>1996-2012に生まれた世代.
-Generatin Z, GenZともいう.</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+Generatin Z, GenZともいう.</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>1 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><article class="gdoc-markdown gdoc-post"><header class=gdoc-post__header><h1 class=gdoc-post__title><a href=/notes/20220310100122/>📝イベント駆動型プログラミング</a></h1></header><section>refs:
 📝組み込みシステムパターン 📝フロー駆動型プログラミング up: 📁Programming Paradigms
@@ -89,8 +89,8 @@ Apr 18, 2022</time></span></span>
 他のドメインとの関係 アプリ開発との関係 T.B.D.
 組込み開発との関係 フロー駆動がフローチャートを重視するならばイベント駆動は状態遷移図を重視する. 状態とはイベントループそのもの.
 🏷組込み開発
-References イベント駆動型プログラミング - Wikipedia イベント駆動型プログラミング | IT用語辞典 | 大塚商会</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-18T21:55:29+09:00>Updated on
-Apr 18, 2022</time></span></span>
+References イベント駆動型プログラミング - Wikipedia イベント駆動型プログラミング | IT用語辞典 | 大塚商会</section><div class=gdoc-post__readmore></div><footer class=gdoc-post__footer><span class=no-wrap><svg class="icon gdoc_date"><use xlink:href="#gdoc_date"/></svg><span class=gdoc-post__tag><time datetime=2022-04-19T18:06:45+09:00>Updated on
+Apr 19, 2022</time></span></span>
 <span class=no-wrap><svg class="icon gdoc_timer"><use xlink:href="#gdoc_timer"/></svg><span class=gdoc-post__tag>1 min read</span></span>
 <span class=no-wrap><svg class="icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"/></svg><span class=gdoc-post__tag><span class=gdoc-button><a class=gdoc-button__link href=/tags/WIKI/ title="All posts tagged with 'WIKI'">WIKI</a></span></span></span></footer></article><div class="gdoc-page__footer flex flex-wrap justify-between"></div></div></main><footer class=gdoc-footer><div class="container flex"><div class="flex flex-wrap"><span class="gdoc-footer__item gdoc-footer__item--row">Built with <a href=https://gohugo.io/ class=gdoc-footer__link>Hugo</a> and<svg class="icon gdoc_heart"><use xlink:href="#gdoc_heart"/></svg></span></div></div></footer></div><script defer src=/js/en.search.min.abe68cbe5566df3a4f1f0d85d032292425f161613d17ce5e425dd2c1304852de.js></script>
 <script defer src=/js/clipboard-27784b7376.min.js></script>
