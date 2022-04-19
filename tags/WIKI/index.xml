@@ -446,7 +446,9 @@ Twitter Scrapingまとめ
 Playwright は2022の銀の弾丸 セキュリティの会社ですらplaywrightを利用したbotの判定が今や難しい.
 https://datadome.co/bot-detection/will-playwright-replace-puppeteer-for-bad-bot-play-acting/
 Example of Twitter Automation.
-https://www.martinmcgee.dev/starting-microsoft-playwright/</description></item><item><title>📝Twitter Technologies</title><link>https://keido.site/notes/20220205072101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220205072101/</guid><description>🏷Twitter
+https://www.martinmcgee.dev/starting-microsoft-playwright/</description></item><item><title>📝Twitter SEO Insignts</title><link>https://keido.site/notes/20220420041238/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220420041238/</guid><description>tags: 🏷Twitter
+Twitterに関わる発見のメモ. このページはどこかに移動するかも.
+Twitterタイムライン フォローしているユーザはスレッドが展開て表示される. 展開はreplyのreplyまで表示される. それ移行を数珠に投稿しても最後の２つが表示される. フォローしていないユーザははじめのツイートのみ表示される.</description></item><item><title>📝Twitter Technologies</title><link>https://keido.site/notes/20220205072101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220205072101/</guid><description>🏷Twitter
 Twitterの技術まとめ.
 どうもReactがWebフロントエンドな気がするのは気のせいか？
 Twitter Retweet ID ref: TwitterでリツイートIDを調べる方法｜Guest｜note
