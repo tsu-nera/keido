@@ -11,7 +11,7 @@ howto: gitのローカルのブランチ名を変更したい 古いブランチ
 $ git branch -m &amp;lt;古いブランチ名&amp;gt; &amp;lt;新しいブランチ名&amp;gt; 今開いているブランチをリネーム.
 $ git branch -m &amp;lt;新しいブランチ名&amp;gt;</description></item><item><title>📝Google Cloud Platform</title><link>https://keido.site/notes/20220311153749/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220311153749/</guid><description>Googleの提供するクラウドサービス群の総称, 略してGCP.
 Firebase は Google Cloudのなかで特にアプリケーション開発に使うものをパッケージングして名前をつけたもの.
-📝Google Cloud Firestore 📝Google Cloud Shell up: 📂ソフトウェア開発ドメイン</description></item><item><title>📝Java</title><link>https://keido.site/notes/20220303203801/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220303203801/</guid><description>refs: 🏷Programming Language
+📝Google Cloud Firestore 📝Google Cloud Shell 📝Google Cloud Build up: 📂ソフトウェア開発ドメイン</description></item><item><title>📝Java</title><link>https://keido.site/notes/20220303203801/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220303203801/</guid><description>refs: 🏷Programming Language
 Javaとは ジェームズ・ゴスリン - Wikipedia が開発.</description></item><item><title>📝NoSQL</title><link>https://keido.site/notes/20220311163333/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://keido.site/notes/20220311163333/</guid><description>No SQL.
 cf. 🏷RDB
 NoSQLとは 非リレーショナルデータベースの総称.
