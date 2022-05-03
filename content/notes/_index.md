@@ -4,7 +4,7 @@ tags = ["DOC"]
 draft = false
 +++
 
-Wiki &amp; Zettelkastenによるtsu-neraの知的生産基盤
+Wiki & Zettelkastenによるtsu-neraの知的生産基盤
 
 aka. [Futurismo](https://futurismo.biz) 別館.
 
@@ -15,6 +15,8 @@ aka. [Futurismo](https://futurismo.biz) 別館.
 
 -   [📂計算機科学(Computer Science)]({{< relref "20220307090518.md" >}})
 -   [📁ソフトウェア工学(Software Engineering)]({{< relref "20220311194105.md" >}})
+-   [📂データサイエンス]({{< relref "20220424053409.md" >}})
+-   [📁アフィリエイト]({{< relref "20220503203924.md" >}})
 -   [📂スタートアップ]({{< relref "20220301073957.md" >}})
 -   [📁音楽]({{< relref "20220309205225.md" >}})
 -   [📁文学]({{< relref "20220327055651.md" >}})
@@ -28,7 +30,6 @@ aka. [Futurismo](https://futurismo.biz) 別館.
 -   [📝Z世代]({{< relref "20211217134744.md" >}})
 -   [📝Youtube]({{< relref "20220107141801.md" >}})
 -   [🏷Twitter]({{< relref "20211217143718.md" >}})
--   [🏷アニメ]({{< relref "20220227213744.md" >}})
 
 
 ## 🎓知恵まとめ(Zettelkasten) {#知恵まとめ--zettelkasten}
