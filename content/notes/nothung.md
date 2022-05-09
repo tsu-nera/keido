@@ -825,8 +825,6 @@ EmacsのWindow Manager.
 
 ご存知！
 
--   [doom-emacs/README.org at develop · hlissner/doom-emacs · GitHub](https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/org/README.org)
-    -
 -   [dotfiles/50_org-mode.org at master · tsu-nera/dotfiles · GitHub](https://github.com/tsu-nera/dotfiles/blob/master/.emacs.d/inits/50_org-mode.org)
     -   昔の設定. すこしずつ移植したい.
 
@@ -900,14 +898,6 @@ EmacsのWindow Manager.
 
   )
 
-;; org-mode で timestamp のみを挿入するカスタム関数(hh:mm)
-(after! org
-  (defun my/insert-timestamp ()
-    "Insert time stamp."
-    (interactive)
-    (insert (format-time-string "%H:%M")))
-  (map! :map org-mode-map "C-c C-." #'my/insert-timestamp))
-
 ;; +pretty(org-superstar-mode)関連
 ;;; Titles and Sections
 ;; hide #+TITLE:
@@ -956,6 +946,21 @@ EmacsのWindow Manager.
 ;;     ("~" (:background "blue" :foreground "white")) cddddd;; 根拠
 ;;     ("+" (:background "green" :foreground "black")))) ;; 自分の考え
 
+```
+
+org-mode で timestamp のみを挿入するカスタム関数.
+Doom Emacsのせいか C-u C-c .が動作しないので.
+
+```emacs-lisp
+;;
+(after! org
+  (defun my/insert-timestamp ()
+    "Insert time stamp."
+    (interactive)
+    (org-insert-time-stamp (current-time) t)
+    ;; (insert (format-time-string "%H:%M"))
+    )
+  (map! :map org-mode-map "C-c C-." #'my/insert-timestamp))
 ```
 
 
@@ -1127,21 +1132,22 @@ org-export-with-xxxという設定項目でいろいろ制御できる.
 おそらく, exportをかけたあとにhook関数によって文字列変換が必要.
 
 ```emacs-lisp
-(defun my-hugo-filter-html-amp (text backend info)
-  (when (org-export-derived-backend-p backend 'hugo)
-    (replace-regexp-in-string "&amp;" "&" text)))
-(defun my-hugo-filter-html-gt (text backend info)
-  (when (org-export-derived-backend-p backend 'hugo)
-    (replace-regexp-in-string "&gt;" ">" text)))
-(defun my-hugo-filter-html-lt (text backend info)
-  (when (org-export-derived-backend-p backend 'hugo)
-    (replace-regexp-in-string "&lt;" "<" text)))
-(add-to-list
-'org-export-filter-plain-text-functions 'my-hugo-filter-html-amp)
-(add-to-list
-'org-export-filter-plain-text-functions 'my-hugo-filter-html-gt)
-(add-to-list
-'org-export-filter-plain-text-functions 'my-hugo-filter-html-lt)
+(after! ox
+  (defun my/hugo-filter-html-amp (text backend info)
+    (when (org-export-derived-backend-p backend 'hugo)
+      (replace-regexp-in-string "&amp;" "&" text)))
+  (defun my/hugo-filter-html-gt (text backend info)
+    (when (org-export-derived-backend-p backend 'hugo)
+      (replace-regexp-in-string "&gt;" ">" text)))
+  (defun my/hugo-filter-html-lt (text backend info)
+    (when (org-export-derived-backend-p backend 'hugo)
+      (replace-regexp-in-string "&lt;" "<" text)))
+  (add-to-list
+   'org-export-filter-plain-text-functions 'my/hugo-filter-html-amp)
+  (add-to-list
+   'org-export-filter-plain-text-functions 'my/hugo-filter-html-gt)
+  (add-to-list
+   'org-export-filter-plain-text-functions 'my/hugo-filter-html-lt))
 ```
 
 
@@ -1282,35 +1288,35 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
   (org-roam-capture-templates
    '(("z" "🎓 Zettelkasten" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🎓${title}\n#+filetags: :CONCEPT:\n")
+                         "#+STARTUP: showeverything\n#+title:🎓${title}\n#+filetags: :CONCEPT:\n")
       :unnarrowed t)
      ("w" "📝 Wiki" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:📝${title}\n#+filetags: :WIKI:\n")
+                         "#+STARTUP: showeverything\n#+title:📝${title}\n#+filetags: :WIKI:\n")
       :unnarrowed t)
      ("t" "🏷 Tag" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:List of ${title} (alias 🏷${title}) \n#+filetags: :TAG:\n")
+                         "#+STARTUP: showeverything\n#+title:List of ${title} (alias 🏷${title}) \n#+filetags: :TAG:\n")
       :unnarrowed t)
      ("i" "📂 TOC" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:Index of {title} (alias 📂${title})\n#+filetags: :TOC:\n")
+                         "#+STARTUP: showeverything\n#+title:Index of {title} (alias 📂${title})\n#+filetags: :TOC:\n")
       :unnarrowed t)
      ("m" "🏛 MOC" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🏛${title} \n#+filetags: :MOC:\n")
+                         "#+STARTUP: showeverything\n#+title:🏛${title} \n#+filetags: :MOC:\n")
       :unnarrowed t)
      ("i" "💡 Issue" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:💡${title} \n#+filetags: :ISSUE:\n")
+                         "#+STARTUP: showeverything\n#+title:💡${title} \n#+filetags: :ISSUE:\n")
       :unnarrowed t)
      ("d" "🗒 DOC" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🗒${title}\n#+filetags: :DOC:\n")
+                         "#+STARTUP: showeverything\n#+title:🗒${title}\n#+filetags: :DOC:\n")
       :unnarrowrd t)
      ("f" "🦊 Darkfox" plain "%?"
       :target (file+head "darkfox/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🦊${title}\n#+filetags: :DARKFOX:\n")
+                         "#+STARTUP: showeverything\n#+title:🦊${title}\n#+filetags: :DARKFOX:\n")
       :unnarrowed t)
      ("b" "📚 Book" plain
       "%?
@@ -1322,7 +1328,7 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 - url: http://www.amazon.co.jp/dp/%^{isbn}
 "
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:📚${title} - ${author}(${date})\n#+filetags: :BOOK:SOURCE:\n")
+                         "#+STARTUP: showeverything\n#+title:📚${title} - ${author}(${date})\n#+filetags: :BOOK:SOURCE:\n")
       :unnarrowed t)
      ("s" "🎙‍ Talk" plain
       "%?
@@ -1333,7 +1339,7 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 - url: %^{url}
 "
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🎙 ${title} - ${editor}(${date})\n#+filetags: :TALK:SOURCE:\n")
+                         "#+STARTUP: showeverything\n#+title:🎙 ${title} - ${editor}(${date})\n#+filetags: :TALK:SOURCE:\n")
       :unnarrowed t)
      ("o" "💻 Online" plain
       "%?
@@ -1343,7 +1349,7 @@ org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 - url: %^{url}
 "
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:💻${title}\n#+filetags: :ONLINE:SOURCE:\n")
+                         "#+STARTUP: showeverything\n#+title:💻${title}\n#+filetags: :ONLINE:SOURCE:\n")
       :unnarrowed t)))
   (org-roam-extract-new-file-path "%<%Y%m%d%H%M%S>.org")
   ;;        :map org-mode-map
