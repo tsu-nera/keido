@@ -1,5 +1,5 @@
 baseURL = "https://keido.site/"
-title = "Keido"
+title = "keido"
 theme = "hugo-geekdoc"
 
 pluralizeListTitles = false

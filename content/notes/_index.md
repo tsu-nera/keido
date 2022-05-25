@@ -49,8 +49,7 @@ aka. [Futurismo](https://futurismo.biz) 別館.
 
 ## 🦊虚無との戦い(DarkFox) {#虚無との戦い--darkfox}
 
-大学生のころ，生きる意味を探求するためのHPをYahoo geocitiesに構築していた.
-geocities終了とともに閉鎖してしまったHPをここに復活させる.
+大学生のころ，生きる意味を探求するためのHPをYahoo geocitiesに構築していた. geocities終了とともに閉鎖してしまったHPをここに復活させる.
 
 [🦊虚無との戦い]({{< relref "20220128151558.md" >}})
 
