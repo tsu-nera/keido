@@ -1,15 +1,16 @@
 baseURL = "https://keido.site/"
 title = "keido"
-theme = "hugo-geekdoc"
+theme = "hugo-book"
 
-pluralizeListTitles = false
+# pluralizeListTitles = false
 
 refLinksErrorLevel = "WARNING"
 refLinksNotFoundURL = "/keido/404.html"
 
 # Geekdoc required configuration
-pygmentsUseClasses = true
-pygmentsCodeFences = true
+# pygmentsUseClasses = true
+# pygmentsCodeFences = true
+
 disablePathToLower = true
 enableGitInfo = true
 
@@ -17,27 +18,33 @@ enableGitInfo = true
 enableRobotsTXT = true
 
 # Needed for mermaid shortcodes
-[markup]
-  [markup.goldmark.renderer]
-    # Needed for mermaid shortcode
-    unsafe = true
-  [markup.tableOfContents]
-    startLevel = 1
-    endLevel = 9
+# [markup]
+#   [markup.goldmark.renderer]
+#     # Needed for mermaid shortcode
+#     unsafe = true
+#   [markup.tableOfContents]
+#     startLevel = 1
+#     endLevel = 9
 
-[taxonomies]
-   tag = "tags"
+# [taxonomies]
+#    tag = "tags"
 
 [params]
-   type = "notes"
-   geekdocToC = 3
-   geekdocMenuBundle = true
-   geekdocNextPrev = false
-   geekdocBreadcrumb = false
-   geekdocRepo = "https://github.com/tsu-nera/keido"
-   geekdocEditPath = "edit/main/content"
-   geekdocBackToTop = false
-   geekdocTagsToMenu = true
+  BookTheme = 'dark'
+  BookSection = 'notes'
+
+  # BookMenuBundle = 'menu'
+
+# [params]
+#    type = "notes"
+#    geekdocToC = 3
+#    geekdocMenuBundle = true
+#    geekdocNextPrev = false
+#    geekdocBreadcrumb = false
+#    geekdocRepo = "https://github.com/tsu-nera/keido"
+#    geekdocEditPath = "edit/main/content"
+#    geekdocBackToTop = false
+#    geekdocTagsToMenu = true
 
 [outputs]
    home = ['HTML', 'RSS']

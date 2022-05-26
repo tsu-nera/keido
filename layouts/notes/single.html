@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="markdown">
+  <h1>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h1>
+  <!-- 自分でタグをしているのでサイトの機能は保留 -->
+  <!-- {{ partial "docs/post-meta" . }} -->
+  {{- .Content -}}
+</article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}
