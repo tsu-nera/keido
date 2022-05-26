@@ -616,6 +616,8 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
 ;; 自動でalign整形.
 (setq clojure-align-forms-automatically t)
 
+
+
 (use-package! cider
   :bind
   ;; desing journal用にbinding追加
@@ -630,6 +632,11 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
   ;; companyでのあいまい補完.
   (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
   (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
+
+  ;; うまくうごかないな..
+  (setq cider-special-mode-truncate-lines nil)
+  ;; (add-hook 'cider-stacktrace-mode-hook (lambda () (setq truncate-lines nil)))
+  ;; (add-hook 'cider-inspector-mode-hook (lambda () (setq truncate-lines nil)))
 
   ;; stack-frame表示をプロジェクトに限定
   (setq cider-stacktrace-default-filters '(project))
@@ -1549,29 +1556,6 @@ Org-modeとAnkiをつなぐ．
   (define-key org-mode-map (kbd "C-c n A s") #'org-anki-sync-entry)
   (define-key org-mode-map (kbd "C-c n A u") #'org-anki-update-all)
   (define-key org-mode-map (kbd "C-c n A d") #'org-anki-delete-entry))
-```
-
-
-### org-modern {#org-modern}
-
-[GitHub - minad/org-modern: Modern Org Style](https://github.com/minad/org-modern)
-
-開発途中なのかいまいち, コードブロックの線もでない...様子見かな...
-
-```emacs-lisp
-(after! org-modern
-  (setq
-   ;; Agenda styling
-   org-agenda-block-separator ?─
-   org-agenda-time-grid
-   '((daily today require-timed)
-     (800 1000 1200 1400 1600 1800 2000)
-     " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
-   org-agenda-current-time-string
-   "⭠ now ─────────────────────────────────────────────────"))
-
-(add-hook 'org-mode-hook #'org-modern-mode)
-(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 ```
 
 
