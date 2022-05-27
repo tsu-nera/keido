@@ -1542,8 +1542,7 @@ PDFからOutlineを抜き出してOrg fileに生成して，あとはそのOrg-f
 Org-modeとAnkiをつなぐ．
 <https://github.com/eyeinsky/org-anki>
 
-今までanki-editorを利用していたものの，その記法とwikiの相性が悪かった（冗長）.
-これならorg-modeのheadlineがそのままつかえるのでよさそう.
+今までanki-editorを利用していたものの，その記法とwikiの相性が悪かった（冗長）. これならorg-modeのheadlineがそのままつかえるのでよさそう.
 
 ```emacs-lisp
 (use-package! org-anki
@@ -1558,6 +1557,8 @@ Org-modeとAnkiをつなぐ．
   (define-key org-mode-map (kbd "C-c n A d") #'org-anki-delete-entry))
 ```
 
+URLの挿入はorg-link形式でできる. これは便利.
+
 
 ### org-trello {#org-trello}
 
@@ -1568,6 +1569,11 @@ Kanbanツール Trello連携.
     -   [GitHub - org-trello/org-trello](https://github.com/org-trello/org-trello)
 
 古いプロジェクトだがメンテもされていてスターも500以上ついている.
+
+```emacs-lisp
+;; (use-package! org-trello)
+;; (setq org-trello-files '("~/keido/notes/gtd/projects/project_kotori_twitter. org"))
+```
 
 
 ## Term {#term}
