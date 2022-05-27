@@ -1559,6 +1559,17 @@ Org-modeとAnkiをつなぐ．
 ```
 
 
+### org-trello {#org-trello}
+
+Kanbanツール Trello連携.
+
+-   refs.
+    -   [org-trello(official)](http://org-trello.github.io/)
+    -   [GitHub - org-trello/org-trello](https://github.com/org-trello/org-trello)
+
+古いプロジェクトだがメンテもされていてスターも500以上ついている.
+
+
 ## Term {#term}
 
 ```emacs-lisp
