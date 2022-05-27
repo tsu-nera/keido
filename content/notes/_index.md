@@ -25,8 +25,7 @@ aka. [Futurismo](https://futurismo.biz) 別館.
 
 ## 💡仮説まとめ(Issue) {#仮説まとめ--issue}
 
--   🔬自分を変えるアイデア(aka.ライフハック)
--   [🔬Startup Ideas]({{< relref "20220114203239.md" >}})
+[🔬Startup Ideas]({{< relref "20220114203239.md" >}})
 
 
 ## 📚勉強ノート(Literature Notes) {#勉強ノート--literature-notes}
