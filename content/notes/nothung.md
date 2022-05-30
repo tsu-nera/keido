@@ -1577,9 +1577,22 @@ Kanbanツール Trello連携.
 
 古いプロジェクトだがメンテもされていてスターも500以上ついている.
 
+ただし動かない...native comp無効で行けるか. -> いけた.
+<https://github.com/org-trello/org-trello/issues/418>
+
 ```emacs-lisp
-;; (use-package! org-trello)
-;; (setq org-trello-files '("~/keido/notes/gtd/projects/project_kotori_twitter. org"))
+(use-package! org-trello)
+```
+
+どうもDoom Emacsだと C-uが効かない. そしてそれによってtrello->org-fileへのdownloadがC-u C-c o sに頼っているので不便になる. **(org-trello-sync-buffer t)** を評価するとダウンロードが走るという仕様のためこれを関数にして呼ぶことによって代替.
+
+[Synching from and to Trello does not work · Issue #409](https://github.com/org-trello/org-trello/issues/409)
+
+```emacs-lisp
+(after! org-trello
+  (defun my/org-trello-sync-from-trello ()
+    (interactive)
+    (org-trello-sync-buffer t)))
 ```
 
 
