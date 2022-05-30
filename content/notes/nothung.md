@@ -616,8 +616,6 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
 ;; 自動でalign整形.
 (setq clojure-align-forms-automatically t)
 
-
-
 (use-package! cider
   :bind
   ;; desing journal用にbinding追加
@@ -659,10 +657,19 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
   (clj-refactor-mode 1)
   (yas-minor-mode 1) ; for adding require/use/import statements
   ;; This choice of keybinding leaves cider-macroexpand-1 unbound
-  (cljr-add-keybindings-with-prefix "C-c C-m"))
+  (cljr-add-keybindings-with-prefix "C-c C-m")
+
+  ;; cljr-rename-symbolでのプロンプト抑止.
+  ;; どうも初回実行が遅く２回目からは問題ない.
+  (setq cljr-warn-on-eval nil)
+)
 ```
 
--   cljr-clean-nsでnamespaceを整理, cljr-project-cleanでプロジェクト全体に適用.
+-   cljr-clean-ns
+    -   namespaceを整理, cljr-project-cleanでプロジェクト全体に適用.
+-   cljr-rename-symbol
+    -   シンボル(関数名や変数名含む).
+    -   どうも遅いのてLSPのほうがここはいいのかも.
 
 
 #### cljstyle: formatter for Clojure {#cljstyle-formatter-for-clojure}
