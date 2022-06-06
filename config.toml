@@ -13,6 +13,7 @@ refLinksNotFoundURL = "/keido/404.html"
 
 disablePathToLower = true
 enableGitInfo = true
+enableEmoji = true
 
 # Required if you want to render robots.txt template
 enableRobotsTXT = true
@@ -32,6 +33,8 @@ enableRobotsTXT = true
 [params]
   BookTheme = 'dark'
   BookSection = 'notes'
+  BookServiceWorker = true
+  BookSearch = true
 
   # BookMenuBundle = 'menu'
 
