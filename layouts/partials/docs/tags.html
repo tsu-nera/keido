@@ -1,0 +1,17 @@
+<div class="bl-section">
+  <h4>Tags</h4>
+  <div class="tags">
+    <ul>
+     {{ range $taxonomy, $_ := .Site.Taxonomies }}
+        {{ with $terms := $.GetTerms $taxonomy }}
+        <div>
+          {{ range $n, $term := $terms }}
+            <li>
+              <a href="{{ $term.RelPermalink }}">🔖{{ $term.Title }}</a></li>
+          {{- end }}
+        </div>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>

@@ -3,10 +3,10 @@
   <h1>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
   </h1>
-  <!-- 自分でタグをしているのでサイトの機能は保留 -->
-  <!-- {{ partial "docs/post-meta" . }} -->
+  {{ partial "docs/post-meta" . }}
   {{- .Content -}}
-  </p>
+  <hr/>
+  {{ partial "docs/tags" . }}
   {{ partial "docs/backlinks" . }}
 </article>
 {{ end }}
