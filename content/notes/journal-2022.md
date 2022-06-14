@@ -1,5 +1,6 @@
 +++
 title = "📅Journal 2022"
+tags = ["JOURNAL"]
 draft = false
 +++
 

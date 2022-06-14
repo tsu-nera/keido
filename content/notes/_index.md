@@ -4,7 +4,7 @@ tags = ["HOME", "DOC"]
 draft = false
 +++
 
-Wiki & Zettelkastenによるtsu-neraの知的生産基盤
+tsu-neraの知的生産基盤.
 
 
 ## Inputs {#inputs}
