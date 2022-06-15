@@ -1,5 +1,5 @@
 +++
-title = "🎓Keido HOME"
+title = "🎓虚無との戦い"
 tags = ["HOME", "DOC"]
 draft = false
 +++
@@ -58,11 +58,11 @@ tsu-neraの知的生産基盤.
 [🔗Futurismo](https://futurismo.biz/)
 
 
-### 🦊虚無との戦い(DarkFox) {#虚無との戦い--darkfox}
+### 🦊何のために生きるか(DarkFox) {#何のために生きるか--darkfox}
 
 大学生のころ，生きる意味を探求するためのHPをYahoo geocitiesに構築していた. geocities終了とともに閉鎖してしまったHPをここに復活させる.
 
-[🦊虚無との戦い]({{< relref "20220128151558.md" >}})
+[🦊DarkFox]({{< relref "20220128151558.md" >}})
 
 
 ## 🗒このサイトについて {#このサイトについて}
