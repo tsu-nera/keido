@@ -1,6 +1,6 @@
 +++
-title = "📅Journal 2022"
-tags = ["JOURNAL"]
+title = "📅Journals 2022"
+tags = ["YEARLY", "JOURNAL"]
 draft = false
 +++
 
@@ -11,4 +11,4 @@ draft = false
 
 ## References {#references}
 
-up: [🎓Keido HOME]({{< relref "_index.md" >}})
+-   up: [📂Journals]({{< relref "toc_journals.md" >}})
