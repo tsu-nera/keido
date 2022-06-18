@@ -1090,27 +1090,6 @@ org-mode で timestamp のみを挿入するカスタム関数. Doom Emacsのせ
 ```
 
 
-#### capture to weekly journal {#capture-to-weekly-journal}
-
-ツイッターのようなマイクロブログの利用を想定している.
-
-```emacs-lisp
-(defun my/create-weekly-org-file (path)
-  (expand-file-name (format "%s.org" (format-time-string "%Y-w%W")) path))
-(defconst my/weekly-journal-dir "~/keido/notes/journals/weekly")
-
-(after! org
-  (add-to-list 'org-capture-templates
-        '("w" "💭 Thought(weekly)" entry
-          (file (lambda ()
-                     (my/create-weekly-org-file my/weekly-journal-dir)))
-              "* 💭 %?\n%U\n\n"
-              :empty-lines 1
-              :unnarrowed nil ;; ほかのエントリは見えないように.
-              :klll-buffer t)))
-```
-
-
 #### Google Chrome Extention: Org Capture {#google-chrome-extention-org-capture}
 
 Google Chromeにを入れることでWeb Pageがorg-captureと連携([link](https://chrome.google.com/webstore/detail/org-capture/kkkjlfejijcjgjllecmnejhogpbcigdc?hl=ja)).
@@ -1309,6 +1288,7 @@ Zettelkasten MethodのOrg-roam実装.
         "R" #'org-roam-ref-remove
         "o" #'org-id-get-create
         "u" #'my/org-roam-update
+        "D" #'org-roam-dailies-goto-today
         )
   :custom
   ;;ファイル名を ID にする.
@@ -1342,7 +1322,7 @@ Zettelkasten MethodのOrg-roam実装.
                          "#+title:🗒${title}\n#+filetags: :DOC:\n")
       :unnarrowrd t)
      ("f" "🦊 Darkfox" plain "%?"
-      :target (file+head "darkfox/%<%Y%m%d%H%M%S>.org"
+      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
                          "#+title:🦊${title}\n#+filetags: :DARKFOX:\n")
       :unnarrowed t)
      ("b" "📚 Book" plain
@@ -1389,7 +1369,6 @@ Zettelkasten MethodのOrg-roam実装.
 
   (setq +org-roam-open-buffer-on-find-file nil)
   (org-roam-db-autosync-mode))
-
 ```
 
 
@@ -1430,6 +1409,37 @@ Org-roamに組み込まれた劣化版org-journal. 現状使用するのをや�
 org-roam-dialiesよりもorg-journalを利用する(org-agendaの都合).
 
 ref. [Org-journal vs org-roam-dailies - Troubleshooting - Org-roam](https://org-roam.discourse.group/t/org-journal-vs-org-roam-dailies/384)
+
+週単位で日記のようなページを外部公開用に使う.
+
+ツイッターのようなマイクロブログの利用を想定している.
+
+```emacs-lisp
+(after! org-roam
+  (setq org-roam-dailies-directory "zk")
+
+  (setq org-roam-dailies-capture-templates
+        '(("d" "default" entry "** %?" :if-new
+           (file+head+olp "%<%G-w%V>.org" "#+title: 📓%<%G-w%V>\n"
+                          ("🖊Journals"))))))
+```
+
+```emacs-lisp
+(defun my/create-weekly-org-file (path)
+  (expand-file-name (format "%s.org" (format-time-string "%Y-w%W")) path))
+(defconst my/weekly-journal-dir "~/keido/notes/zk")
+
+(after! org-capture
+  (add-to-list 'org-capture-templates
+        '("w" "💭 Thought(weekly)" entry
+          (file+headline (lambda ()
+                     (my/create-weekly-org-file my/weekly-journal-dir))
+                         "🖊Journals")
+              "* 💭%?\n%T\n\n"
+              :empty-lines 1
+              :unnarrowed nil ;; ほかのエントリは見えないように.
+              :klll-buffer t)))
+```
 
 
 ### org-journal {#org-journal}
@@ -1488,6 +1498,15 @@ Web UI.
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
 
+
+```
+
+
+#### org-roam-timestamps(disabled) {#org-roam-timestamps--disabled}
+
+org-roam-uiでつかうメタ情報を付与することが目的だが現状使っていないのでいったん封印.
+
+```emacs-lisp
 (use-package! org-roam-timestamps
    :after org-roam
    :config
