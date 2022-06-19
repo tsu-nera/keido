@@ -1,5 +1,6 @@
 +++
 title = "🖊ハッカー未来派宣言"
+tags = ["イデオロギー"]
 draft = false
 +++
 
@@ -176,3 +177,8 @@ Devid Alenはいみじくもいった。『働くだけの幸せバカ』これ�
 行動の全てを見ているスマ－トハウス、……そんなすべてを、さぁ謳いあげろ！
 
 <https://www.youtube.com/watch?v=SBT7W7uJ3ds>
+
+
+## References {#references}
+
+-   [🔖イデオロギー]({{< relref "20220619184826.md" >}})

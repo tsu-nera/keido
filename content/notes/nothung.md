@@ -1208,6 +1208,7 @@ Org-modeで書いたブログ記事をHugoにあったMarkdown形式に変換す
   :config
   ;; なんか.dir-locals.elに書いても反映してくれないな. ココに書いとく.
   (setq org-export-with-author nil))
+(global-set-key (kbd "C-c r e") 'org-hugo-export-to-md)
 ```
 
 このox-hugoで出力されるMarkdownはどうもリスト表示でスペースが4つ入ってしまう. GitHub Favorite Markdownのようにリストでのスペース２であって欲しいものの解決方法が見つからない.
@@ -1301,9 +1302,13 @@ Zettelkasten MethodのOrg-roam実装.
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
                          "#+title:📝${title}\n#+filetags: :WIKI:\n")
       :unnarrowed t)
-     ("t" "🏷 Tag" plain "%?"
+     ("t" "🔖 Tag" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
                          "#+title:🔖${title}\n#+filetags: :TAG:\n")
+      :unnarrowed t)
+     ("p" "👨 Person" plain "%?"
+      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
+                         "#+title:👨${title}\n#+filetags: :PERSON:TAG:\n")
       :unnarrowed t)
      ("i" "📂 TOC" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
@@ -1525,7 +1530,7 @@ org-roam-uiでつかうメタ情報を付与することが目的だが現状使
     -   ivyのactionは ivy-bibtexでC-SPCで選択-> C-M-oでaction選択候補を出し，pとかeとか押す.
 -   org-roam-bibtex
 
-<!--listend-->
+なんかzoteroからデータエクスポートできなくなって動かなくなった.
 
 ```emacs-lisp
 (use-package! org-ref
