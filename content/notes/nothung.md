@@ -979,11 +979,7 @@ org-mode で timestamp のみを挿入するカスタム関数. Doom Emacsのせ
 未分類(後で整理).
 
 ```emacs-lisp
-;; 今どきのアウトライナー的な線を出す.
-;; Terminal Mode ではつかえないので一旦無効化する.
-;; (require 'org-bars)
-;; (add-hook! 'org-mode-hook #'org-bars-mode)
-
+;;
 ;; 空白が保存時に削除されると bullet 表示がおかしくなる.
 ;; なお wl-bulter は doom emacs のデフォルトで組み込まれている.
 (add-hook! 'org-mode-hook (ws-butler-mode -1))
@@ -992,7 +988,7 @@ org-mode で timestamp のみを挿入するカスタム関数. Doom Emacsのせ
 
 ### org-capture {#org-capture}
 
-<https://orgmode.org/manual/Capture-templates.html>
+[Capture templates (The Org Manual)](https://orgmode.org/manual/Capture-templates.html)
 
 ```emacs-lisp
 (after! org
@@ -1063,6 +1059,14 @@ org-mode で timestamp のみを挿入するカスタム関数. Doom Emacsのせ
               (lambda () (my/create-date-org-file my/daily-journal-dir))
               "DeepWork")
              "* 🍅 %?\n%T"
+             :empty-lines 1
+             :unnarrowed t
+             :kill-buffer t)
+            ("r" "🧘 Recovery" entry
+             (file+headline
+              (lambda () (my/create-date-org-file my/daily-journal-dir))
+              "Recovery")
+             "* 🧘 %?\n%T"
              :empty-lines 1
              :unnarrowed t
              :kill-buffer t)
@@ -1208,6 +1212,8 @@ Org-modeで書いたブログ記事をHugoにあったMarkdown形式に変換す
   :config
   ;; なんか.dir-locals.elに書いても反映してくれないな. ココに書いとく.
   (setq org-export-with-author nil))
+
+;; org-roamのexportで多様するのでC-c rのprefixをつけておく.
 (global-set-key (kbd "C-c r e") 'org-hugo-export-to-md)
 ```
 
@@ -1621,6 +1627,21 @@ Org-modeとAnkiをつなぐ．
 ```
 
 URLの挿入はorg-link形式でできる. これは便利.
+
+
+### org-bars {#org-bars}
+
+今どきのアウトライナー的な線を出す.
+
+-   Terminal Mode ではつかえない.
+-   リストの折返しでのインデントは崩れる.
+
+<!--listend-->
+
+```emacs-lisp
+(require 'org-bars)
+(add-hook! 'org-mode-hook #'org-bars-mode)
+```
 
 
 ### Org-noter(disabled) {#org-noter--disabled}
