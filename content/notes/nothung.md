@@ -430,13 +430,35 @@ Emacsの画面に1行80文字のところに線を薄く引く.
 ;; Emacs起動時にいちいち質問されるのはうざい.
 ;; default tではなぜか無視できないので:allを設定しておく.
 (setq enable-local-variables :all)
+
+;;; 右から左に読む言語に対応させないことで描画高速化
+(setq-default bidi-display-reordering nil)
+```
+
+
+### Emacs ガーベジコレクション {#emacs-ガーベジコレクション}
+
+ガーベジコレクションでEmacsのつかうメモリを最適化する.
+
+ガーベジコレクションが走る間隔が多ければ途中で重くなるが, 低スペックPCだとガーベジコレクションをこまめに走らせることで全体的に軽くすることも. 要調整.
+
+```emacs-lisp
+;; GCを減らして軽くする.
+;; (setq gc-cons-threshold (* gc-cons-threshold 10))
+;; GCの上限閾値をあえて下げる(低スペックPC)
+;; (setq gc-cons-threshold (/ gc-cons-threshold 10))
+
+;; どうもDoom だとデフォルトで大きな値が設定されている模様なので戻す.
+;; (setq gc-cons-percentage 0.1)
+(setq gc-cons-threshold 800000)
+;; GC実行のメッセージを出す
+(setq garbage-collection-messages t)
 ```
 
 
 ### ace-window {#ace-window}
 
--   3つ以上のwindowの選択が番号でできる. defaultでC-x oを上書きしてる?
--   C-u C-x o だとwindowをswapできる(ace-swap-window).
+3つ以上のwindowの選択が番号でできる. defaultでC-x oを上書きしてる? C-u C-x o だとwindowをswapできる(ace-swap-window).
 
 
 ## Email {#email}
