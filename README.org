@@ -8,3 +8,4 @@ Wiki & Zettelkastenの実験場 aka. tsu-neraの知的生産基盤.
 - [[https://futurismo.biz/close-futurismo-wiki-3th-2022/][🖊Futurismo Wikiを閉鎖して新たにデジタルガーデンを立ち上げます]]
 
 Org-fileで書いたメモのうちのOrg-roamで管理しているメモの公開用をox-hugoにてexport.
+
