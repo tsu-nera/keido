@@ -10,18 +10,18 @@ tsu-neraの知的生産基盤.
 ## Inputs {#ee611c}
 
 
-### 📚勉強ノート(Literature Notes) {#cb5e60}
-
-ツェッテルカステンにおける文献メモ.
-
-[📁勉強記録]({{< relref "20211231162342.md" >}})
-
-
 ### 📓日記(Fleeting Notes) {#a0f30f}
 
 日々の記録. 時系列のメモからWikiやZettelのメモに知識を流していく.
 
 [📓日記]({{< relref "20220616174719.md" >}})
+
+
+### 📚勉強ノート(Literature Notes) {#cb5e60}
+
+ツェッテルカステンにおける文献メモ.
+
+[📁勉強記録]({{< relref "20211231162342.md" >}})
 
 
 ## Processing {#643562}
@@ -41,12 +41,11 @@ tsu-neraの知的生産基盤.
 [🏛知恵まとめ]({{< relref "zettelkasten.md" >}})
 
 
-### 💡グロースハックまとめ(BML) {#5a9cac}
+### 💡グロースハック(BML) {#3b8395}
 
 仮説検証を通じた学習と成長を記録していく.
 
--   [🔬Startup Ideas]({{< relref "20220114203239.md" >}})
--   [🔥Titan]({{< relref "titan.md" >}})
+[🔥Titan]({{< relref "titan.md" >}})
 
 
 ## Outputs {#bf3324}
