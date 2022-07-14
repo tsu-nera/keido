@@ -34,10 +34,10 @@ ref. 過去の設定は[こちら](https://github.com/tsu-nera/dotfiles/tree/mas
 ```
 
 
-## App {#app}
+## App {#ac863f}
 
 
-### Twitter {#twitter}
+### Twitter {#2491bc}
 
 ```emacs-lisp
 ;; App
@@ -52,7 +52,7 @@ ref. 過去の設定は[こちら](https://github.com/tsu-nera/dotfiles/tree/mas
 ```
 
 
-### eww {#eww}
+### eww {#c69c4f}
 
 Emacsのテキストブラウザ([Manual](https://www.gnu.org/software/emacs/manual/html_mono/eww.html))
 
@@ -84,7 +84,7 @@ notes:
 ```
 
 
-### org-web-tools {#org-web-tools}
+### org-web-tools {#602745}
 
 ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-tools>).
 
@@ -95,7 +95,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ```
 
 
-### Pocket {#pocket}
+### Pocket {#74f27d}
 
 あとで読むサービス.
 
@@ -110,7 +110,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ```
 
 
-### RSS(Elfeed) {#rss--elfeed}
+### RSS(Elfeed) {#ba6edc}
 
 ```emacs-lisp
 ;; elfeed
@@ -132,7 +132,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ```
 
 
-### Habitica {#habitica}
+### Habitica {#198bbe}
 
 ```emacs-lisp
 (use-package! habitica
@@ -145,7 +145,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ```
 
 
-## Checkers {#checkers}
+## Checkers {#30c122}
 
 ```emacs-lisp
 ;; Checkers
@@ -154,7 +154,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ```
 
 
-## Completion {#completion}
+## Completion {#2fea59}
 
 ```emacs-lisp
 ;; Completion
@@ -195,7 +195,7 @@ ewwとorgを便利にするツール群(<https://github.com/alphapapa/org-web-to
 ```
 
 
-### affe {#affe}
+### affe {#cb755a}
 
 fuzzy find. あいまい検索 for consult.
 
@@ -212,7 +212,7 @@ fuzzy find. あいまい検索 for consult.
 ```
 
 
-### all-the-icons-completion {#all-the-icons-completion}
+### all-the-icons-completion {#334911}
 
 <https://github.com/iyefrat/all-the-icons-completion>
 
@@ -224,7 +224,7 @@ fuzzy find. あいまい検索 for consult.
 ```
 
 
-## Config {#config}
+## Config {#fa535f}
 
 ```emacs-lisp
 ;; Config
@@ -247,10 +247,12 @@ fuzzy find. あいまい検索 for consult.
   (setq-default pdf-view-display-size 'fit-width)
   :custom
   (pdf-annot-activate-created-annotations t "automatically annotate highlights"))
+
+
 ```
 
 
-## Editor {#editor}
+## Editor {#344a7f}
 
 ```emacs-lisp
 ;; Editor
@@ -269,7 +271,7 @@ fuzzy find. あいまい検索 for consult.
 ```
 
 
-### 改行(newline)と折り返し(wrap) {#改行--newline--と折り返し--wrap}
+### 改行(newline)と折り返し(wrap) {#5a5c5a}
 
 まず改行(newline)と折り返し(wrap)の２つの概念があることに注意.
 
@@ -319,7 +321,7 @@ auto-fill-modeで自動改行される. これは無効にする.
 折り返しoff/onは, M-x toggle-truncate-linesで切り替えることができる.
 
 
-### visual-line-mode {#visual-line-mode}
+### visual-line-mode {#adc9ee}
 
 単語単位での折り返しをするEmacs標準実装のモード.
 
@@ -338,7 +340,7 @@ Emacsはウィンドウの右端の近くの単語の境界で折り返すよう
 ref: [Word-wrap problem with Chinese or Japanese characters : emacs](https://www.reddit.com/r/emacs/comments/ov2s2r/wordwrap_problem_with_chinese_or_japanese/h76ipjy/)
 
 
-### visual-fill-column {#visual-fill-column}
+### visual-fill-column {#31e520}
 
 Doomだといらないかもだけど.
 
@@ -352,7 +354,7 @@ Doomだといらないかもだけど.
     -   [memo: Emacs の visual-fill-column.el が便利だった](http://sleepboy-zzz.blogspot.com/2015/12/emacs-visual-fill-columnel_29.html)
 
 
-### perfect-margin {#perfect-margin}
+### perfect-margin {#352881}
 
 いい感じにmarginをとってくれる (<https://github.com/mpwang/perfect-margin>)
 
@@ -363,7 +365,7 @@ Doomだといらないかもだけど.
 ```
 
 
-### ターミナルの縦分割線をUTF-8できれいに描く {#ターミナルの縦分割線をutf-8できれいに描く}
+### ターミナルの縦分割線をUTF-8できれいに描く {#f4f3a6}
 
 ref: [How do I make the vertical window divider more pretty? : emacs](https://www.reddit.com/r/emacs/comments/3u0d0u/how_do_i_make_the_vertical_window_divider_more/)
 
@@ -381,7 +383,7 @@ ref: [How do I make the vertical window divider more pretty? : emacs](https://ww
 ```
 
 
-### whitespace {#whitespace}
+### whitespace {#67b860}
 
 余分な空白/タブに色づけ.
 
@@ -399,7 +401,7 @@ ref: [How do I make the vertical window divider more pretty? : emacs](https://ww
 ```
 
 
-### display-fill-column-indicator-mode {#display-fill-column-indicator-mode}
+### display-fill-column-indicator-mode {#a692ab}
 
 Emacsの画面に1行80文字のところに線を薄く引く.
 
@@ -415,7 +417,20 @@ Emacsの画面に1行80文字のところに線を薄く引く.
 ```
 
 
-## Emacs {#emacs}
+### iedit {#4916f9}
+
+複数同時編集.
+
+なおDoom Emacsだと +company/completeとC-;のkeybind競合.
+
+```emacs-lisp
+(use-package! iedit
+  :bind
+  ("C-;" . iedit-mode))
+```
+
+
+## Emacs {#169baf}
 
 ```emacs-lisp
 ;; Emacs
@@ -436,14 +451,14 @@ Emacsの画面に1行80文字のところに線を薄く引く.
 ```
 
 
-### recentf {#recentf}
+### recentf {#a78d1c}
 
 ```emacs-lisp
 (setq recentf-max-saved-items 500)
 ```
 
 
-### Emacs ガーベジコレクション {#emacs-ガーベジコレクション}
+### Emacs ガーベジコレクション {#b2be29}
 
 ガーベジコレクションでEmacsのつかうメモリを最適化する.
 
@@ -451,7 +466,7 @@ Emacsの画面に1行80文字のところに線を薄く引く.
 
 ```emacs-lisp
 ;; GCを減らして軽くする.
-(setq gc-cons-threshold (* gc-cons-threshold 10))
+;; (setq gc-cons-threshold (* gc-cons-threshold 10))
 ;; GCの上限閾値をあえて下げる(低スペックPC)
 ;; (setq gc-cons-threshold (/ gc-cons-threshold 10))
 
@@ -463,12 +478,12 @@ Emacsの画面に1行80文字のところに線を薄く引く.
 ```
 
 
-### ace-window {#ace-window}
+### ace-window {#63c2ff}
 
 3つ以上のwindowの選択が番号でできる. defaultでC-x oを上書きしてる? C-u C-x o だとwindowをswapできる(ace-swap-window).
 
 
-## Email {#email}
+## Email {#ce8ae9}
 
 ```emacs-lisp
 ;; Email
@@ -477,7 +492,7 @@ Emacsの画面に1行80文字のところに線を薄く引く.
 ```
 
 
-## Input {#input}
+## Input {#324118}
 
 ```emacs-lisp
 ;; Input
@@ -499,7 +514,7 @@ Emacsの画面に1行80文字のところに線を薄く引く.
 ```
 
 
-### fcitx {#fcitx}
+### fcitx {#db3e55}
 
 ```emacs-lisp
 (use-package! fcitx
@@ -511,7 +526,7 @@ Emacsの画面に1行80文字のところに線を薄く引く.
 ```
 
 
-### artist mode {#artist-mode}
+### artist mode {#9f9523}
 
 [EmacsWiki: Artist Mode](https://www.emacswiki.org/emacs/ArtistMode)
 
@@ -526,17 +541,17 @@ Emacs上でカーソルやマウスを使って線が書ける.
 ref: [秀丸のような罫線マクロないかなと思ってelisp作成した | Futurismo](https://futurismo.biz/archives/1972/)
 
 
-## Lang {#lang}
+## Lang {#263ab2}
 
 編集補助の中でも特にコーディング支援をまとめる.
 
 
-### Generals {#generals}
+### Generals {#ee5309}
 
 言語に依存しないコーディング支援ツール.
 
 
-#### smartparens {#smartparens}
+#### smartparens {#8dbc69}
 
 <https://github.com/Fuco1/smartparens>
 
@@ -583,7 +598,7 @@ refs:
 ```
 
 
-#### symbol-overlay {#symbol-overlay}
+#### symbol-overlay {#6a29dd}
 
 シンボルのハイライトをキー入力で制御できる.
 
@@ -602,7 +617,7 @@ refs:
 ```
 
 
-#### codic {#codic}
+#### codic {#236efe}
 
 よい変数名を教えてくれるwebサービスcodicクライアント.
 
@@ -622,7 +637,7 @@ codic-translateを使うにはtokenを codic-api-tokenに設定する必要が�
 -   [英語力を向上させたいのでまずは Emacs からはじめた | Futurismo](https://futurismo.biz/archives/2538/)
 
 
-### Clojure {#clojure}
+### Clojure {#3ce4a9}
 
 ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/clojure/README.org)
 
@@ -678,7 +693,7 @@ ref: [doom-emacs/README.org - GitHub](https://github.com/hlissner/doom-emacs/blo
 ```
 
 
-#### clj-refactor {#clj-refactor}
+#### clj-refactor {#3da3ca}
 
 Emacs CIDERでClojureを書くための便利なファクタツール提供.
 
@@ -704,7 +719,7 @@ Emacs CIDERでClojureを書くための便利なファクタツール提供.
     -   どうも遅いのてLSPのほうがここはいいのかも.
 
 
-#### cljstyle: formatter for Clojure {#cljstyle-formatter-for-clojure}
+#### cljstyle: formatter for Clojure {#143663}
 
 ref: [GitHub](https://qiita.com/lagenorhynque/items/a5d83b4a36a1cf1cacbe)
 
@@ -718,12 +733,12 @@ Clojureだとdefaultが node-cljfmtなのでcljstyleを使うには設定が必�
 ```
 
 
-#### clj-kondo: linter for Clojure {#clj-kondo-linter-for-clojure}
+#### clj-kondo: linter for Clojure {#76b9ab}
 
 ref: [GitHub](https://qiita.com/lagenorhynque/items/dd9d6a1d97cbea738bc0)
 
 
-#### portal {#portal}
+#### portal {#7ee9c4}
 
 Data Visualization for Clojure.
 
@@ -745,7 +760,7 @@ ref. <https://github.com/djblue/portal>
 ```
 
 
-### rest {#rest}
+### rest {#65e880}
 
 ```emacs-lisp
 (use-package! restclient
@@ -760,7 +775,7 @@ ref. <https://github.com/djblue/portal>
 ```
 
 
-## Os {#os}
+## Os {#02c4b2}
 
 ```emacs-lisp
 ;; OS
@@ -768,7 +783,7 @@ ref. <https://github.com/djblue/portal>
 ```
 
 
-### EXWM {#exwm}
+### EXWM {#3d569f}
 
 EmacsのWindow Manager.
 
@@ -867,7 +882,7 @@ EmacsのWindow Manager.
 ```
 
 
-## Org-mode {#org-mode}
+## Org-mode {#259b76}
 
 ご存知！
 
@@ -889,6 +904,8 @@ EmacsのWindow Manager.
   (setq org-use-speed-commands t)  ;; bullet にカーソルがあると高速移動
   (setq org-hide-emphasis-markers t) ;; * を消して表示.
   (setq org-pretty-entities t)
+
+  (setq system-time-locale "C") ;; カレンダー表示を英語表記へ
 
   (setq org-footnote-section "Notes") ;; defaultではFootnotesなので変える.
   (setq org-footnote-auto-adjust t)
@@ -961,7 +978,10 @@ EmacsのWindow Manager.
 ;; (set-face-attribute 'org-level-1 nil :inherit 'org-level-8 :height 1.728) ;\LARGE
 ;; Only use the first 4 styles and do not cycle.
 (setq org-cycle-level-faces nil)
-(setq org-n-level-faces 4)
+
+;; orgの階層の色分けレベル.
+;; (setq org-n-level-faces 8)
+
 ;; Document Title, (\huge)
 ;; (set-face-attribute 'org-document-title nil
 ;;                    :height 2.074
@@ -1018,7 +1038,21 @@ org-mode で timestamp のみを挿入するカスタム関数. Doom Emacsのせ
 ```
 
 
-### org-capture {#org-capture}
+### TODOキーワード拡張 {#852221}
+
+TODOキーワードのカスタマイズ.
+
+ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensions.html)
+
+```emacs-lisp
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "NEXT(n)" "PROJ(p)" "WAIT(w)" "|" "DONE(d)")
+        (sequence "✅(c)" "💡(b)" "📍(r)" "🔍(s)" "📊(a)" "🔬(e)" "🗣(h)" "|")
+        (sequence "🎓(z)" "📝(m)" "|")))
+```
+
+
+### org-capture {#7069b9}
 
 [Capture templates (The Org Manual)](https://orgmode.org/manual/Capture-templates.html)
 
@@ -1041,7 +1075,7 @@ org-mode で timestamp のみを挿入するカスタム関数. Doom Emacsのせ
 ```
 
 
-#### capture to daily journal {#capture-to-daily-journal}
+#### capture to daily journal {#92cfb1}
 
 ```emacs-lisp
 (defun my/create-date-org-file (path)
@@ -1126,14 +1160,14 @@ org-mode で timestamp のみを挿入するカスタム関数. Doom Emacsのせ
 ```
 
 
-#### Google Chrome Extention: Org Capture {#google-chrome-extention-org-capture}
+#### Google Chrome Extention: Org Capture {#6b693d}
 
 Google Chromeにを入れることでWeb Pageがorg-captureと連携([link](https://chrome.google.com/webstore/detail/org-capture/kkkjlfejijcjgjllecmnejhogpbcigdc?hl=ja)).
 
 ChromeでCtrl + Shift + Lで起動.
 
 
-### org-export(ox) {#org-export--ox}
+### org-export(ox) {#639cea}
 
 Org-modeのファイルをエクスポートする機能. ox package.
 
@@ -1186,7 +1220,7 @@ org-export-with-xxxという設定項目でいろいろ制御できる.
 ```
 
 
-#### ox-hugo {#ox-hugo}
+#### ox-hugo {#d078da}
 
 Org-modeで書いたブログ記事をHugoにあったMarkdown形式に変換する.
 
@@ -1201,12 +1235,21 @@ Org-modeで書いたブログ記事をHugoにあったMarkdown形式に変換す
 
 ;; org-roamのexportで多様するのでC-c rのprefixをつけておく.
 (global-set-key (kbd "C-c r e") 'org-hugo-export-to-md)
+
+;; org-hugo-get-idを使うように設定.
+(setq org-hugo-anchor-functions '(org-hugo-get-page-or-bundle-name
+                                  org-hugo-get-custom-id
+                                  org-hugo-get-id
+                                  org-hugo-get-md5
+                                  ;; 日本語に不向きな気がする
+                                  org-hugo-get-heading-slug
+                                  ))
 ```
 
 このox-hugoで出力されるMarkdownはどうもリスト表示でスペースが4つ入ってしまう. GitHub Favorite Markdownのようにリストでのスペース２であって欲しいものの解決方法が見つからない.
 
 
-#### ox-rst {#ox-rst}
+#### ox-rst {#c6d8ad}
 
 Org-modeで書いたWiki用のページをSphinxで公開するためにreST形式に変換する.
 
@@ -1225,7 +1268,22 @@ Org-modeで書いたWiki用のページをSphinxで公開するためにreST形�
 ```
 
 
-### org-babel(ob) {#org-babel--ob}
+#### ox-qmd {#04869d}
+
+GitHub Flavored Markdown.
+
+標準のMarkdownの出力だと見た目が悪い. Bufferに書き出してGitHubとかにコピペするとき用にいれておく.
+
+ref. [Org-modeからQiita準拠のMarkdownをexportするパッケージを作ってみました - Qiita](https://qiita.com/0x60df/items/3cde67967e3db30d9afe)
+
+```emacs-lisp
+(use-package! ox-qmd)
+```
+
+ox-gfmは2017からメンテされてないのでやめとくか([ref](https://github.com/larstvei/ox-gfm/issues/44)).
+
+
+### org-babel(ob) {#784535}
 
 Org-modeのなかでLiterature Programming.
 
@@ -1271,7 +1329,7 @@ refs:
 -   [org-modeのコードブロック(Babel)の使い方 | Misohena Blog](https://misohena.jp/blog/2017-10-26-how-to-use-code-block-of-emacs-org-mode.html)
 
 
-#### ob-html {#ob-html}
+#### ob-html {#114523}
 
 [org-modeのコードブロックでHTMLを「実行」する | Misohena Blog](https://misohena.jp/blog/2021-08-03-execute-html-in-org-mode-code-blocks.html)
 
@@ -1284,7 +1342,7 @@ refs:
 ```
 
 
-### Org-roam {#org-roam}
+### Org-roam {#c30a5c}
 
 Zettelkasten MethodのOrg-roam実装.
 
@@ -1394,12 +1452,53 @@ Zettelkasten MethodのOrg-roam実装.
     (org-roam-update-org-id-locations)
     (org-roam-db-sync))
 
+  (setq org-roam-mode-sections
+        '((org-roam-backlinks-section :unique t)))
+
+
   (setq +org-roam-open-buffer-on-find-file nil)
   (org-roam-db-autosync-mode))
 ```
 
+```emacs-lisp
+(setq org-roam-db-node-include-function
+      (lambda ()
+        (not (member "" (org-get-tags)))))
+```
 
-#### Org-roam管理下のノートの全文検索 {#org-roam管理下のノートの全文検索}
+
+#### consult-org-roam(Org-roam検索強化) {#b09eea}
+
+以下の機能を提供.ファイル名は今は日付にしているからいらないかな.全文検索は動かない.バックリンク検索だけ使えそう.
+
+-   ファイル名検索
+-   バックリンク検索
+-   全文検索
+
+<!--listend-->
+
+```emacs-lisp
+(use-package! consult-org-roam
+   :ensure t
+   :init
+   (require 'consult-org-roam)
+   ;; Activate the minor-mode
+   (consult-org-roam-mode 1)
+   :custom
+   (consult-org-roam-grep-func #'consult-ripgrep)
+   :config
+   ;; Eventually suppress previewing for certain functions
+   (consult-customize
+    consult-org-roam-forward-links
+    :preview-key (kbd "M-."))
+   :bind
+   ("C-c r F" . consult-org-roam-file-find)
+   ("C-c r b" . consult-org-roam-backlinks)
+   ("C-c r S" . consult-org-roam-search))
+```
+
+
+#### Org-roam管理下のノートの全文検索 {#ccecb7}
 
 [Using consult-ripgrep with org-roam for searching notes - How To - Org-roam](https://org-roam.discourse.group/t/using-consult-ripgrep-with-org-roam-for-searching-notes/1226)
 
@@ -1414,7 +1513,7 @@ consult-ripgrepを [deft](https://jblevins.org/projects/deft/) の代わりに�
 ```
 
 
-#### org-publish(Org-roamのノートをサイトへ公開) {#org-publish--org-roamのノートをサイトへ公開}
+#### org-publish(Org-roamのノートをサイトへ公開) {#28f538}
 
 使ってないかな...
 
@@ -1429,7 +1528,7 @@ consult-ripgrepを [deft](https://jblevins.org/projects/deft/) の代わりに�
 ```
 
 
-#### org-roam-dailies {#org-roam-dailies}
+#### org-roam-dailies {#1f4c28}
 
 Org-roamに組み込まれた劣化版org-journal. 現状使用するのをやめた.
 
@@ -1469,7 +1568,7 @@ ref. [Org-journal vs org-roam-dailies - Troubleshooting - Org-roam](https://org-
 ```
 
 
-#### org-roam-ui {#org-roam-ui}
+#### org-roam-ui {#4a348a}
 
 Web UI.
 
@@ -1492,7 +1591,7 @@ Web UI.
 ```
 
 
-#### org-roam-timestamps(disabled) {#org-roam-timestamps--disabled}
+#### org-roam-timestamps(disabled) {#83eb97}
 
 org-roam-uiでつかうメタ情報を付与することが目的だが現状使っていないのでいったん封印.
 
@@ -1506,7 +1605,7 @@ org-roam-uiでつかうメタ情報を付与することが目的だが現状使
 ```
 
 
-### org-toggl {#org-toggl}
+### org-toggl {#d47618}
 
 org-modeをTogglと連携させる.
 <https://github.com/mbork/org-toggl>
@@ -1522,7 +1621,7 @@ org-modeをTogglと連携させる.
 ```
 
 
-### org-journal {#org-journal}
+### org-journal {#40078c}
 
 <https://github.com/bastibe/org-journal>
 
@@ -1559,7 +1658,7 @@ org-modeをTogglと連携させる.
 ```
 
 
-### org-ref(bibtex) {#org-ref--bibtex}
+### org-ref(bibtex) {#336e39}
 
 文献管理. Zoteroと連携して，論文というよりは書籍やYoutube動画やWeb記事のメモに利用.
 
@@ -1638,7 +1737,7 @@ org-modeをTogglと連携させる.
 ```
 
 
-### org-anki {#org-anki}
+### org-anki {#29076d}
 
 Org-modeとAnkiをつなぐ．
 <https://github.com/eyeinsky/org-anki>
@@ -1661,7 +1760,7 @@ Org-modeとAnkiをつなぐ．
 URLの挿入はorg-link形式でできる. これは便利.
 
 
-### org-bars {#org-bars}
+### org-bars {#c9c353}
 
 今どきのアウトライナー的な線を出す.
 
@@ -1676,7 +1775,7 @@ URLの挿入はorg-link形式でできる. これは便利.
 ```
 
 
-### Org-noter(disabled) {#org-noter--disabled}
+### Org-noter(disabled) {#f77cd8}
 
 PDFの注釈を管理する. [:link:weirdNox/org-noter](https://github.com/weirdNox/org-noter)
 
@@ -1698,7 +1797,7 @@ M-x org-noter-create-skeltonという関数がヤばい. [🔗Youtube動画(1:08
 ```
 
 
-### org-trello(disabled) {#org-trello--disabled}
+### org-trello(disabled) {#c4dcf7}
 
 Kanbanツール Trello連携.
 
@@ -1727,7 +1826,14 @@ Kanbanツール Trello連携.
 ```
 
 
-## Term {#term}
+### org-table {#1e7fe9}
+
+```emacs-lisp
+(setq org-table-export-default-format "orgtbl-to-csv")
+```
+
+
+## Term {#cf5f30}
 
 ```emacs-lisp
 ;; Term
@@ -1735,7 +1841,7 @@ Kanbanツール Trello連携.
 ```
 
 
-## Tools {#tools}
+## Tools {#8625e1}
 
 ```emacs-lisp
 ;; Tools
@@ -1743,7 +1849,7 @@ Kanbanツール Trello連携.
 ```
 
 
-### forge {#forge}
+### forge {#228410}
 
 magit拡張, EmacsとGitHubを連携.
 
@@ -1763,7 +1869,7 @@ ref: [Forge User and Developer Manual](https://magit.vc/manual/forge/)
 これは .git/configの問題なのでローカルのファイルを修正する.
 
 
-### git-link {#git-link}
+### git-link {#ba2b77}
 
 現在のバッファの位置のGitHubのurlを取得.
 
@@ -1779,12 +1885,12 @@ ref: [Forge User and Developer Manual](https://magit.vc/manual/forge/)
 ```
 
 
-## UI {#ui}
+## UI {#71ff71}
 
 みため周りの設定.
 
 
-### Doom {#doom}
+### Doom {#63af23}
 
 ```emacs-lisp
 ;; UI
@@ -1803,15 +1909,15 @@ ref: [Forge User and Developer Manual](https://magit.vc/manual/forge/)
 ;; counselとdoom-modelineが相性悪いようなので
 ;; workspace name表示のためには追加で設定.
 ;; https://github.com/hlissner/doom-emacs/issues/314
-(after! doom-modeline
-  (setq doom-modeline-icon (display-graphic-p))
-  (setq doom-modeline-major-mode-icon t))
+;; (after! doom-modeline
+;;  (setq doom-modeline-icon (display-graphic-p))
+;;  (setq doom-modeline-major-mode-icon t))
 ```
 
 <https://github.com/seagle0128/doom-modeline>
 
 
-### emojify {#emojify}
+### emojify {#361469}
 
 Emacsで絵文字をつかう.
 
@@ -1836,7 +1942,7 @@ Emacsの機能でemoji-searchがあるのでこれも設定しておこう.
 ```
 
 
-### svg-tag-mode {#svg-tag-mode}
+### svg-tag-mode {#219cd0}
 
 TODOほかラベルを美しく.
 
@@ -1866,7 +1972,7 @@ TODOほかラベルを美しく.
 ```
 
 
-### Others {#others}
+### Others {#52ef96}
 
 ```emacs-lisp
 (setq display-line-numbers-type t) ; 行番号表示
@@ -1892,4 +1998,8 @@ TODOほかラベルを美しく.
 
 ;; 実験, どうもマウス操作でEmacsの制御が効かなくなることがあるので.
 (setq make-pointer-invisible nil)
+
+;; (general-def
+;;  :keymaps 'override
+;;   "C-u" 'universal-argument)
 ```
