@@ -1,5 +1,6 @@
 +++
 title = "✅仮想通貨Botの自動売買で稼ぐ方法(2022)"
+lastmod = 2022-07-14T19:46:31+09:00
 tags = ["FUTURISMO", "BML"]
 draft = false
 +++
@@ -11,16 +12,18 @@ draft = false
 - [✅2022からでも仮想通貨Botで稼げる](#d14cd0)
     - [🔍過去1年の参入者での実績を出した事例](#1870ec)
 - [✅開発するBotはmlbot](#fffb4f)
-    - [<span class="org-todo todo _">🔍</span> 主な仮想通貨Botの種類](#788bb7)
-    - [<span class="org-todo todo _">📊</span> 開発の難易度と得られるリターンのマトリックス](#4a82d0)
+    - [🔍主な仮想通貨Botの種類](#b0d34e)
+    - [📊開発の難易度と得られるリターンのマトリックス](#8a0da7)
     - [💡どてんBotよりもむしろmlbot](#c88676)
     - [💡アビトラBotよりもむしろmlbot](#38eb77)
 - [✅開発言語はPythonではなくClojure](#b3a8a8)
+    - [🔍Clojureでのtrading bot開発事例](#5753e9)
     - [🔍Clojureで開発するメリット](#7bfe2e)
     - [🔍Clojureで開発するデメリット](#ed4401)
     - [💡デメリットが大きくてもClojureを選ぶ理由](#8e43cb)
 - [✅Botの戦略はxxx](#74bd27)
 - [✅取引所はBitflyer](#02ce91)
+    - [🔍多くのbotterがbitflyerを選ぶ人気理由](#efb0e4)
 
 </div>
 <!--endtoc-->
@@ -34,7 +37,7 @@ draft = false
 
 ## ✅2022からでも仮想通貨Botで稼げる {#d14cd0}
 
-**📍強い既存Botterだけでなく新規参入者でも勝てるか？**
+-   📍強い既存Botterだけでなく新規参入者でも勝てるか？
 
 
 ### 🔍過去1年の参入者での実績を出した事例 {#1870ec}
@@ -42,14 +45,14 @@ draft = false
 
 ## ✅開発するBotはmlbot {#fffb4f}
 
-**📍勝てるBotの種類を見極める**
+-   📍勝てるBotの種類を見極める
 
 仮想通貨Botにはいろんな種類がある.
 
 このなかで, なぜmlbotを開発するのかを明確にする.
 
 
-### <span class="org-todo todo _">🔍</span> 主な仮想通貨Botの種類 {#788bb7}
+### 🔍主な仮想通貨Botの種類 {#b0d34e}
 
 -
 
@@ -60,7 +63,7 @@ draft = false
 ref.
 
 
-### <span class="org-todo todo _">📊</span> 開発の難易度と得られるリターンのマトリックス {#4a82d0}
+### 📊開発の難易度と得られるリターンのマトリックス {#8a0da7}
 
 T.B.D.
 
@@ -73,7 +76,11 @@ T.B.D.
 
 ## ✅開発言語はPythonではなくClojure {#b3a8a8}
 
-**📍Clojureの優位性を見極める**
+-   📍Clojureの優位性を見極める.
+-   📍ClojureでPythonのようなデータ分析が可能かを見極める.
+
+
+### 🔍Clojureでのtrading bot開発事例 {#5753e9}
 
 
 ### 🔍Clojureで開発するメリット {#7bfe2e}
@@ -87,7 +94,7 @@ T.B.D.
 
 ## ✅Botの戦略はxxx {#74bd27}
 
-**📍勝てる戦略を見極める**
+-   📍勝てる戦略を見極める.
 
 mlbotを開発しようとしたときに, チュートリアル通りにやっても稼げない. そこで, 改造ポイントを見極める.
 
@@ -96,4 +103,7 @@ mlbotを開発しようとしたときに, チュートリアル通りにやっ�
 
 ## ✅取引所はBitflyer {#02ce91}
 
-**📍勝てる取引所を選定する**
+-   📍勝てる取引所を選定する.
+
+
+### 🔍多くのbotterがbitflyerを選ぶ人気理由 {#efb0e4}

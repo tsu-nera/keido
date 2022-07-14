@@ -1220,6 +1220,17 @@ org-export-with-xxxという設定項目でいろいろ制御できる.
 ```
 
 
+#### org-preview-html {#94009d}
+
+今のEmacs, xwidget用にコンパイルしてなかったな...
+
+ewwでプレビューできる.
+
+```emacs-lisp
+(use-package! org-preview-html)
+```
+
+
 #### ox-hugo {#d078da}
 
 Org-modeで書いたブログ記事をHugoにあったMarkdown形式に変換する.
