@@ -17,4 +17,6 @@ draft = false
 
 ## References {#d95867}
 
-up: [🎓Keido HOME]({{< relref "_index.md" >}})
+-   up: [🎓Keido HOME]({{< relref "_index.md" >}})
+-   refs.
+    -   [🏛MOC HOME]({{< relref "zettelkasten.md" >}})
