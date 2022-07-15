@@ -11,14 +11,29 @@ draft = false
 [🦊自分史]({{< relref "my_history.md" >}})に時系列のイベントを書き，それを元にこのイベントを抽象化したインサイトを書き溜める.
 
 
-## 高校2年生のときに医学部受験から東大受験に変えたのは医者ではなくて学者になりたかったから {#38769243-75bc-4067-8fb1-1c78a42d371c}
+## 高校受験で巣鴨高校を選んだのは医者になりたかったから {#245eae8e-d47b-4e2d-84e5-a03f13bd907c}
+
+高校受験では [📝巣鴨高校]({{< relref "20220715092223.md" >}})と海城高校を受験して両方合格して巣鴨高校を選んだ. その理由は, 医者になろうと思ったから. 巣鴨は今もむかしも医学部進学率は全国１位.
+
+近所に早大学院があったのでその選択肢もあったし周りの成績がいい人はそこを受ける人も多かったが, 大学に受験なしで上がれても早稲田程度だと嫌だった(過去の思い込み, 今は思っていない).
+
+to. [医学部受験から東大受験に変えたのは医者ではなくて学者になりたかったから](#38769243-75bc-4067-8fb1-1c78a42d371c)
+
+
+## 医学部受験から東大受験に変えたのは医者ではなくて学者になりたかったから {#38769243-75bc-4067-8fb1-1c78a42d371c}
+
+[🦊巣鴨高校時代]({{< relref "20220712202003.md" >}})
+
+高校2年生のときに医学部受験から東大受験に変えたのは医者ではなくて学者になりたかったから.
 
 とても大事なことを思い出した. そして，それまでは医者になろうとしていたので，これを祖父にいうのも勇気が必要だった.
+
+ネガティブな理由をいえば, 他人を助けたりすることに興味がなく, また他人に親切にすることで自分も満足感をえる経験が少なかったのかも. 自分は思いやりのない人間だと思っていた. 他人より自分が大事だし, その価値観は今も変わらない.
 
 
 ## 大学でまともに勉強しなかったり研究ができなかったことにとても未練がある {#be799b47-a69c-44e5-a460-0d1e9e5e3361}
 
-[東大受験失敗]({{< relref "my_history.md#e1586f29-e576-4ed8-a9da-cecde08701de" >}})してうつ病にさえならなければ，大学でちゃんと勉強して学術的な世界を見れたかもしれない.
+[東大受験失敗]({{< relref "20220712202003.md#e1586f29-e576-4ed8-a9da-cecde08701de" >}})してうつ病にさえならなければ，大学でちゃんと勉強して学術的な世界を見れたかもしれない.
 
 死ぬ前の後悔としてなにかあるとすれば，学術研究の世界を知りたかった.論文を読んだり学会にでたり.
 
@@ -74,7 +89,7 @@ UberEatsをすればするほど，自分に自信がなくなり(自己肯定�
 
 しかし浪人をして考えが変わり応用数学を選んだ. この理由は，勉強ばかりしていても役には立たないことを悟り，知識を役立てたかった.そしてとくに好きだったのが数学だったので，数.学を役立てる，つまり数学を使って仕事をしたりお金を稼ぎたかったから([数学を使って稼ぎたい]({{< relref "20211227030010.md" >}})).
 
-ref: [2006/04: 東京理科大学理学部数理情報科学科に入学]({{< relref "my_history.md#f19ceac3-16fb-4937-afa3-50fdae6fa52a" >}})
+ref: [2006/04: 東京理科大学理学部数理情報科学科に入学]({{< relref "20220712202153.md#f19ceac3-16fb-4937-afa3-50fdae6fa52a" >}})
 
 
 ## 受験生(現役)のとき理科大の物理学科に合格したのは発明家になりたかったから {#99bbde73-6293-44ec-a871-c76a1baf8d14}
@@ -112,28 +127,28 @@ ref: [2006/04: 東京理科大学理学部数理情報科学科に入学]({{< re
 キオークマンでただ声に出しながら勉強した。音読をかなりやり込んだ。TOEICもそうだったな。丸暗記には中毒性があり、落語に繋がった。
 
 
-## 知的生産基盤を完成させるということは，すなわち頭をつかって稼いでいくということへの宣戦布告 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-20 月&gt;</span></span> {#d08040}
+## 知的生産基盤を完成させるということは，すなわち頭をつかって稼いでいくということへの宣戦布告 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-20 Mon&gt;</span></span> {#9b0661}
 
 知的生産基盤をつくるというのは，好奇心として面白い. しかし，別の大きな目的としては知的生産によってお金を稼いでいくという覚悟と決意でもある.
 
 もうUberEats配達員生活が2年続いた，どうしてもここから抜け出したい. 的生産によって収入を得たい. 肉体労働力を提供するだけの仕事はほんとうに嫌だ.
 
 
-## 頭で稼ぐ仕事がしたい，身体で稼ぐ仕事は私らしくない <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-20 月&gt;</span></span> {#1e6a06}
+## 頭で稼ぐ仕事がしたい，身体で稼ぐ仕事は私らしくない <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-20 Mon&gt;</span></span> {#b84667}
 
 UberEatsはもうしたくない，それは頭をつかって稼ぐ仕事ではないから. わたしはずっと勉強だったり机に向かってきている人生だった.
 
 UberEatsではその経験を活かすことが難しい,それは私らしさを感じない. UberEatsをやるたびに私が私であるという自己肯定感か下がる.
 
 
-## 思考力に惹かれるのは，今まさに直面している生活の問題を解きたいから <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-20 月&gt;</span></span> {#9e95ed}
+## 思考力に惹かれるのは，今まさに直面している生活の問題を解きたいから <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-20 Mon&gt;</span></span> {#7a2c46}
 
 思考力に惹かれるのは、今まさに直面している目の前の問題を解きたいから。そして半年間今までのスキルと経験で解こうとしても解けないから。lispだったり仮説思考など、新たなスキルを獲得してチャレンジしたいから。
 
 2年間, UberEats配達員から抜け出せない貧困生活に本当に焦っている.
 
 
-## Zettelkasten MethodはGTDに出会ったときのようにワクワクする. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-18 土&gt;</span></span> {#ba462a}
+## Zettelkasten MethodはGTDに出会ったときのようにワクワクする. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-18 Sat&gt;</span></span> {#9fc6d1}
 
 Zettelとの出会いはGTDと大変似ている。社会人1年目，人生をオーガナイズしたかった.
 
@@ -145,19 +160,19 @@ ZettelもGTD同様に人生を管理できる可能性がある. 日本に上陸
 新しい知識を手に入れること、努力して成長すること。 この両者に共通している点は、どちらも新しい世界が見えるようになるということ。これは未踏の地への冒険であり、副産物は感動だ。
 
 
-## 独りが好き <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-12 日&gt;</span></span> {#751f85}
+## 独りが好き <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-12 Sun&gt;</span></span> {#89c4cd}
 
 今，ほとんど人間関係を断っているが，逆にとても快適だ. 基本的には独りや孤独が好きなのだ.というより，他人といると嫉妬したり遠慮したりする.
 
 もしかしたら練習すればいいのかもしれない. ただ，もう子供の時からずっとこうなのでいまさら変えなくてもいいかもしれない.
 
 
-## 人生の目的や意味を考えるのではなく，明日死ぬとして今のあり方を考える <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 土&gt;</span></span> {#49e232}
+## 人生の目的や意味を考えるのではなく，明日死ぬとして今のあり方を考える <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 Sat&gt;</span></span> {#d9043a}
 
 生きる目的や意味を求めるのではなく、追求するべき価値観を見つけるべきでは？目的は到達地点だが、未来のことは予測できない。意味は得られるものだが、報酬はなくてもいい。将来こうなりたいとか、これを得たいとかではなく、今この瞬間にどうありたいか、を考える。
 
 
-## DarkFoxになる！ <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 土&gt;</span></span> {#8a2579}
+## DarkFoxになる！ <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 Sat&gt;</span></span> {#f4878b}
 
 [DarkHorse]({{< relref "20220127181529.md" >}})という本にとても惹かれる.
 
@@ -170,7 +185,7 @@ ref. [『Dark Horse「好きなことだけで生きる人」が成功する時�
 ダークホースは極めて個人的で細分化され小さなモチベーションを重視。私はなんだ？クラシック音楽をきいたときにドーパミンが頭から出る感覚？知識や美に感動する能力？
 
 
-## 確率思考を学びたい, データサイエンスや数学的な素養は鍛えれば強力な武器<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 土&gt;</span></span> {#f49b12}
+## 確率思考を学びたい, データサイエンスや数学的な素養は鍛えれば強力な武器<span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 Sat&gt;</span></span> {#61501e}
 
 [情報理論]({{< relref "20211211064848.md" >}}) を学んだ身としては，確率的に物事を考えるということは，アイデンティティに食い込む.
 
@@ -183,36 +198,36 @@ ref. [『Dark Horse「好きなことだけで生きる人」が成功する時�
 確率，統計，機械学習などのデータサイエンススキルは生涯に渡りUpdateしていく.
 
 
-## アノニマスの人類への警鐘 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 土&gt;</span></span> {#8c8271}
+## アノニマスの人類への警鐘 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 Sat&gt;</span></span> {#11c9b7}
 
 [🎙アノニマスからの警告]({{< relref "20220609222149.md" >}}) の翻訳をdropboxからみつけて再読する。
 
 なんか今考えてることも2年前にTitanでやろうとしてたことも、ほぼ同じだな。自分の道を歩むことを支援するサービス。昔との変化はこれはわたしが変わりたいためにやるのであり、わたし以外はけっこうどうでもいい。Titanの失敗は他人を意識したサービスを作ろうとした。私を変えるんだ、わたしが変わりたかったんだ。救いたかったのは、自分自身なんだ。
 
 
-## あらゆる知識を博覧強記に学習したい. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 土&gt;</span></span> {#7cf6d1}
+## あらゆる知識を博覧強記に学習したい. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 Sat&gt;</span></span> {#704a2e}
 
 わたしは大学で大した専門性を身につけなかったし、なんの分野も深く入れなかった。しかしだからこそなんでも分野に関わらず学べばいいのでは？数学を学んで古文を学んで音楽を学ぶ。
 
 学者じゃないので役に立つとか仕事につながるとか、そんなことのしがらみから開放され好奇心のままに学ぶ。これは研究者や学者でないからこその強みだ。そして学ぶ楽しさはその深さとは無関係だ.
 
 
-## 落語の才能を活かしてユーチューブがしたい <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 土&gt;</span></span> {#94792a}
+## 落語の才能を活かしてユーチューブがしたい <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 Sat&gt;</span></span> {#4ecf92}
 
 落語の才能でユーチューブをやるのはありかも。なぜならわたしは落語のように話すのが大変好きなのだ。受けるとか受けないの前に、好きなのだ。今まで落語なんて語っても受けてないじゃないか！それでも夢中だったじゃないか。
 
 
-## お金にならなくても芸術的なことに注力したい. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 土&gt;</span></span> {#1c4d89}
+## お金にならなくても芸術的なことに注力したい. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 Sat&gt;</span></span> {#4005bb}
 
 お金にならなくてもわくわくすることをしたい、この思想は画家や音楽家のようなことに今気付いた。
 
 
-## お金がなくても死なないしお腹が空いても寒くても思ってたより幸福 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 土&gt;</span></span> {#903891}
+## お金がなくても死なないしお腹が空いても寒くても思ってたより幸福 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-11 Sat&gt;</span></span> {#5cf0e6}
 
 また一つ既成概念が壊れつつある。たしかに、お金がないと将来が不安だしホームレスや餓死が怖いと思っていた。今はいいけど老後はどうするかと思っていた。しかし、老後どころかまさに今、生活費が7万の貧困にいつつ、そこまで絶望的ではないし、どちらかというと正社員で働いてうつ病にかかってたときよりは圧倒的に幸福である。そして、食べなくても死なないし、空腹慣れれば大して気にならないことも発見した。
 
 
-## ハックすることは無限に没頭できる. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-09 木&gt;</span></span> {#b6b9e7}
+## ハックすることは無限に没頭できる. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-09 Thu&gt;</span></span> {#d6f4e8}
 
 勉強すること、ハックすること、この2つはどんなに貧乏でも、どんなに金持ちでも、関係ない価値観。
 
@@ -221,27 +236,27 @@ ref. [『Dark Horse「好きなことだけで生きる人」が成功する時�
 そう考えると瞬間瞬間で幸福を感じることができる。空の感覚と美の感覚はあらゆるところに偏在する。
 
 
-## 強みを探して極限まで高めたい <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-03 金&gt;</span></span> {#07bd3e}
+## 強みを探して極限まで高めたい <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-03 Fri&gt;</span></span> {#e3b621}
 
 今までの人生を振り返り、好きなことと得意なことと大事なことを極限まで叩き上げる。さらにそれを軸にして誰も到達したことがない世界を切り開く。
 
 
-## 不安を力に変える <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-02 木&gt;</span></span> {#282ea7}
+## 不安を力に変える <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-02 Thu&gt;</span></span> {#9bfe66}
 
 ストレスを力に変えるのはなんとなくわかった。 次は不安だ。不安があればあるほど、ワクワク感を感じよう。そして、わたしには感動すると脳が震えてドーパミンが出まくるという、他人にはない究極の強みを発見した。
 
 
-## 青春18きっぷの旅が好きだった. あと金太郎花太郎も. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-09 木&gt;</span></span> {#e600b6}
+## 青春18きっぷの旅が好きだった. あと金太郎花太郎も. <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-09 Thu&gt;</span></span> {#6fb1cf}
 
 
-## 落語をはじめたきっかけは演説が得意だと思ったから <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-09 木&gt;</span></span> {#e9a5de}
+## 落語をはじめたきっかけは演説が得意だと思ったから <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-09 Thu&gt;</span></span> {#5eea98}
 
 落語をはじめたのはなんとなく子供の頃から自分には演説の才能がある. またチャップリンなどのスピーチに感動したからな気がした。
 
 思い起こせば，高校の化学の時間にディベートで褒められたのも影響している. ただ，中学2年生で全校生徒の前で生徒総会で上がってしまい逃げてしまったのでそれ以来大学まではあまり人前で話さなかった.それまでは，人前での発表は好きだったんだけどな.
 
 
-## 過去に楽しかった時期は浪人中と休職中 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-07 火&gt;</span></span> {#72b00f}
+## 過去に楽しかった時期は浪人中と休職中 <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-07 Tue&gt;</span></span> {#a0eaaa}
 
 結局人生で楽しかったと振り返り思えるときは浪人時代と休職中で、他のすべてを断ち毎日何かしらのテーマで学んでいたときだった。おそらく時間やお金、そして寿命からもすべてが自由になってもやることは勉強な気がするな。
 
@@ -253,9 +268,9 @@ ref. [『Dark Horse「好きなことだけで生きる人」が成功する時�
 -   ドラクエの勇者
 
 
-## クラシコイタリアファッションが好きだったことを思い出した <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-03 金&gt;</span></span> {#60b06d}
+## クラシコイタリアファッションが好きだったことを思い出した <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-03 Fri&gt;</span></span> {#2c6b58}
 
 
-## クラシック音楽に感動する能力で裏悟りを開きたい <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-03 金 17:13&gt;</span></span> {#09bd40}
+## クラシック音楽に感動する能力で裏悟りを開きたい <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-12-03 Fri 17:13&gt;</span></span> {#31844b}
 
 クラシック音楽で感動する力、このわたしの特殊能力を瞑想で極限まで叩き上げた先に見える世界がみたい。これはヴィパッサナーとは対局のサマタ瞑想の境地。裏悟り。
