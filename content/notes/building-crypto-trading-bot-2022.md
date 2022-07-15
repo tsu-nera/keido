@@ -1,6 +1,6 @@
 +++
 title = "✅仮想通貨Botの自動売買で稼ぐ方法(2022)"
-lastmod = 2022-07-14T20:41:09+09:00
+lastmod = 2022-07-15T12:05:23+09:00
 tags = ["FUTURISMO", "BML"]
 draft = false
 +++
@@ -24,7 +24,7 @@ draft = false
 - [✅Botの戦略はxxx](#74bd27)
 - [✅取引所はBitflyer](#02ce91)
     - [🔍多くのbotterがbitflyerを選ぶ人気理由](#efb0e4)
-- [References](#d95867)
+- [🔗References](#3b90d2)
 
 </div>
 <!--endtoc-->
@@ -101,6 +101,12 @@ mlbotを開発しようとしたときに, チュートリアル通りにやっ�
 
 選択肢は以下のようなものがある.
 
+-
+
+-
+
+-
+
 
 ## ✅取引所はBitflyer {#02ce91}
 
@@ -110,7 +116,7 @@ mlbotを開発しようとしたときに, チュートリアル通りにやっ�
 ### 🔍多くのbotterがbitflyerを選ぶ人気理由 {#efb0e4}
 
 
-## References {#d95867}
+## 🔗References {#3b90d2}
 
 -   [システムトレードで億万長者になるぞ! coursera で Computational Investing Part I を受けた | Futurismo](https://futurismo.biz/archives/2678/)
 -   [夏休みの自由研究 は OANDA APIを利用して FX システムトレード | Futurismo](https://futurismo.biz/archives/4392/)

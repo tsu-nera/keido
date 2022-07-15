@@ -1,5 +1,5 @@
 +++
-title = "Keido"
+title = "🏠Keido HOME"
 tags = ["HOME", "DOC"]
 draft = false
 +++
