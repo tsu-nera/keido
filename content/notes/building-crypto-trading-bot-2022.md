@@ -1,6 +1,6 @@
 +++
 title = "✅WIP:仮想通貨Botの自動売買で稼ぐ方法(2022)"
-lastmod = 2022-07-15T21:46:01+09:00
+lastmod = 2022-07-16T11:16:47+09:00
 tags = ["WIP", "FUTURISMO", "BML"]
 draft = false
 +++
@@ -10,17 +10,13 @@ draft = false
 <div class="heading">Table of Contents</div>
 
 - [✅勝てるBot仮説](#a1b50f)
-    - [✅2022からでも仮想通貨Botで稼げる](#d14cd0)
-    - [✅開発するBotはmlbot](#fffb4f)
-    - [✅勝てる取引所はBitflyer](#fc8e38)
+    - [✅2022に稼げる仮想通貨Botのマーケットはxxx](#2c66f1)
+    - [✅開発するBotはdex bot](#88bec9)
+    - [✅勝てる取引所はxxx](#919de3)
     - [✅勝てる戦略はxxx](#cbeb3f)
-- [✅開発言語はPythonではなくClojure](#b3a8a8)
-    - [🔍Clojureでのtrading bot開発事例](#5753e9)
-    - [🔍Clojureで開発するメリット](#7bfe2e)
-    - [🔍Clojureで開発するデメリット](#ed4401)
-    - [💡デメリットが大きくてもClojureを選ぶ理由](#8e43cb)
-    - [<span class="org-todo todo _">🔬</span> Clojure Trading BotのPoC](#b5262e)
-- [✅結論: ClojureでBitflyerを取引所にしたmlbotを作成する](#b97f61)
+- [✅開発言語はRust](#65baca)
+    - [<span class="org-todo todo _">🔬</span> Trading BotのPoC](#9e6818)
+- [✅結論: RustでSolanaを取引所にしたdex botを作成する](#578972)
 - [🔗References](#3b90d2)
 
 </div>
@@ -35,33 +31,51 @@ draft = false
 
 ## ✅勝てるBot仮説 {#a1b50f}
 
+過去1年稼げないマーケットで努力してすごく無駄な努力をした. 先月ガッツリ仮説検証の本を読んだ. なので, 今回は開発をする前に仮説ベースである程度戦略を立てる. とりあえずやってみない.
 
-### ✅2022からでも仮想通貨Botで稼げる {#d14cd0}
 
--   📍強い既存Botterだけでなく新規参入者でも勝てるか？
+### ✅2022に稼げる仮想通貨Botのマーケットはxxx {#2c66f1}
+
+-   📍勝てる市場を見極める.
+
+これが最重要イシュー. 釣りの名人でも魚がいなければ魚は釣れない. どんなに技術が優れていてもマーケットがだめだと駄目. とくにネガティブサムゲームはオワコンの隣の世界はヌルゲーの可能性が高い.
+
+しかし閑散期とバブル期の観点だと, 閑散期の次にくるバブルも考慮するか. どうせ駆け出しは稼げるようになるまで数ヶ月は学習のほうが多いので.
 
 
 #### 🔍過去1年の参入者での実績を出した事例 {#1870ec}
 
 
-### ✅開発するBotはmlbot {#fffb4f}
+#### 🔍ビットコイン冬の時代の検証 {#a10182}
+
+2022/05前半LUNAショック後, 相場が低迷.
+
+-   [冬の時代のbotterの歩き方｜Hoheto (仮想通貨botter)｜note](https://note.com/hht/n/n8f4afa2ec02a)
+
+
+#### 🔍高頻度Botオワコン説の検証 {#de2e5a}
+
+ref. <https://twitter.com/muzineco/status/1544871942083072000>
+
+
+### ✅開発するBotはdex bot {#88bec9}
 
 -   📍勝てるBotの種類を見極める
 
 仮想通貨Botにはいろんな種類がある.
 
-このなかで, なぜmlbotを開発するのかを明確にする.
+このなかで, なぜdex botを開発するのかを明確にする.
+
+流行ではなく今の自分の状況と強みを考慮した最適戦略の意思決定がしたい.
 
 
 #### 🔍主な仮想通貨Botの種類 {#b0d34e}
 
--
-
--
-
--
-
-ref.
+-   MLBot
+-   Dex bot
+-   アビトラBot
+-   mmBot
+-   スイングボット
 
 
 #### 📊元手が少ない場合の回収までのスピード {#47eb80}
@@ -74,9 +88,9 @@ ref.
 T.B.D.
 
 
-#### 🔍mlbotの現状2022 {#082c97}
+#### 🔍MLbotの現状2022 {#1ea9c9}
 
-richmanbtcによって参入した人の大半は機械学習がわからない. それはKindleの評価欄の感想とTwitterから観測した. ぼくには難しいと言っていた人が多い.
+りっちまん本によって参入した人の大半は機械学習がわからない. それはKindleの評価欄の感想とTwitterから観測した. ぼくには難しいと言っていた人が多い.
 
 そして単純な予測ではみんなが仲良く稼げるわけがない. 特徴量か裁定ロジックで差別化が必要.
 
@@ -87,18 +101,18 @@ richmanbtcによって参入した人の大半は機械学習がわからない.
 [G-Research Crypto Forecasting | Kaggle](https://www.kaggle.com/competitions/g-research-crypto-forecasting/)
 
 
-#### 💡どてんBotよりもむしろmlbot {#c88676}
+#### 💡MLBotよりもむしろdex bot {#fa1377}
 
 
-#### 💡アビトラBotよりもむしろmlbot {#38eb77}
+#### 💡高頻度Botよりもむしろdex bot {#c62101}
 
 
-### ✅勝てる取引所はBitflyer {#fc8e38}
+#### 💡アビトラBotよりもむしろdex bot {#896ce8}
+
+
+### ✅勝てる取引所はxxx {#919de3}
 
 -   📍勝てる取引所を選定する.
-
-
-#### 🔍多くのbotterがbitflyerを選ぶ人気理由 {#efb0e4}
 
 
 ### ✅勝てる戦略はxxx {#cbeb3f}
@@ -114,30 +128,15 @@ mlbotを開発しようとしたときに, チュートリアル通りにやっ�
 -
 
 
-## ✅開発言語はPythonではなくClojure {#b3a8a8}
-
--   📍Clojureの優位性を見極める.
--   📍ClojureでPythonのようなデータ分析が可能かを見極める.
+## ✅開発言語はRust {#65baca}
 
 
-### 🔍Clojureでのtrading bot開発事例 {#5753e9}
+### <span class="org-todo todo _">🔬</span> Trading BotのPoC {#9e6818}
+
+実際にかんたんなサンプルプログラムを組んで見る.
 
 
-### 🔍Clojureで開発するメリット {#7bfe2e}
-
-
-### 🔍Clojureで開発するデメリット {#ed4401}
-
-
-### 💡デメリットが大きくてもClojureを選ぶ理由 {#8e43cb}
-
-
-### <span class="org-todo todo _">🔬</span> Clojure Trading BotのPoC {#b5262e}
-
-実際にかんたんなサンプルプログラムをClojureで組んで見る. 既存のサンプルプログラムをClojureにポーティングをすることで実装可能性を検証する.
-
-
-## ✅結論: ClojureでBitflyerを取引所にしたmlbotを作成する {#b97f61}
+## ✅結論: RustでSolanaを取引所にしたdex botを作成する {#578972}
 
 
 ## 🔗References {#3b90d2}
