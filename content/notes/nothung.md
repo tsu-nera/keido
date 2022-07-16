@@ -889,7 +889,36 @@ EmacsのWindow Manager.
 -   [dotfiles/50_org-mode.org at master · tsu-nera/dotfiles · GitHub](https://github.com/tsu-nera/dotfiles/blob/master/.emacs.d/inits/50_org-mode.org)
     -   昔の設定. すこしずつ移植したい.
 
-<!--listend-->
+
+### ファイルパス {#54c5d8}
+
+ファイルパス関連の定義はまとめてここで実施.
+
+```emacs-lisp
+(after! org
+  (setq org-directory "~/keido")
+
+
+  (defconst my/gtd-projects-file
+    "~/keido/notes/gtd/gtd_projects.org")
+  (defconst my/inbox-file "~/keido/inbox/inbox.org")
+  (defconst my/daily-journal-dir "~/keido/notes/journals/daily")
+  (defconst my/project-journal-bakuchi
+    "~/keido/notes/zk/journal_bakuchi.org")
+
+  ;; org-captureのtargetは詳しくいろいろ設定するのでdefaultは不要.
+  ;; (setq org-default-notes-file "gtd/gtd_projects.org")
+
+  ;; 何でもかんでも agenda すると思いので厳選.
+  ;; org-journalの機能でこのほかに今日のjournal fileが追加される.
+  (setq org-agenda-files
+        '(my/gtd-projects-file
+          my/project-journal-bakuchi))
+  )
+```
+
+
+### Basics {#bbc910}
 
 ```emacs-lisp
 ;; Org mode
@@ -897,22 +926,24 @@ EmacsのWindow Manager.
 
 ;; スマホとの共有のため, github を clone したものを Dropbox に置いて$HOME に symlink している.
 (after! org
-  (setq org-directory "~/keido")
-  (setq org-default-notes-file "gtd/gtd_projects.org")
 
   (setq org-return-follows-link t) ;; Enter でリンク先へジャンプ
   (setq org-use-speed-commands t)  ;; bullet にカーソルがあると高速移動
   (setq org-hide-emphasis-markers t) ;; * を消して表示.
   (setq org-pretty-entities t)
 
-  (setq system-time-locale "C") ;; カレンダー表示を英語表記へ
+  ;; カレンダー表示を英語表記へ
+  (setq system-time-locale "C")
 
-  (setq org-footnote-section "Notes") ;; defaultではFootnotesなので変える.
+  ;; defaultではFootnotes
+  (setq org-footnote-section "Footnotes")
   (setq org-footnote-auto-adjust t)
 
   ;; M-RET の挙動の調整
-  ;; t だと subtree の最終行に heading を挿入, nil だと current point に挿入
-  ;; なお，C-RET だと subtree の最終行に挿入され, C-S-RET だと手前に挿入される.
+  ;; t だと subtree の最終行に heading を挿入
+  ;; nil だと current point に挿入
+  ;; なお，C-RET だと subtree の最終行に挿入され
+  ;; C-S-RET だと手前に挿入される.
   (setq org-insert-heading-respect-content nil)
 
   (setq org-startup-indented t)
@@ -922,14 +953,21 @@ EmacsのWindow Manager.
   (setq org-startup-truncated nil) ;; 長い文は折り返す.
 
   ;; electric-indent は org-mode で誤作動の可能性があることのこと
-  ;; たまにいきなり org-mode の tree 構造が壊れるから，とりあえず設定しておく.
+  ;; たまにいきなり org-mode の tree 構造が壊れる.とりあえず設定しておく
   ;; この設定の効果が以下の記事で gif である.
   ;; https://www.philnewton.net/blog/electric-indent-with-org-mode/
-  (add-hook! org-mode (electric-indent-local-mode -1))
+  (add-hook! org-mode (electric-indent-local-mode -1)))
+```
 
+
+### org-agenda {#4cc41f}
+
+```emacs-lisp
+(after! org
   ;; org-agenda
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
-  (setq org-agenda-time-leading-zero t) ;; 時間表示が 1 桁の時, 0 をつける
+  ;; 時間表示が 1 桁の時, 0 をつける
+  (setq org-agenda-time-leading-zero t)
   (setq calendar-holidays nil) ;; 祝日を利用しない.
   (setq org-log-done 'time);; 変更時の終了時刻記録.
 
@@ -937,104 +975,23 @@ EmacsのWindow Manager.
   (setq org-agenda-skip-deadline-if-done nil)
   (setq org-agenda-skip-scheduled-if-done nil)
 
-  (setq org-agenda-include-inactive-timestamps t) ;; default で logbook を表示
-  (setq org-agenda-start-with-log-mode t) ;; ;; default で 時間を表示
+  ;; default で logbook を表示
+  (setq org-agenda-include-inactive-timestamps t)
+  ;; default で 時間を表示
+  (setq org-agenda-start-with-log-mode t)
 
   ;; org-agenda speedup tips
   ;; https://orgmode.org/worg/agenda-optimization.html
 
-  ;; 何でもかんでも agenda すると思いので厳選.
-  (setq org-agenda-files '("~/Dropbox/keido/notes/gtd/gtd_projects.org"
-                           "~/Dropbox/keido/notes/journals/journal.org"))
-                           ;; projectsディレクトリにある.orgをみる.
-                           ;; その配下のorgファイルは対象にはならない.
-                           ;; "~/Dropbox/keido/notes/gtd/projects")
 
   ;; 期間を限定
   (setq org-agenda-span 7)
-                                        ; Inhibit the dimming of blocked tasks:
+  ;; Inhibit the dimming of blocked tasks:
   (setq org-agenda-dim-blocked-tasks nil)
   ;; Inhibit agenda files startup options:
   (setq org-agenda-inhibit-startup nil)
   ;; Disable tag inheritance in agenda:
-  (setq org-agenda-use-tag-inheritance nil)
-
-  )
-
-;; +pretty(org-superstar-mode)関連
-;;; Titles and Sections
-;; hide #+TITLE:
-;; (setq org-hidden-keywords '(title))
-;; set basic title font
-;; (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
-;; Low levels are unimportant => no scaling
-;; (set-face-attribute 'org-level-7 nil :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-6 nil :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-5 nil :inherit 'org-level-8)
-;; (set-face-attribute 'org-level-4 nil :inherit 'org-level-8)
-;; Top ones get scaled the same as in LaTeX (\large, \Large, \LARGE)
-;; (set-face-attribute 'org-level-3 nil :inherit 'org-level-8 :height 1.2) ;\large
-;; (set-face-attribute 'org-level-2 nil :inherit 'org-level-8 :height 1.44) ;\Large
-;; (set-face-attribute 'org-level-1 nil :inherit 'org-level-8 :height 1.728) ;\LARGE
-;; Only use the first 4 styles and do not cycle.
-(setq org-cycle-level-faces nil)
-
-;; orgの階層の色分けレベル.
-;; (setq org-n-level-faces 8)
-
-;; Document Title, (\huge)
-;; (set-face-attribute 'org-document-title nil
-;;                    :height 2.074
-;;                    :foreground 'unspecified
-;;                    :inherit 'org-level-8)
-
-;; (with-eval-after-load 'org-superstar
-;;  (set-face-attribute 'org-superstar-item nil :height 1.2)
-;;  (set-face-attribute 'org-superstar-header-bullet nil :height 1.2)
-;;  (set-face-attribute 'org-superstar-leading nil :height 1.3))
-;; Set different bullets, with one getting a terminal fallback.
-(setq org-superstar-headline-bullets-list '("■" "◆" "●" "▷"))
-;; (setq org-superstar-special-todo-items t)
-
-;; Stop cycling bullets to emphasize hierarchy of headlines.
-(setq org-superstar-cycle-headline-bullets nil)
-;; Hide away leading stars on terminal.
-;; (setq org-superstar-leading-fallback ?\s)
-(setq inhibit-compacting-font-caches t)
-
-;; 読書のためのマーカー（仮）
-;; あとでちゃんと検討と朝鮮しよう.
-;; (setq org-emphasis-alist
-;;   '(("*" bold)
-;;     ("/" italic)
-;;     ("_" underline))
-;;     ("=" (:background "red" :foreground "white")) ;; 書き手の主張
-;;     ("~" (:background "blue" :foreground "white")) cddddd;; 根拠
-;;     ("+" (:background "green" :foreground "black")))) ;; 自分の考え
-
-```
-
-org-mode で timestamp のみを挿入するカスタム関数. Doom EmacsのせいでC-u C-c .が動作しないので.
-
-```emacs-lisp
-;;
-(after! org
-  (defun my/insert-timestamp ()
-    "Insert time stamp."
-    (interactive)
-    (org-insert-time-stamp (current-time) t)
-    ;; (insert (format-time-string "%H:%M"))
-    )
-  (map! :map org-mode-map "C-c C-." #'my/insert-timestamp))
-```
-
-未分類(後で整理).
-
-```emacs-lisp
-;;
-;; 空白が保存時に削除されると bullet 表示がおかしくなる.
-;; なお wl-bulter は doom emacs のデフォルトで組み込まれている.
-(add-hook! 'org-mode-hook (ws-butler-mode -1))
+  (setq org-agenda-use-tag-inheritance nil))
 ```
 
 
@@ -1058,18 +1015,17 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
 
 ```emacs-lisp
 (after! org
-  (defconst my/captured-notes-file "~/keido/inbox/inbox.org")
-
   (setq org-capture-templates
         '(("i" "📥 Inbox" entry
-           (file "~/keido/inbox/inbox.org") "* %?\nCaptured On: %U\n"
+           (file my/inbox-file)
+           "* %?\nCaptured On: %U\n"
            :klll-buffer t)
           ("I" "📥+🌐 Inbox+Browser" entry
-           (file "~/keido/inbox/inbox.org")
+           (file my/inbox-file)
            "* %?\nSource: [[%:link][%:description]]\nCaptured On: %U\n"
            :klll-buffer t)
           ("q" "📥+🌐 Inbox+Browser(quote)" entry
-           (file "~/keido/inbox/inbox.org")
+           (file my/inbox-file)
            "* %?\nSource: [[%:link][%:description]]\nCaptured On: %U\n%i\n"
            :klll-buffer t))))
 ```
@@ -1086,19 +1042,20 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
 ;;   (expand-file-name (format "%s.org" (format-time-string "%Y%m%d%H%M%S")) path))
 
 (after! org
-  (defconst my/daily-journal-dir "~/keido/notes/journals/daily")
   (setq org-capture-templates
         (append
           '(("c" "☑ Planning" plain
              (file+headline
-              (lambda () (my/create-date-org-file my/daily-journal-dir))
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir))
               "Planning")
              "%?"
              :unnarrowed t
              :kill-buffer t)
             ("t" "🤔 Thought" entry
              (file+headline
-              (lambda () (my/create-date-org-file my/daily-journal-dir))
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir))
               "Thoughts")
              "* 🤔 %?\n%T"
              :empty-lines 1
@@ -1106,7 +1063,8 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
              :kill-buffer t)
             ("T" "🤔+📃 Thought+Ref" entry
              (file+headline
-              (lambda () (my/create-date-org-file my/daily-journal-dir))
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir))
               "Thoughts")
              "* 🤔 %?\n%T from %a\n"
              :empty-lines 1
@@ -1114,7 +1072,8 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
              :kill-buffer t)
             ("l" "🤔+🌐 Thought+Browser" entry
              (file+headline
-              (lambda () (my/create-date-org-file my/daily-journal-dir))
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir))
               "Thoughts")
              "* 🤔 %?\n%T from [[%:link][%:description]]\n"
              :empty-lines 1
@@ -1122,7 +1081,8 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
              :kill-buffer t)
             ("p" "🍅 Pomodoro" entry
              (file+headline
-              (lambda () (my/create-date-org-file my/daily-journal-dir))
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir))
               "DeepWork")
              "* 🍅 %?\n%T"
              :empty-lines 1
@@ -1130,33 +1090,54 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
              :kill-buffer t)
             ("r" "🧘 Recovery" entry
              (file+headline
-              (lambda () (my/create-date-org-file my/daily-journal-dir))
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir))
               "Recovery")
              "* 🧘 %?\n%T"
              :empty-lines 1
              :unnarrowed t
              :kill-buffer t)
             ("j" "🖊 Journal" plain
-             (file (lambda ()
-                     (my/create-date-org-file my/daily-journal-dir)))
+             (file
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir)))
              "%?"
              :empty-lines 1
              :unnarrowed t
              :kill-buffer t)
             ("J" "🖊+📃 Journal+Ref" plain
-             (file (lambda ()
-                     (my/create-date-org-file my/daily-journal-dir)))
+             (file
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir)))
              "%?\n%a"
              :empty-lines 1
              :unnarrowed t
              :kill-buffer t)
             ("L" "🖊+🌐 Journal+Browser" plain
-             (file (lambda ()
-                     (my/create-date-org-file my/daily-journal-dir)))
+             (file
+              (lambda ()
+                (my/create-date-org-file my/daily-journal-dir)))
              "%?\nSource: [[%:link][%:description]]\nCaptured On: %U\n"
              :empty-lines 1
              :unnrrowed t
              :kill-buffer t)) org-capture-templates)))
+```
+
+
+#### capture to project journal {#29e9f4}
+
+```emacs-lisp
+(after! org
+  (setq org-capture-templates
+        (append
+         org-capture-templates
+        '(("B" "🖊 bakuchi journal" entry
+           (file+olp+datetree my/project-journal-bakuchi)
+           "* %?\nCaptured On: %T\n"
+           :unnarrowed t
+           :empty-lines 1
+           :tree-type week
+           :klll-buffer t)))))
 ```
 
 
@@ -1317,6 +1298,7 @@ Org-modeのなかでLiterature Programming.
   (setq org-src-preserve-indentation t)
   ;; TABの挙動
   (setq org-src-tab-acts-natively t)
+
   ;; org-babel のソースをキレイに表示.
   (setq org-src-fontify-natively t)
   (setq org-fontify-whole-heading-line t)
@@ -1350,6 +1332,54 @@ refs:
   :config
   ;; C-c C-o でブラウザで開く.
   (org-babel-html-enable-open-src-block-result-temporary))
+```
+
+
+### org-superstar {#e46aa5}
+
+org-superstar-mode(+pretty option)関連.
+
+```emacs-lisp
+(after! org
+;;; Titles and Sections
+;; hide #+TITLE:
+;; (setq org-hidden-keywords '(title))
+;; set basic title font
+;; (set-face-attribute 'org-level-8 nil :weight 'bold :inherit 'default)
+;; Low levels are unimportant => no scaling
+;; (set-face-attribute 'org-level-7 nil :inherit 'org-level-8)
+;; (set-face-attribute 'org-level-6 nil :inherit 'org-level-8)
+;; (set-face-attribute 'org-level-5 nil :inherit 'org-level-8)
+;; (set-face-attribute 'org-level-4 nil :inherit 'org-level-8)
+;; Top ones get scaled the same as in LaTeX (\large, \Large, \LARGE)
+;; (set-face-attribute 'org-level-3 nil :inherit 'org-level-8 :height 1.2) ;\large
+;; (set-face-attribute 'org-level-2 nil :inherit 'org-level-8 :height 1.44) ;\Large
+;; (set-face-attribute 'org-level-1 nil :inherit 'org-level-8 :height 1.728) ;\LARGE
+;; Only use the first 4 styles and do not cycle.
+(setq org-cycle-level-faces nil)
+
+;; orgの階層の色分けレベル.
+;; (setq org-n-level-faces 8)
+
+;; Document Title, (\huge)
+;; (set-face-attribute 'org-document-title nil
+;;                    :height 2.074
+;;                    :foreground 'unspecified
+;;                    :inherit 'org-level-8)
+
+;; (with-eval-after-load 'org-superstar
+;;  (set-face-attribute 'org-superstar-item nil :height 1.2)
+;;  (set-face-attribute 'org-superstar-header-bullet nil :height 1.2)
+;;  (set-face-attribute 'org-superstar-leading nil :height 1.3))
+;; Set different bullets, with one getting a terminal fallback.
+(setq org-superstar-headline-bullets-list '("■" "◆" "●" "▷"))
+;; (setq org-superstar-special-todo-items t)
+
+;; Stop cycling bullets to emphasize hierarchy of headlines.
+(setq org-superstar-cycle-headline-bullets nil)
+;; Hide away leading stars on terminal.
+;; (setq org-superstar-leading-fallback ?\s)
+(setq inhibit-compacting-font-caches t))
 ```
 
 
@@ -1397,9 +1427,10 @@ Zettelkasten MethodのOrg-roam実装.
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
                          "#+title:🔖${title}\n#+filetags: :TAG:\n")
       :unnarrowed t)
-     ("p" "👨 Person" plain "%?"
-      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:👨${title}\n#+filetags: :PERSON:TAG:\n")
+     ("h" "👨 Person" plain "%?"
+      :target (file+head
+               "zk/%<%Y%m%d%H%M%S>.org"
+               "#+title:👨${title}\n#+filetags: :PERSON:\n")
       :unnarrowed t)
      ("i" "📂 TOC" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
@@ -1409,17 +1440,23 @@ Zettelkasten MethodのOrg-roam実装.
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
                          "#+title:🏛${title}\n#+filetags: :MOC:\n")
       :unnarrowed t)
-     ("i" "💡 Issue" plain "%?"
+     ("i" "✅ Issue" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:💡${title}\n#+filetags: :ISSUE:\n")
+                        "#+title:✅${title}\n#+filetags: :ISSUE:\n")
+      :unnarrowed t)
+     ("p" "⚙ Pattern" plain "%?"
+      :target (file+head
+               "zk/%<%Y%m%d%H%M%S>.org"
+               "#+title:⚙${title}\n#+filetags: :PATTERN:\n")
       :unnarrowed t)
      ("d" "🗒 DOC" plain "%?"
       :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
                          "#+title:🗒${title}\n#+filetags: :DOC:\n")
       :unnarrowrd t)
      ("f" "🦊 Darkfox" plain "%?"
-      :target (file+head "zk/%<%Y%m%d%H%M%S>.org"
-                         "#+title:🦊${title}\n#+filetags: :DARKFOX:\n")
+      :target (file+head
+               "zk/%<%Y%m%d%H%M%S>.org"
+               "#+title:🦊${title}\n#+filetags: :DARKFOX:\n")
       :unnarrowed t)
      ("b" "📚 Book" plain
       "%?
@@ -1841,6 +1878,32 @@ Kanbanツール Trello連携.
 
 ```emacs-lisp
 (setq org-table-export-default-format "orgtbl-to-csv")
+```
+
+
+### 未分類(後で整理) {#4908ab}
+
+org-mode で timestamp のみを挿入するカスタム関数. Doom EmacsのせいでC-u C-c .が動作しないので.
+
+```emacs-lisp
+;;
+;; (after! org
+;;   (defun my/insert-timestamp ()
+;;     "Insert time stamp."
+;;     (interactive)
+;;     (org-insert-time-stamp (current-time) t)
+;;     ;; (insert (format-time-string "%H:%M"))
+;;     )
+;;   (map! :map org-mode-map "C-c C-." #'my/insert-timestamp))
+```
+
+---
+
+空白が保存時に削除されると bullet 表示がおかしくなる.
+なお wl-bulter は doom emacs のデフォルトで組み込まれている.
+
+```emacs-lisp
+(add-hook! 'org-mode-hook (ws-butler-mode -1))
 ```
 
 
