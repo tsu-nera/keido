@@ -106,3 +106,92 @@ Twitterにつぶやいてもいいんだけど, Twitterがきらいであまり�
 -  bybitしらなかった, けっこう話題なので調べる
 
     Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-15 Fri 21:16&gt;</span></span>
+
+<!--list-separator-->
+
+-  仮想通貨Botにkaggleで拾った知識をt混ぜてみるのは面白そうだしわたしは機械学習に抵抗がないのは強みになる. しかし問題はPythonを捨ててClojureでやりたいと考えたときのClojureと機械学習の相性だな.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-15 Fri 22:01&gt;</span></span>
+
+
+#### 2022-07-16 Saturday {#e9f043}
+
+<!--list-separator-->
+
+-  作業開始.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 10:27&gt;</span></span>
+
+<!--list-separator-->
+
+-  気になる発言. 過去１年でレッドオーシャンでの努力ほど虚しいことを知ったのでオワコンに恐怖を感じる. 行動の前によく調べる必要がある.
+
+    最近の高頻度損益、マジでオワコンになってきていて、勝ってる人はどうやって勝ってるの感isある
+    <https://twitter.com/muzineco/status/1544871942083072000>
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 10:31&gt;</span></span>
+
+<!--list-separator-->
+
+-  まずはBotの種類を再確認して方針を決めることがビッグイシュー.
+
+    少ない資金を元手でコストが安いという観点からの絞り込が必要.
+
+    正直ここが狂うとその後の調査かやり直しになる分岐点.
+
+    仮にDex Botを選択したばあい, Rustの技術可能性は一つのサブイシューになる. MLBotの場合, Clojureで果たしていけるのかPythonとの比較がサブイシューとなる.
+
+    まずは見極めのための情報収集を. Botの特徴を手早くまとめないと. richmanbtc出ない可能性も検討なので, mlbotに時間を割くのを保留.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 10:41&gt;</span></span>
+
+<!--list-separator-->
+
+-  dex botも市場が傾いた？
+
+    <https://twitter.com/sazan_dev/status/1532598715290034177>
+
+    要約すると、既存の狩場は終了のお知らせ.
+
+    ---
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 11:38&gt;</span></span>
+
+<!--list-separator-->
+
+-  dex botは競プロスキル, mlbotはkaggleスキル？
+
+    <https://twitter.com/sazan_dev/status/1532885093777145857>
+
+    お金儲けだけならML botで本気だすのも、DeFi bot攻略するのも同じくらい儲かりそうなのに、なんでMLやる気でないのかなーと思ってたんだけど、、、
+
+    結局もうML飽きてるってのが答えな気がしてきた。賞味期限15年くらい
+
+    でも超絶儲かりそうとかだったらやる
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 11:40&gt;</span></span>
+
+<!--list-separator-->
+
+-  Twitterのスキルを活かしてBot作成できないかな？
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 12:09&gt;</span></span>
+
+<!--list-separator-->
+
+-  資金面で選択肢がHFTかもしれん. 圧倒的に資金ないから.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 14:04&gt;</span></span>
+
+<!--list-separator-->
+
+-  solana botはC言語低レベルしかでなきかったわたしには相性いいかも
+
+    Python botterがほとんどな世の中で, どちらかというとC言語と低レイヤでもがき続けてきたことしかしてないわたしはここしか強みがでないのでは？Rustも面白そうだしいつかはやってみたいと思っている.
+
+    ただ, 小さなリスクで確実にいこうとするとdex botは今は見送りかな...
+
+    今日はいろいろ情報収集をしてbot作成のための解像度が上がった. 明日は意思決定をしていく.
+
+    戦略的に仮説思考しようとしたものの, たいしたことはできてないが, wikiにまとめる力だけがフル回転している.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 23:57&gt;</span></span>

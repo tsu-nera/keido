@@ -1,6 +1,6 @@
 +++
 title = "✅WIP:仮想通貨Botの自動売買で稼ぐ方法(2022)"
-lastmod = 2022-07-16T20:37:52+09:00
+lastmod = 2022-07-16T23:06:37+09:00
 tags = ["WIP", "FUTURISMO", "BML"]
 draft = false
 +++
