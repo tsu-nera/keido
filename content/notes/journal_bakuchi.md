@@ -195,3 +195,14 @@ Twitterにつぶやいてもいいんだけど, Twitterがきらいであまり�
     戦略的に仮説思考しようとしたものの, たいしたことはできてないが, wikiにまとめる力だけがフル回転している.
 
     Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-16 Sat 23:57&gt;</span></span>
+
+
+#### 2022-07-17 Sunday {#7aaab6}
+
+<!--list-separator-->
+
+-  今日はどんなBotを作成するか意思決定をしたい. そのためには比較軸で比較する.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-17 Sun 08:20&gt;</span></span>
+
+    [📝ドテン君]({{< relref "20220717083642.md" >}})の調査完了. これは深堀しなくてもいいかな.

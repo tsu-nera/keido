@@ -1,6 +1,6 @@
 +++
 title = "✅WIP:仮想通貨Botの自動売買で稼ぐ方法(2022)"
-lastmod = 2022-07-16T23:06:37+09:00
+lastmod = 2022-07-17T10:13:18+09:00
 tags = ["WIP", "FUTURISMO", "BML"]
 draft = false
 +++
@@ -12,11 +12,11 @@ draft = false
 - [仮説ベースで考えてみる.](#7bd9bf)
 - [✅勝てるBot仮説](#a1b50f)
     - [✅2022に稼げる仮想通貨Botのマーケットはxxx](#2c66f1)
-    - [✅開発するBotはdex bot](#88bec9)
+    - [✅開発するBotはmm bot -&gt; ml bot](#bf3382)
+    - [✅mlbotの改造ポイントはxxx](#b820e3)
     - [✅勝てる取引所はxxx](#919de3)
-    - [✅勝てる戦略はxxx](#cbeb3f)
     - [✅勝てる開発言語はxxx](#376b17)
-- [✅結論: RustでSolanaを取引所にしたdex botを作成する](#578972)
+- [✅結論: ClojureでCEX(xxx)でのml botを作成](#2b38e1)
 - [🔗References](#3b90d2)
 
 </div>
@@ -63,22 +63,16 @@ draft = false
 ref. <https://twitter.com/muzineco/status/1544871942083072000>
 
 
-### ✅開発するBotはdex bot {#88bec9}
+### ✅開発するBotはmm bot -> ml bot {#bf3382}
 
 -   📍勝てるBotの種類を見極める
+-   📍勝てる戦略を見極める.
 
 仮想通貨Botにはいろんな種類がある.
 
-このなかで, なぜdex botを開発するのかを明確にする. 流行ではなく今の自分の状況と強みを考慮した最適戦略の意思決定がしたい.
+このなかで, なぜxxbotを開発するのかを明確にする. 流行ではなく今の自分の状況と強みを考慮した最適戦略の意思決定がしたい.
 
-
-#### 🔍主な仮想通貨Botの種類 {#b0d34e}
-
--   MLBot
--   Dex bot
--   アビトラBot
--   mmBot
--   スイングボット
+-   [🔍仮想通貨bot手法]({{< relref "20220603152137.md#73d718cb-a2fb-4add-8d46-41485ffc4db1" >}})
 
 
 #### 📊元手が少ない場合の回収までのスピード {#47eb80}
@@ -104,21 +98,16 @@ T.B.D.
 [G-Research Crypto Forecasting | Kaggle](https://www.kaggle.com/competitions/g-research-crypto-forecasting/)
 
 
-#### 💡MLBotよりもむしろdex bot {#fa1377}
+#### 💡アビトラBotよりもむしろmlbot {#38eb77}
 
 
-#### 💡高頻度Botよりもむしろdex bot {#c62101}
+#### 💡dex botよりもむしろ mlbot {#2c1179}
 
 
-#### 💡アビトラBotよりもむしろdex bot {#896ce8}
+#### 💡mmbotよりもむしろmlbot {#15e7b9}
 
 
-### ✅勝てる取引所はxxx {#919de3}
-
--   📍勝てる取引所を選定する.
-
-
-### ✅勝てる戦略はxxx {#cbeb3f}
+### ✅mlbotの改造ポイントはxxx {#b820e3}
 
 -   📍勝てる戦略を見極める.
 
@@ -129,6 +118,11 @@ mlbotを開発しようとしたときに, チュートリアル通りにやっ�
 -
 
 -
+
+
+### ✅勝てる取引所はxxx {#919de3}
+
+-   📍勝てる取引所を選定する.
 
 
 ### ✅勝てる開発言語はxxx {#376b17}
@@ -147,7 +141,7 @@ mlbotを開発しようとしたときに, チュートリアル通りにやっ�
 実際にかんたんなサンプルプログラムを組んで見る.
 
 
-## ✅結論: RustでSolanaを取引所にしたdex botを作成する {#578972}
+## ✅結論: ClojureでCEX(xxx)でのml botを作成 {#2b38e1}
 
 
 ## 🔗References {#3b90d2}
