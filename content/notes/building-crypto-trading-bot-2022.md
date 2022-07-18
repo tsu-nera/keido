@@ -1,6 +1,6 @@
 +++
 title = "✅仮想通貨Botの自動売買で稼ぐ方法(2022/07)"
-lastmod = 2022-07-18T15:34:20+09:00
+lastmod = 2022-07-18T15:41:34+09:00
 tags = ["WIP", "FUTURISMO", "BML"]
 draft = false
 +++
@@ -22,7 +22,7 @@ draft = false
 
 2022/07からでも仮想通貨Botの自動売買は稼げるかを開発前に仮説ベースで検証していく.
 
--   url: <https://futurismo.biz/building-crypto-trading-bot-2022/>
+-   url: <https://futurismo.biz/buildinig-crypto-trading-bot-2022/>
 -   tags.
     -   [🔖CryptBot]({{< relref "20220603152137.md" >}})
 
