@@ -997,7 +997,7 @@ EmacsのWindow Manager.
 
 ### TODOキーワード拡張 {#852221}
 
-TODOキーワードのカスタマイズ.
+TODOキーワードのカスタマイズ. M-x C-c t.
 
 ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensions.html)
 
@@ -1005,7 +1005,7 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "PROJ(p)" "WAIT(w)" "|" "DONE(d)")
         (sequence "✅(c)" "💡(b)" "📍(r)" "🔍(s)" "📊(a)" "🔬(e)" "🗣(h)" "|")
-        (sequence "🎓(z)" "📝(m)" "|")))
+        (sequence "🎓(z)" "📝(m)" "🔗(l)" "|")))
 ```
 
 
@@ -1131,13 +1131,20 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
   (setq org-capture-templates
         (append
          org-capture-templates
-        '(("B" "🖊 bakuchi journal" entry
+        '(("b" "🖊 bakuchi entry" entry
            (file+olp+datetree my/project-journal-bakuchi)
            "* %?\nCaptured On: %T\n"
            :unnarrowed t
            :empty-lines 1
            :tree-type week
-           :klll-buffer t)))))
+           :klll-buffer t)
+          ("B" "🖊+✍ bakuchi append" plain
+           (file my/project-journal-bakuchi)
+           "%?"
+           :empty-lines 1
+           :unnarrowed t
+           :jump-to-captured t
+           :kill-buffer t)))))
 ```
 
 
@@ -1878,6 +1885,17 @@ Kanbanツール Trello連携.
 
 ```emacs-lisp
 (setq org-table-export-default-format "orgtbl-to-csv")
+```
+
+
+### org-sidebar {#6dac96}
+
+<https://github.com/alphapapa/org-sidebar>
+
+org-sidebar-treeでサイドバーにアウトラインを表示.
+
+```emacs-lisp
+(use-package! org-sidebar)
 ```
 
 
