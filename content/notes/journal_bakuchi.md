@@ -206,3 +206,150 @@ Twitterにつぶやいてもいいんだけど, Twitterがきらいであまり�
     Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-17 Sun 08:20&gt;</span></span>
 
     [📝ドテン君]({{< relref "20220717083642.md" >}})の調査完了. これは深堀しなくてもいいかな.
+
+<!--list-separator-->
+
+-  元手を軸にしたストラテジの選択がキモ
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-17 Sun 10:15&gt;</span></span>
+
+    どんなbotをつくるかは結局ストラテジであり, その判断のための1番の軸は少ない資金という制約条件. ここの解像度を上げて意思決定をする. たぶんここが１番のイシュー.
+
+<!--list-separator-->
+
+-  Google検索でなんだよこれとおもったら自分の文章だったwww
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-17 Sun 17:58&gt;</span></span>
+
+    <https://github.com/tsu-nera/bakuchi/wiki>
+
+
+### 2022-W29 {#3977fe}
+
+
+#### 2022-07-18 Monday {#517667}
+
+<!--list-separator-->
+
+-  binanceの手数料解禁は最近?これによりmmbotのハックができる？
+
+    後発組としては新規市場は注目に値する.
+
+    -   <https://twitter.com/misanfx/status/1544999480088461316?t=U54-YsA-dl7hMVXZrLWzXw&s=19>
+    -   <https://www.binance.com/en/support/announcement/10435147c55d4a40b64fcbf43cb46329>
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-18 Mon 08:29&gt;</span></span>
+
+    色々やったのにBINANCE手数料無料現物だけじゃんワロタ
+    <https://twitter.com/hanahira_ri/status/1546382085031870465>
+
+<!--list-separator-->
+
+-  現物と先物をもう一度復習する
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-18 Mon 08:53&gt;</span></span>
+
+<!--list-separator-->
+
+-  FTX JP口座開設キャンペーン
+
+    <https://help-jp.ftx.com/hc/ja/articles/7297768019737>
+
+    -   [X] 新規口座開設手続きを完了
+    -   [ ] アカウントの承認が完了
+    -   [ ] FTX JP販売所にて100円以上の暗号資産を取引する
+
+<!--list-separator-->
+
+-  FTX JPは手数料無料のための10万が払えないので諦めてbitflyerにする. APIの自作が必要そうだな...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-18 Mon 20:12&gt;</span></span>
+
+<!--list-separator-->
+
+-  clojureでのbitflyer api wrapperを作成していく
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-18 Mon 20:20&gt;</span></span>
+
+
+#### 2022-07-19 Tuesday {#3f0b18}
+
+<!--list-separator-->
+
+-  httpkitはwebsocketをサポートしているけど, なにもwebsocket libraryはそれだけではないのでとりあえず慣れたclj-httpをつかう
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-19 Tue 06:49&gt;</span></span>
+
+<!--list-separator-->
+
+-  clojureでイベントドリブンな状態遷移ってどうかけばいいの？
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-19 Tue 19:13&gt;</span></span>
+
+
+#### 2022-07-20 Wednesday {#854f0e}
+
+<!--list-separator-->
+
+-  bitflyerのprivate apiが気軽に叩けないことに気づいたので認証を実装する.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-20 Wed 06:25&gt;</span></span>
+
+    <https://github.com/knowm/XChange/blob/develop/xchange-bitflyer/src/main/java/org/knowm/xchange/bitflyer/service/BitflyerDigest.java>
+
+    ---
+
+    <https://github.com/after-the-sunrise/bitflyer4j/blob/master/src/main/java/com/after_sunrise/cryptocurrency/bitflyer4j/core/impl/HttpClientImpl.java>
+    <https://github.com/knowm/XChange/blob/develop/xchange-core/src/main/java/org/knowm/xchange/utils/DigestUtils.java>
+
+<!--list-separator-->
+
+-  bitflyerのエラーがわからないな, これってエラーがよく変える前提でつくるのかな...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-20 Wed 09:53&gt;</span></span>
+
+    <https://note.com/wanna_be_free/n/n009968671ed6>
+
+    magitoサンプルはリトライしている.
+
+    とりあえずさきに進むか...
+
+<!--list-separator-->
+
+-  xchangeのライブラリをつかうことにする. 自前はいいや...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-20 Wed 13:30&gt;</span></span>
+
+<!--list-separator-->
+
+-  だめだな, xchangeのdtoがウザい.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-20 Wed 14:25&gt;</span></span>
+
+<!--list-separator-->
+
+-  おかしいなさっきはやっても取得できて, 今はなんどやっても取得エラーする
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-20 Wed 19:03&gt;</span></span>
+
+<!--list-separator-->
+
+-  もくしかして署名はリクエストごとに使い回さないといけないのか?一定時間立つと問題ないな.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-20 Wed 19:16&gt;</span></span>
+
+<!--list-separator-->
+
+-  ついにわかった...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-20 Wed 19:33&gt;</span></span>
+
+    ```clojure
+    (defn toHexString
+      "Convert bytes to a String"
+      [bytes]
+      (apply str (map #(format "%02x" %) bytes)))
+    ```
+
+    %xを%02xに変更したらできた.
+    これで１日潰れるとは...
