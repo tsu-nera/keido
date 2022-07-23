@@ -353,3 +353,67 @@ Twitterにつぶやいてもいいんだけど, Twitterがきらいであまり�
 
     %xを%02xに変更したらできた.
     これで１日潰れるとは...
+
+
+#### 2022-07-21 Thursday {#8d0ac8}
+
+<!--list-separator-->
+
+-  とりあえずorderがやっとapiからできた. 一歩前進した.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-20 Wed 20:05&gt;</span></span>
+
+<!--list-separator-->
+
+-  botのloopをつくっていく. Clojureでloopはどうやるんだろう.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 13:25&gt;</span></span>
+
+<!--list-separator-->
+
+-  おそらくintegrantがstart/stopの機能を気軽に提供する点でよいんだ. 問題は, loopの部分. serverのようなフレームワークではなくてもっと気軽なものがいい.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 13:30&gt;</span></span>
+
+<!--list-separator-->
+
+-  integrationにchimeを組み込む
+
+    <https://ilyaletre.hatenablog.com/entry/2018/04/15/175037>
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 13:33&gt;</span></span>
+
+<!--list-separator-->
+
+-  chimeの無限ループを停止するにはどうすればいいの？
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 15:25&gt;</span></span>
+
+<!--list-separator-->
+
+-  フォワードテスト的なデモトレードがしたいな... 実際のお金をかけると損しそうなので.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 20:02&gt;</span></span>
+
+<!--list-separator-->
+
+-  ぜんぜんspreadとしきい値があわないな. eff tickがいけないのかな...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 20:28&gt;</span></span>
+
+<!--list-separator-->
+
+-  マーケットメイクの原理が理解できてないからそれを見えるようにしないとな. 紙上で理解するのがいいのかも.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 21:02&gt;</span></span>
+
+<!--list-separator-->
+
+-  マーケットメイクを正しく理解するとともにeffの算出を正確に実装する必要がある.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 21:10&gt;</span></span>
+
+<!--list-separator-->
+
+-  とりあえずこれで１週間経過か... まだまだ先が長そうだ...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 21:12&gt;</span></span>
