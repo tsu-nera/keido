@@ -905,6 +905,8 @@ EmacsのWindow Manager.
   (defconst my/daily-journal-dir "~/keido/notes/journals/daily")
   (defconst my/project-journal-bakuchi
     "~/keido/notes/zk/journal_bakuchi.org")
+  (defconst my/project-journal-deepwork
+    "~/keido/notes/zk/journal_deepwork.org")
 
   ;; org-captureのtargetは詳しくいろいろ設定するのでdefaultは不要.
   ;; (setq org-default-notes-file "gtd/gtd_projects.org")
@@ -913,7 +915,8 @@ EmacsのWindow Manager.
   ;; org-journalの機能でこのほかに今日のjournal fileが追加される.
   (setq org-agenda-files
         '(my/gtd-projects-file
-          my/project-journal-bakuchi))
+          my/project-journal-bakuchi
+          my/project-journal-deepwork))
   )
 ```
 
@@ -1144,7 +1147,14 @@ ref. [TODO Extensions (The Org Manual)](https://orgmode.org/manual/TODO-Extensio
            :empty-lines 1
            :unnarrowed t
            :jump-to-captured t
-           :kill-buffer t)))))
+           :kill-buffer t)
+          ("d" "🖊 DeepWork entry" entry
+           (file+olp+datetree my/project-journal-deepwork)
+           "* %?\nCaptured On: %T\n"
+           :unnarrowed t
+           :empty-lines 1
+           :tree-type week
+           :klll-buffer t)))))
 ```
 
 
