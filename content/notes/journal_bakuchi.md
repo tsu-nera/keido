@@ -417,3 +417,345 @@ Twitterにつぶやいてもいいんだけど, Twitterがきらいであまり�
 -  とりあえずこれで１週間経過か... まだまだ先が長そうだ...
 
     Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-21 Thu 21:12&gt;</span></span>
+
+
+#### 2022-07-22 Friday {#57fb09}
+
+<!--list-separator-->
+
+-  わからないところは, サンプルコードではspreadのエントリのしきい値が0.0005なのに対して現実の開きが0. 005であり, 桁ひとつ差の開きがあるところ.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 06:35&gt;</span></span>
+
+    これは2018と2022ではそもそもそういうものなのか, 自分のバグなのか. もう少し板情報に対する理解を上げる必要がある.
+
+    effective bid/askであろうとbest bid/askだろうと, これは変わらないので, 実効価格の実装バグではない. もう少し別の視点が必要.
+
+<!--list-separator-->
+
+-  スプレッドの理解を深めることが今のイシューだ.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 06:40&gt;</span></span>
+
+<!--list-separator-->
+
+-  うーんネットの情報と手元の計算だとスプレッドの桁ひとつ違うな. 数千ではなく数万.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 07:37&gt;</span></span>
+
+<!--list-separator-->
+
+-  2022/02の記事だと0.07ってかいてあるな.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 07:41&gt;</span></span>
+
+    [bitFlyer (ビットフライヤー) スプレッドは広すぎるか比較検証 | Kasobu](https://kasobu.com/articles/bitflyer-spread)
+
+<!--list-separator-->
+
+-  いちおう今の仮説では, 現状のスプレッドは2018とはだいぶ違うが計算が間違っているわけではない.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 08:01&gt;</span></span>
+
+<!--list-separator-->
+
+-  開きすぎから戻れば利益になるので, まずは開きすぎの状態を見極める必要がありそうだな.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 10:45&gt;</span></span>
+
+<!--list-separator-->
+
+-  異変に気づいた. bitflyer先物は取引量が極端に少ない. やるならFXがいいかもだが最小ロットが大きい. そうするとどうしよう... うーんどうしよう. とりあえず開発するだけならいけるんだけど,実践と乖離してもなあ...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 14:35&gt;</span></span>
+
+    いやーこれだときついなあ... mmbotをbitflyerで人ってロットを0.01でやっているのか.
+
+    これ一時的なものなのかな...
+
+<!--list-separator-->
+
+-  FTXJPやるかな... 少ロットでいけるのはよい. 取引手数料0.02がどのくらいのインパクトがあるのだろう. 売上の2%なら大したことないんだけど. 最小ロット0.0001で300円からいけるならばもやは手数料は稼げるまでの勉強代としてもいい. 論点はその2%によってそもそも稼げない仕組みになっているかどうか.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 16:06&gt;</span></span>
+
+<!--list-separator-->
+
+-  FTXJPへ移動検討. 手数料0.02の影響度調査と取引量の調査(bitFlyerみたいに板がスカスカでないか).
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 16:25&gt;</span></span>
+
+<!--list-separator-->
+
+-  FTXJPのmaker手数料0.02は大したことないな.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 17:53&gt;</span></span>
+
+<!--list-separator-->
+
+-  取引量の勢いがすごいな, 間違いなさそう.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri 18:07&gt;</span></span>
+
+
+#### 2022-07-23 Saturday {#018dcb}
+
+
+### 2022-W30 {#9f62c4}
+
+
+#### 2022-07-25 Monday {#442374}
+
+<!--list-separator-->
+
+-  とりあえずtickを取得できるようになったのでbotのstartとstopをREPLからできるようにしたい. このあとサーバで起動できるようにしたい.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-25 Mon 09:55&gt;</span></span>
+
+<!--list-separator-->
+
+-  FTXのprivate apiが疎通した.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-25 Mon 15:57&gt;</span></span>
+
+<!--list-separator-->
+
+-  とりあえずbitflyerでできていたところまでまずはもっていくか.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-25 Mon 15:58&gt;</span></span>
+
+<!--list-separator-->
+
+-  loggerに手をいれておくか...見にくい...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-25 Mon 16:08&gt;</span></span>
+
+<!--list-separator-->
+
+-  ログを整えた.
+
+    いいな, これてorderとcancelを実装すれば最低限の機能は実装できる.
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-25 Mon 18:55&gt;</span></span>
+
+
+#### 2022-07-26 Tuesday {#eb1d9c}
+
+<!--list-separator-->
+
+-  とりあえず新規注文成功.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-26 Tue 08:48&gt;</span></span>
+
+<!--list-separator-->
+
+-  FSMの実装をしたい.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-26 Tue 11:55&gt;</span></span>
+
+<!--list-separator-->
+
+-  ずばりClojureでFSMを利用したtrading systemについて
+
+    [Paul Lam. Founding engineer for data-driven enterprise startups. | Event-driven finite state machine for a distributed trading system](https://www.quantisan.com/event-driven-finite-state-machine-for-a-distributed-trading-system/#.Yt9eaHVBxhE)
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-26 Tue 12:24&gt;</span></span>
+
+<!--list-separator-->
+
+-  これがまさに探してたこと. 休憩後にこれを利用する方針で進める.
+
+    <https://lucywang000.github.io/clj-statecharts/>
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-26 Tue 13:29&gt;</span></span>
+
+
+#### 2022-07-27 Wednesday {#c4cc97}
+
+<!--list-separator-->
+
+-  とりあえずサーバにデプロイしたいな.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-27 Wed 08:26&gt;</span></span>
+
+<!--list-separator-->
+
+-  とりまサクラサーバで動かすことに成功.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-27 Wed 08:38&gt;</span></span>
+
+<!--list-separator-->
+
+-  FTXのサブアカウント対応ができた.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-27 Wed 16:47&gt;</span></span>
+
+<!--list-separator-->
+
+-  注文してもcloseしないことが結構多いな. そしてclooseしないとその後の取引もしないので実質止まっている状態で損し続ける. cancelをつくりこまないと. というかいろいろやることをそろそろ整理しないと.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-27 Wed 18:52&gt;</span></span>
+
+<!--list-separator-->
+
+-  サンプルでも１時間動かして90円なら夢があるな.
+
+    [pybottersとasyncioでmagito MM!｜pe｜note](https://note.com/clever_dahlia308/n/n2fdb1ca0c62e)
+
+    アフィリだと200時間かけて150円だった. さっきUber１時間半やって601円だった.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-27 Wed 19:03&gt;</span></span>
+
+<!--list-separator-->
+
+-  reentryにはmodifyorderが使えそうだな.
+
+    <https://docs.ftx.com/#modify-order>
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-27 Wed 20:52&gt;</span></span>
+
+
+#### 2022-07-28 Thursday {#227b4e}
+
+<!--list-separator-->
+
+-  modify apiから調査
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-28 Thu 11:29&gt;</span></span>
+
+<!--list-separator-->
+
+-  とりあえずcancel & 再注文は実装できたもののtickのたびに再注文が走る.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-28 Thu 17:27&gt;</span></span>
+
+
+#### 2022-07-29 Friday {#9af51d}
+
+<!--list-separator-->
+
+-  ログ改善をしていく.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 11:54&gt;</span></span>
+
+<!--list-separator-->
+
+-  約定前のキャンセルは手数料かからないのかな?
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 16:32&gt;</span></span>
+
+<!--list-separator-->
+
+-  postonlyってなんだろう
+
+    <https://help-jp.ftx.com/hc/ja/articles/4588828882201-%E6%B3%A8%E6%96%87%E7%A8%AE%E9%A1%9E%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6>
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 16:35&gt;</span></span>
+
+<!--list-separator-->
+
+-  キャンセル失敗するとどんどん注文が溜まっていく...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 18:56&gt;</span></span>
+
+<!--list-separator-->
+
+-  キャンセル問題を解決する.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 19:37&gt;</span></span>
+
+<!--list-separator-->
+
+-  注文がクラッシュする理由がわからないがpost-onlyを有効にしてからおかしくなったので切り分けのためにdisableしてみる.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 20:16&gt;</span></span>
+
+<!--list-separator-->
+
+-  根本的には例外処理をちゃんとつくりこめばいいんだけど. http error 400の詳細はなんだろう.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 20:17&gt;</span></span>
+
+<!--list-separator-->
+
+-  うーん, 例外発生で多重注文になる. これでは深夜に放置はできないな...
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 21:07&gt;</span></span>
+
+<!--list-separator-->
+
+-  例外処理を作り込む. まずはプログラム実行中の例外のメッセージを補足してログする.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-29 Fri 23:58&gt;</span></span>
+
+
+#### 2022-07-30 Saturday {#2fea0a}
+
+<!--list-separator-->
+
+-  大幅下落のとき仮に約定しても損なので大幅下落時の損切りリセットロジックは必要.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 01:11&gt;</span></span>
+
+<!--list-separator-->
+
+-  現状はプログラムをいじらなくてもWebUIからキャンセルすればいい.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 01:13&gt;</span></span>
+
+<!--list-separator-->
+
+-  さらにいえばこういうトレンド相場は勝てないので取引をやめたほうがいい.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 01:14&gt;</span></span>
+
+<!--list-separator-->
+
+-  サーバーエラーが発生していた. 503と404.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 01:44&gt;</span></span>
+
+<!--list-separator-->
+
+-  Clojureのcore.asyncを使いこなせばワンちゃん高頻度bot勝てるかもしれない. そのくらいの力感じる. Pythonでwebsocketや並行プログラミングを扱うことが言語の才能がない部分を努力でなんとかしている. Clojureは素の文法がマッチョ.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 09:43&gt;</span></span>
+
+<!--list-separator-->
+
+-  こうなったらclj-httpの例外処理をこの機会に作り込んでとどめをさしておこう.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 11:40&gt;</span></span>
+
+<!--list-separator-->
+
+-  エラーメッセージ強化
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 12:46&gt;</span></span>
+
+    400 not enough balance.
+
+<!--list-separator-->
+
+-  とりあえずdevelopmentからproductionに資金移動して再開してみる.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 12:49&gt;</span></span>
+
+<!--list-separator-->
+
+-  サーバエラーみたいな異常系はコツコツやらないとな. わたしはこのエラーハンドリングに異常な好奇心があるため苦ではないのだ.
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 12:50&gt;</span></span>
+
+<!--list-separator-->
+
+-  magito mmbot対応の最後の山でremaining対応をする.
+
+    現状は0.0003が0.0001約定と0.0002未約定のような部分約定の場合に0.0002をキャンセルしたあとに0.0003のロットとして指値更新をしてしまう. ここは部分的な約定の情報を考慮しないと計算が合わない.
+
+    理想的には0.0001は約定したのだから0.0001ロットと0.0002ロットの２つのスレッドで同時bot稼働ができればいいのだがおいおい対応にする.
+
+    昨日の深夜によくクラッシュしたのは部分約定の対応漏れかも.
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 15:42&gt;</span></span>
+
+<!--list-separator-->
+
+-
+
+    Captured On: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-30 Sat 15:45&gt;</span></span>
