@@ -1,7 +1,7 @@
 +++
-title = "✅仮想通貨Botの自動売買で稼ぐ方法(2022/07)"
-lastmod = 2022-07-18T15:41:34+09:00
-tags = ["WIP", "FUTURISMO", "BML"]
+title = "🖊仮想通貨Botの自動売買で稼ぐ方法(2022/07)"
+lastmod = 2022-08-03T07:35:21+09:00
+tags = ["FUTURISMO", "BML"]
 draft = false
 +++
 
@@ -9,33 +9,34 @@ draft = false
 
 <div class="heading">Table of Contents</div>
 
-- [仮説ベースで考えてみる](#7bb40d)
-- [<span class="org-todo todo _">💡</span> 勝てるBot仮説](#93a65f)
-    - [✅高頻度mmbotで小さな成功体験を目指す](#6ea17b)
-    - [✅戦う取引所はFTX JP](#e68ac2)
-    - [✅開発言語はClojure](#c02e97)
-- [✅結論: ClojureでFTXJPでのmmbotを作成](#936332)
-- [🔗References](#3b90d2)
+- [仮説ベースで考えてみる](#仮説ベースで考えてみる)
+- [<span class="org-todo todo _">💡</span> 勝てるBot仮説](#勝てるbot仮説)
+    - [✅高頻度mmbotで小さな成功体験を目指す](#高頻度mmbotで小さな成功体験を目指す)
+    - [✅戦う取引所はFTX JP](#戦う取引所はftx-jp)
+    - [✅開発言語はClojure](#開発言語はclojure)
+- [✅結論: ClojureでFTXJPでのmmbotを作成](#結論-clojureでftxjpでのmmbotを作成)
+- [🔗References](#references)
 
 </div>
 <!--endtoc-->
 
 2022/07からでも仮想通貨Botの自動売買は稼げるかを開発前に仮説ベースで検証していく.
 
--   url: <https://futurismo.biz/buildinig-crypto-trading-bot-2022/>
+-   up: [🖊Futurismo]({{< relref "20220624083448.md" >}})
+-   url: <https://futurismo.biz/building-crypto-trading-bot-2022/>
 -   tags.
     -   [🔖CryptBot]({{< relref "20220603152137.md" >}})
 
 
-## 仮説ベースで考えてみる {#7bb40d}
+## 仮説ベースで考えてみる {#仮説ベースで考えてみる}
 
 過去1年稼げないマーケットで努力してすごく無駄な努力をした. 先月ガッツリ[📝仮説思考]({{< relref "20220527175824.md" >}})の本を読んだ. なので, 今回はその知識の実践も兼ねて, 開発をする前に仮説ベースである程度戦略を立てて見ようと思う. とりあえずやってみない. [稼げてる人は稼げると言わない]({{< relref "20220716112627.md" >}}).
 
 
-## <span class="org-todo todo _">💡</span> 勝てるBot仮説 {#93a65f}
+## <span class="org-todo todo _">💡</span> 勝てるBot仮説 {#勝てるbot仮説}
 
 
-### ✅高頻度mmbotで小さな成功体験を目指す {#6ea17b}
+### ✅高頻度mmbotで小さな成功体験を目指す {#高頻度mmbotで小さな成功体験を目指す}
 
 -   📍勝てるBotの種類を見極める
 -   📍勝てる戦略を見極める.
@@ -44,26 +45,26 @@ draft = false
 
 このなかで, なぜmmbotを開発するのかを明確にする. 流行ではなく今の自分の状況と強みを考慮した最適戦略の意思決定がしたい.
 
--   [🔍仮想通貨bot手法]({{< relref "20220603152137.md#73d718cb-a2fb-4add-8d46-41485ffc4db1" >}})
+-   [🔍仮想通貨bot手法]({{< relref "20220603152137.md#仮想通貨bot手法" >}})
 
 現在, けっこう元手がない. そのため最も大事な論点は **少ない元手でまずは小さい利益を上げること**. 100円でいいのでまずは小さな成功体験がほしい.
 
 
-#### <span class="org-todo todo _">✅</span> スイングbotではなく高頻度bot {#60302d}
+#### <span class="org-todo todo _">✅</span> スイングbotではなく高頻度bot {#スイングbotではなく高頻度bot}
 
-ref. [高頻度(HFT)botとスイングbot比較]({{< relref "20220603152137.md#0c77005e-c63f-4b4b-b9de-e33a63c4ccf1" >}})
+ref. [高頻度(HFT)botとスイングbot比較]({{< relref "20220603152137.md#高頻度--hft--botとスイングbot比較" >}})
 
 小さく確実な成功体験という軸を考えると, スイングbotより高頻度botのほうが適切.
 
 さらに2022/05から[冬の相場](https://note.com/hht/n/n8f4afa2ec02a)と喩えられる換算相場なのも気になるのでこれを考えてもスイングは不適切.
 
 
-#### <span class="org-todo todo _">✅</span> Dex BotよりもCEX bot {#f5cc7e}
+#### <span class="org-todo todo _">✅</span> Dex BotよりもCEX bot {#dex-botよりもcex-bot}
 
 ゼロサム・ゲームであるので競争を避けるという点でDex市場にはとても魅力を感じるが, 小さな成功体験という点では大きなリスクになってしまうので, まずは過去の再現性を考えてCEXを相手にするbotを作成する.
 
 
-#### <span class="org-todo todo _">✅</span> アビトラbotではなくmmbot {#b54a69}
+#### <span class="org-todo todo _">✅</span> アビトラbotではなくmmbot {#アビトラbotではなくmmbot}
 
 元手が少ない状態から小さな成功体験を目指す時, アビトラbotよりも高頻度botがよいと考えた.
 
@@ -72,7 +73,7 @@ CEX botでいこうとした場合, イベントのような歪みで大きく�
 いろいろな前提抜きにすると, 2年前にアビトラbotを開発していたというのもあり, 今回は別の方法を試したいという思いもある.
 
 
-#### <span class="org-todo todo _">✅</span> mlbotではなくmmbot {#fe6917}
+#### <span class="org-todo todo _">✅</span> mlbotではなくmmbot {#mlbotではなくmmbot}
 
 ここまで絞れたらmmbotとmlbotが選択肢として上がる.
 
@@ -95,7 +96,7 @@ CEX botでいこうとした場合, イベントのような歪みで大きく�
 幸いわたしもMLの知識は初歩ならばありモデルも構築できるので, mmbotでだいたい雰囲気がわかったらmlbotに進化させる. 敵がいない方向にいかないと...
 
 
-### ✅戦う取引所はFTX JP {#e68ac2}
+### ✅戦う取引所はFTX JP {#戦う取引所はftx-jp}
 
 -   📍勝てる取引所を選定する.
 
@@ -122,16 +123,16 @@ BINANCEが手数料無料化という発表が少し気になっているが今�
 いずれにしろ取引所を柔軟に切り替えられるようなソフトウェアのつくりにしておこう.
 
 
-### ✅開発言語はClojure {#c02e97}
+### ✅開発言語はClojure {#開発言語はclojure}
 
-[仮想通貨bot開発言語]({{< relref "20220717145220.md#161186f9-1809-44df-99e4-f5bb9405e32f" >}})
+[仮想通貨bot開発言語]({{< relref "20220717145220.md#仮想通貨bot開発言語" >}})
 
 Clojureでやりたいものの果たしてその選択をして地獄落ちしないか確認. たぶん実際のところつくってみないとわからないかも.
 
 データ分析がネックならそこだけPythonで分析すればいい. Clojureの遅延シーケンスと並行プログラミングのシンタックスに強い可能性を感じている.
 
 
-## ✅結論: ClojureでFTXJPでのmmbotを作成 {#936332}
+## ✅結論: ClojureでFTXJPでのmmbotを作成 {#結論-clojureでftxjpでのmmbotを作成}
 
 今までの考察をまとめると,
 
@@ -140,7 +141,7 @@ Clojureでやりたいものの果たしてその選択をして地獄落ちし�
 という結論になった. とはいえ, このあとClojureでのPoC的なものを作成しつつ, もう少し手数料周りの深堀調査が必要とは思っている.
 
 
-## 🔗References {#3b90d2}
+## 🔗References {#references}
 
 -   [システムトレードで億万長者になるぞ! coursera で Computational Investing Part I を受けた | Futurismo](https://futurismo.biz/archives/2678/)
 -   [夏休みの自由研究 は OANDA APIを利用して FX システムトレード | Futurismo](https://futurismo.biz/archives/4392/)
